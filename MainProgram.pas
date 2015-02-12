@@ -41,6 +41,7 @@ type
 
 var
   Main: TInicial;
+  FechaActual: string;
 
 implementation
 
@@ -202,6 +203,7 @@ begin
   IIte:=0;
   Ipag:=0;
   Int:=0;
+  FechaActual := DateToStr(Date);
 end;
 
 procedure TInicial.UrgenciasBTNClick(Sender: TObject);

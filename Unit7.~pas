@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ViewDatos, Mask;
+  Dialogs, StdCtrls, SharedClasses, Mask;
 
 type
   TFDatos = class(TForm)
@@ -146,8 +146,8 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
-    procedure MaskEdit5KeyPress(Sender: TObject; var Key: Char);
     procedure MaskEdit5Change(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
 
   private
     { Private declarations }
@@ -179,7 +179,8 @@ type
 var
   FDatos: TFDatos;
 
-// Genero los vecotres donde voy a almacenar los datos
+// Vectors
+// Where data will persist:
   VPersonas: VectorPersonas;
   VMedicos:  VectorMedicos;
   VSecretarias:  VectorSecretarias;
@@ -199,7 +200,7 @@ var
   VInterComunes:  VectorInterComunes;
   VInterTerapias:  VectorInterTerapias;
   VPagos:  VectorPagos;
-// Genero las variables que actúan de índice en los vectores
+// Vectors indexes
   Iper,
   IMed,
   ISec,
@@ -234,9 +235,11 @@ uses MainProgram;
 
 procedure TFDatos.Button13Click(Sender: TObject);
 begin
-FDatos.hide;
-Main.show;
+  FDatos.hide;
+  Main.show;
 end;
+
+// New Medico
 
 procedure TFDatos.Button5Click(Sender: TObject);
 var
@@ -246,35 +249,40 @@ var
   med:Medicos;
   ok:boolean;
 begin
-// Tomo los valores de los edit
+  // Tomo los valores de los edit
   ok:=true;
   n:=edit16.text;
   a:=edit17.text;
-  If digitos(edit18.text) then
+
+  if digitos(edit18.text) then
     d:=strtoint(edit18.text)
     else
       ok:=false;
   f:=Maskedit1.text;
-  If digitos(edit20.text) then
+
+  if digitos(edit20.text) then
     l:=strtoint(edit20.text)
     else
       ok:=false;
-  If digitos(edit21.text) then
+
+  if digitos(edit21.text) then
     m:=strtoint(edit21.text)
     else
       ok:=false;
-  If ok then
-  begin
-  // Incremento el indice
-  IMed:=IMed+1;
-// Creo el nuevo objeto a insertar
-  Med:=Medicos.crearmedico(d,a,n,f,l,m);
-// Almaceno en el vector el objeto creado
-  VMedicos[IMed]:=Med;
-  showmessage('Carga correcta');
-  end
+  if ok then
+    begin
+      // Incremento el indice
+      IMed:=IMed+1;
+      // Creo el nuevo objeto a insertar
+      Med:=Medicos.crearmedico(d,a,n,f,l,m);
+      // Almaceno en el vector el objeto creado
+      VMedicos[IMed]:=Med;
+      showmessage('Carga correcta');
+    end
   else
     showmessage('Hay datos incorrectos');
+
+  // Edits are cleaned
   Edit16.Text:='';
   Edit17.Text:='';
   Edit18.Text:='';
@@ -283,6 +291,8 @@ begin
   MaskEdit1.Text:='';
 end;
 
+// New Consultorio
+
 procedure TFDatos.Button10Click(Sender: TObject);
 var
   n,m,s:integer;
@@ -290,36 +300,43 @@ var
   Cons:Consultorios;
   ok:boolean;
 begin
-// Recopilo los datos de los edit
-  If digitos(edit46.text) then
-  n:=strtoint(edit46.text)
+  // get data from Edits
+  if digitos(edit46.text) then
+    n:=strtoint(edit46.text)
   else
       ok:=false;
+
   e:=edit47.text;
-  If digitos(edit48.text) then
-  m:=strtoint(edit48.text)
+
+  if digitos(edit48.text) then
+    m:=strtoint(edit48.text)
   else
       ok:=false;
-  If digitos(edit49.text) then
-  s:=strtoint(edit49.text)
+
+  if digitos(edit49.text) then
+    s:=strtoint(edit49.text)
   else
-      ok:=false;
-  If ok then
-  begin
-// Incremento el índice
-  ICns:=ICns+1;
-// Creo un nuevo objeto de esta clase
-  Cons:=Consultorios.crearconsultorio(n,m,s,e);
-  VConsultorios[ICns]:=Cons;
-    showmessage('Carga correcta');
-  end
-  else
-    showmessage('Hay datos incorrectos');
+    ok:=false;
+
+  if ok then
+    begin
+      // Incremento el índice
+      ICns:=ICns+1;
+      // Creo un nuevo objeto de esta clase
+      Cons:=Consultorios.crearconsultorio(n,m,s,e);
+      VConsultorios[ICns]:=Cons;
+      showmessage('Carga correcta');
+    end
+    else
+      showmessage('Hay datos incorrectos');
+
   Edit46.Text:='';
   Edit47.Text:='';
   Edit48.Text:='';
   Edit49.Text:='';
 end;
+
+// New Horario
 
 procedure TFDatos.Button12Click(Sender: TObject);
 var
@@ -328,29 +345,34 @@ var
   ok:boolean;
 begin
 // Recupero los dato de los edit
-  If digitos(edit50.text) then
-  n:=strtoint(edit50.text)
+  if digitos(edit50.text) then
+    n:=strtoint(edit50.text)
   else
     ok:=false;
-  If digitos(edit50.text) then
-  c:=strtoint(edit51.text)
+
+  if digitos(edit50.text) then
+    c:=strtoint(edit51.text)
   else
     ok:=false;
-  If ok then
-  begin
-// Incremento el índice
-  IHor:=IHor+1;
-// Creo un nuevo objeto
-  Horario:=Horarios.crearhorario(n,c);
-// Almaceno
-  VHorarios[IHor]:=Horario;
-  showmessage('Carga correcta');
-  end
-  else
-    showmessage('Hay datos incorrectos');
+
+  if ok then
+    begin
+      // Incremento el índice
+      IHor:=IHor+1;
+      // Creo un nuevo objeto
+      Horario:=Horarios.crearhorario(n,c);
+      // Almaceno
+      VHorarios[IHor]:=Horario;
+      showmessage('Carga correcta');
+    end
+    else
+      showmessage('Hay datos incorrectos');
+
   Edit50.Text:='';
   Edit51.Text:='';
 end;
+
+// New Obra Social
 
 procedure TFDatos.Button9Click(Sender: TObject);
 var
@@ -360,25 +382,30 @@ var
   ok:boolean;
 begin
   //Almacena los datos
-  If digitos (edit40.Text)then
-  nu:=strtoint(Edit40.text)
+  if digitos (edit40.Text)then
+    nu:=strtoint(Edit40.text)
   else
     ok:=false;
+
   no:=Edit41.Text;
-  If ok then
-  begin
-  os:=ObraSocial.crearobra(nu,no);
-  //Incrementa el indice
-  IOS:=IOS+1;
-  //Carga en vector
-  VObraSocial[IOS]:=os;
-  showmessage('Carga correcta');
-  end
-  else
-    showmessage('Hay datos incorrectos');
+
+  if ok then
+    begin
+      os:=ObraSocial.crearobra(nu,no);
+      //Incrementa el indice
+      IOS:=IOS+1;
+      //Carga en vector
+      VObraSocial[IOS]:=os;
+      showmessage('Carga correcta');
+    end
+    else
+      showmessage('Hay datos incorrectos');
+
   Edit40.Text:='';
   Edit41.Text:='';
 end;
+
+// New Categoria Obra social
 
 procedure TFDatos.Button11Click(Sender: TObject);
 var
@@ -388,35 +415,42 @@ var
   ok:boolean;
 begin
   //Almacena los datos
-  If digitos(edit42.text) then
-  n:=strtoint(edit42.text)
+  if digitos(edit42.text) then
+    n:=strtoint(edit42.text)
   else
     ok:=false;
-  If digitos(edit44.text) then
-  o:=strtoint(edit44.text)
+
+  if digitos(edit44.text) then
+    o:=strtoint(edit44.text)
   else
     ok:=false;
+
   desc:=edit43.text;
-  If digitos(edit45.text) then
-  d:=strtoint(edit45.text)
+
+  if digitos(edit45.text) then
+    d:=strtoint(edit45.text)
   else
     ok:=false;
-  If ok then
-  begin
-  cato:=CatObras.crearcarobra(n,o,d,desc);
-  //Incrementa el indice
-  ICO:=ICO+1;
-  //Carga en Vector
-  VCatObras[ICO]:=cato;
-    showmessage('Carga correcta');
-  end
-  else
-    showmessage('Hay datos incorrectos');
+
+  if ok then
+    begin
+      cato:=CatObras.crearcatobra(n,o,d,desc);
+      //Incrementa el indice
+      ICO:=ICO+1;
+      //Carga en Vector
+      VCatObras[ICO]:=cato;
+      showmessage('Carga correcta');
+    end
+    else
+      showmessage('Hay datos incorrectos');
+
   Edit42.Text:='';
   Edit43.Text:='';
   Edit44.Text:='';
   Edit45.Text:='';
 end;
+
+// New Sala
 
 procedure TFDatos.Button1Click(Sender: TObject);
 var
@@ -425,33 +459,39 @@ var
   ok:boolean;
 begin
   ok:=true;
-  If digitos(edit1.text) then
-   n:=strtoint(edit1.text)
-   else
-    ok:=false;
-  If digitos(edit2.text) then
-   e:=strtoint(edit2.text)
-   else
-    ok:=false;
-  If digitos(edit3.text) then
-   a:=strtoint(edit3.text)
-   else
-    ok:=false;
-  If ok then
-  begin
-  //Creo el objeto
-  sala:=salas.crearsala(n,e,a);
-  //Incremento indice
-  Isa:=Isa+1;
-  VSalas[Isa]:=sala;
-  showmessage ('Sala cargada')
-  end
+  if digitos(edit1.text) then
+    n:=strtoint(edit1.text)
   else
-  showmessage('Hay datos inválidos');
+    ok:=false;
+
+  if digitos(edit2.text) then
+    e:=strtoint(edit2.text)
+  else
+    ok:=false;
+
+  if digitos(edit3.text) then
+    a:=strtoint(edit3.text)
+  else
+    ok:=false;
+
+  if ok then
+    begin
+      //Creo el objeto
+      sala:=salas.crearsala(n,e,a);
+      //Incremento indice
+      Isa:=Isa+1;
+      VSalas[Isa]:=sala;
+      showmessage ('Sala cargada')
+    end
+    else
+      showmessage('Hay datos inválidos');
+
   Edit1.Text:='';
   Edit2.Text:='';
   Edit3.Text:='';
 end;
+
+// New Enfermera
 
 procedure TFDatos.Button6Click(Sender: TObject);
 var
@@ -461,35 +501,41 @@ var
   enf:Enfermeras;
   ok:boolean;
 begin
-// Tomo los valores de los edit
+  // Tomo los valores de los edit
   ok:=true;
   n:=edit16.text;
   a:=edit17.text;
-  If digitos(edit25.text) then
+
+  if digitos(edit25.text) then
     d:=strtoint(edit25.text)
-    else
-      ok:=false;
-  f:=Maskedit1.text;
-  If digitos(edit26.text) then
-    l:=strtoint(edit26.text)
-    else
-      ok:=false;
-  If digitos(edit27.text) then
-    nro:=strtoint(edit27.text)
-    else
-      ok:=false;
-  If ok then
-  begin
-  // Incremento el indice
-  IEnf:=IEnf+1;
-// Creo el nuevo objeto a insertar
-  Enf:=Enfermeras.crearenfermera(d,a,n,f,l,nro);
-// Almaceno en el vector el objeto creado
-  VEnfermeras[IEnf]:=Enf;
-  showmessage('Carga correcta');
-  end
   else
-    showmessage('Hay datos incorrectos');
+    ok:=false;
+
+  f:=Maskedit1.text;
+
+  if digitos(edit26.text) then
+    l:=strtoint(edit26.text)
+  else
+    ok:=false;
+
+  if digitos(edit27.text) then
+    nro:=strtoint(edit27.text)
+  else
+    ok:=false;
+
+  if ok then
+    begin
+      // Incremento el indice
+      IEnf:=IEnf+1;
+      // Creo el nuevo objeto a insertar
+      Enf:=Enfermeras.crearenfermera(d,a,n,f,l,nro);
+      // Almaceno en el vector el objeto creado
+      VEnfermeras[IEnf]:=Enf;
+      showmessage('Carga correcta');
+    end
+    else
+      showmessage('Hay datos incorrectos');
+
   Edit22.Text:='';
   Edit23.Text:='';
   Edit25.Text:='';
@@ -497,6 +543,9 @@ begin
   Edit27.Text:='';
   MaskEdit2.Text:='';
 end;
+
+
+// New Auxiliar
 
 procedure TFDatos.Button7Click(Sender: TObject);
 var
@@ -506,35 +555,41 @@ var
   aux:Auxiliares;
   ok:boolean;
 begin
-// Tomo los valores de los edit
+  // Tomo los valores de los edit
   ok:=true;
   n:=edit33.text;
   a:=edit32.text;
-  If digitos(edit31.text) then
+
+  if digitos(edit31.text) then
     d:=strtoint(edit31.text)
-    else
-      ok:=false;
-  f:=Maskedit1.text;
-  If digitos(edit29.text) then
-    l:=strtoint(edit29.text)
-    else
-      ok:=false;
-  If digitos(edit28.text) then
-    nro:=strtoint(edit28.text)
-    else
-      ok:=false;
-  If ok then
-  begin
-  // Incremento el indice
-  IAux:=IAux+1;
-// Creo el nuevo objeto a insertar
-  Aux:=Auxiliares.crearauxiliar(d,a,n,f,l,nro);
-// Almaceno en el vector el objeto creado
-  VAuxiliares[IAux]:=Aux;
-  showmessage('Carga correcta');
-  end
   else
-    showmessage('Hay datos incorrectos');
+    ok:=false;
+
+  f:=Maskedit1.text;
+
+  if digitos(edit29.text) then
+    l:=strtoint(edit29.text)
+  else
+    ok:=false;
+
+  if digitos(edit28.text) then
+    nro:=strtoint(edit28.text)
+  else
+    ok:=false;
+
+  if ok then
+    begin
+      // Incremento el indice
+      IAux:=IAux+1;
+      // Creo el nuevo objeto a insertar
+      Aux:=Auxiliares.crearauxiliar(d,a,n,f,l,nro);
+      // Almaceno en el vector el objeto creado
+      VAuxiliares[IAux]:=Aux;
+      showmessage('Carga correcta');
+    end
+    else
+      showmessage('Hay datos incorrectos');
+
   Edit28.Text:='';
   Edit28.Text:='';
   Edit31.Text:='';
@@ -542,6 +597,8 @@ begin
   Edit33.Text:='';
   MaskEdit3.Text:='';
 end;
+
+// New Secreataria
 
 procedure TFDatos.Button8Click(Sender: TObject);
 var
@@ -551,35 +608,41 @@ var
   sec:Secretarias;
   ok:boolean;
 begin
-// Tomo los valores de los edit
+  // Tomo los valores de los edit
   ok:=true;
   n:=edit39.text;
   a:=edit38.text;
-  If digitos(edit37.text) then
+
+  if digitos(edit37.text) then
     d:=strtoint(edit37.text)
-    else
-      ok:=false;
-  f:=Maskedit1.text;
-  If digitos(edit35.text) then
-    l:=strtoint(edit35.text)
-    else
-      ok:=false;
-  If digitos(edit34.text) then
-    nro:=strtoint(edit34.text)
-    else
-      ok:=false;
-  If ok then
-  begin
-  // Incremento el indice
-  ISec:=ISec+1;
-// Creo el nuevo objeto a insertar
-  Sec:=Secretarias.crearsecretaria(d,a,n,f,l,nro);
-// Almaceno en el vector el objeto creado
-  Vsecretarias[ISec]:=Sec;
-  showmessage('Carga correcta');
-  end
   else
-    showmessage('Hay datos incorrectos');
+    ok:=false;
+
+  f:=Maskedit1.text;
+
+  if digitos(edit35.text) then
+    l:=strtoint(edit35.text)
+  else
+    ok:=false;
+
+  if digitos(edit34.text) then
+    nro:=strtoint(edit34.text)
+  else
+    ok:=false;
+
+  if ok then
+    begin
+      // Incremento el indice
+      ISec:=ISec+1;
+      // Creo el nuevo objeto a insertar
+      Sec:=Secretarias.crearsecretaria(d,a,n,f,l,nro);
+      // Almaceno en el vector el objeto creado
+      Vsecretarias[ISec]:=Sec;
+      showmessage('Carga correcta');
+    end
+    else
+      showmessage('Hay datos incorrectos');
+
   Edit34.Text:='';
   Edit35.Text:='';
   Edit37.Text:='';
@@ -587,6 +650,10 @@ begin
   Edit39.Text:='';
   MaskEdit4.Text:='';
 end;
+
+
+// New Internacion
+
 procedure TFDatos.Button2Click(Sender: TObject);
 var
   Sint:SInternaciones;
@@ -594,45 +661,53 @@ var
   ok:boolean;
 begin
   ok:=true;
-  If digitos(edit4.text) then
-   nro:=strtoint(edit4.text)
-   else
+
+  if digitos(edit4.text) then
+    nro:=strtoint(edit4.text)
+  else
     ok:=false;
-  If digitos(edit5.text) then
-   e1:=strtoint(edit5.text)
-   else
+
+  if digitos(edit5.text) then
+    e1:=strtoint(edit5.text)
+  else
     ok:=false;
-  If digitos(edit7.text) then
-   e2:=strtoint(edit7.text)
-   else
+
+  if digitos(edit7.text) then
+    e2:=strtoint(edit7.text)
+  else
     ok:=false;
-  If digitos(edit6.text) then
-   aux:=strtoint(edit6.text)
-   else
+
+  if digitos(edit6.text) then
+    aux:=strtoint(edit6.text)
+  else
     ok:=false;
-  If digitos(edit19.text) then
-   camas:=strtoint(edit19.text)
-   else
+
+  if digitos(edit19.text) then
+    camas:=strtoint(edit19.text)
+  else
     ok:=false;
-  If Combobox1.ItemIndex=0 then
+
+  if Combobox1.ItemIndex=0 then
     tipo:=0
     else
-    If Combobox1.ItemIndex=1 then
-      tipo:=1
+      if Combobox1.ItemIndex=1 then
+        tipo:=1
       else
         tipo:=2;
-  If ok then
-  If (edit5.text)<>(edit7.Text) then
-  begin
-  //Creo el objeto
-  Sint:=SInternaciones.crearsinter(nro,e1,e2,aux,camas,tipo);
-  //Incremento indice
-  Isi:=Isi+1;
-  VSInternaciones[Isi]:=Sint;
-  showmessage('Carga correcta');
-  end
-  else
-    showmessage('Hay datos incorrectos');
+
+  if ok then
+    if (edit5.text)<>(edit7.Text) then
+      begin
+        //Creo el objeto
+        Sint:=SInternaciones.crearsinter(nro,e1,e2,aux,camas,tipo);
+        //Incremento indice
+        Isi:=Isi+1;
+        VSInternaciones[Isi]:=Sint;
+        showmessage('Carga correcta');
+      end
+    else
+      showmessage('Hay datos incorrectos');
+
   Edit4.Text:='';
   Edit5.Text:='';
   Edit6.Text:='';
@@ -643,15 +718,15 @@ end;
 
 procedure TFDatos.Button3Click(Sender: TObject);
 begin
-FActual:=MaskEdit5.Text;
-FechaActualLABEL.Caption := FActual;
-showmessage('Fecha Cargada');
-MaskEdit5.Text:='';
+  FActual:=MaskEdit5.Text;
+  FechaActualLABEL.Caption := FActual;
+  showmessage('Fecha Cargada');
+  MaskEdit5.Text:='';
 end;
 
 procedure TFDatos.Button4Click(Sender: TObject);
 begin
-  If (digitos(edit8.Text)) and (digitos(edit9.text))then
+  if (digitos(edit8.Text)) and (digitos(edit9.text))then
   begin
     PSC:=strtofloat(edit8.text);
     PSI:=strtofloat(edit9.text);
@@ -660,16 +735,6 @@ begin
   else
     showmessage ('Datos inválidos');
 end;
-    
-procedure TFDatos.MaskEdit5KeyPress(Sender: TObject; var Key: Char);
-const
-  Backspace = #8;
-  AllowKeys: set of Char = ['0'..'9'];
-
-begin
-
-
-end;
 
 procedure TFDatos.MaskEdit5Change(Sender: TObject);
 begin
@@ -677,6 +742,12 @@ begin
     begin
       Button3.Enabled := true;
     end;
+end;
+
+procedure TFDatos.FormCreate(Sender: TObject);
+begin
+  FActual := DateToStr(Date);
+  FechaActualLABEL.Caption := FActual;
 end;
 
 end.

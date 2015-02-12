@@ -209,7 +209,7 @@ CatObras = class
     Descripcion:string[10];
     Descuento:integer;
   public
-    constructor crearcarobra (n,o,d:integer;d2:string);
+    constructor crearcatobra (n,o,d:integer;d2:string);
     function obteneroscat ():integer;
     function obtenernrocat ():integer;
     function obtenercatobra ():string;
@@ -625,7 +625,7 @@ end;
 //FIN OBRA SOCIAL----------------------------------------
 
 //CATEGORIAS OBRA SOCIAL------------------------------------------
-constructor CatObras.crearcarobra (n,o,d:integer;d2:string);
+constructor CatObras.crearcatobra (n,o,d:integer;d2:string);
 begin
   inherited create;
     nro:=n;

@@ -202,6 +202,7 @@ begin
   IIte:=0;
   Ipag:=0;
   Int:=0;
+  
 end;
 
 procedure TInicial.UrgenciasBTNClick(Sender: TObject);

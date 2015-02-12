@@ -11,6 +11,7 @@ object FDatos: TFDatos
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -27,23 +28,23 @@ object FDatos: TFDatos
     ParentFont = False
   end
   object Label12: TLabel
-    Left = 296
-    Top = 8
+    Left = 696
+    Top = 16
     Width = 66
     Height = 13
     Caption = 'Fecha Actual:'
   end
   object FechaActualLABEL: TLabel
-    Left = 371
-    Top = 8
+    Left = 771
+    Top = 16
     Width = 3
     Height = 13
     Color = clHighlight
     ParentColor = False
   end
   object GroupBox1: TGroupBox
-    Left = 280
-    Top = 456
+    Left = 176
+    Top = 488
     Width = 177
     Height = 161
     Caption = 'Salas Comunes'
@@ -101,8 +102,8 @@ object FDatos: TFDatos
     end
   end
   object GroupBox2: TGroupBox
-    Left = 472
-    Top = 456
+    Left = 368
+    Top = 488
     Width = 385
     Height = 161
     Caption = 'Salas Internaci'#243'n'
@@ -207,8 +208,8 @@ object FDatos: TFDatos
     end
   end
   object GroupBox5: TGroupBox
-    Left = 280
-    Top = 48
+    Left = 176
+    Top = 80
     Width = 177
     Height = 225
     Caption = 'M'#233'dicos'
@@ -311,8 +312,8 @@ object FDatos: TFDatos
     end
   end
   object GroupBox6: TGroupBox
-    Left = 472
-    Top = 48
+    Left = 368
+    Top = 80
     Width = 185
     Height = 225
     Caption = 'Enfermeras'
@@ -415,8 +416,8 @@ object FDatos: TFDatos
     end
   end
   object GroupBox7: TGroupBox
-    Left = 672
-    Top = 48
+    Left = 568
+    Top = 80
     Width = 185
     Height = 225
     Caption = 'Auxiliares'
@@ -519,8 +520,8 @@ object FDatos: TFDatos
     end
   end
   object GroupBox8: TGroupBox
-    Left = 872
-    Top = 48
+    Left = 768
+    Top = 80
     Width = 185
     Height = 225
     Caption = 'Secretarias'
@@ -623,8 +624,8 @@ object FDatos: TFDatos
     end
   end
   object GroupBox9: TGroupBox
-    Left = 280
-    Top = 280
+    Left = 176
+    Top = 312
     Width = 177
     Height = 161
     Caption = 'Obras Sociales'
@@ -668,8 +669,8 @@ object FDatos: TFDatos
     end
   end
   object GroupBox10: TGroupBox
-    Left = 472
-    Top = 280
+    Left = 368
+    Top = 312
     Width = 185
     Height = 161
     Caption = 'Categor'#237'as'
@@ -748,8 +749,8 @@ object FDatos: TFDatos
     end
   end
   object GroupBox11: TGroupBox
-    Left = 672
-    Top = 280
+    Left = 568
+    Top = 312
     Width = 185
     Height = 161
     Caption = 'Consultorios'
@@ -821,8 +822,8 @@ object FDatos: TFDatos
     end
   end
   object GroupBox12: TGroupBox
-    Left = 872
-    Top = 280
+    Left = 768
+    Top = 312
     Width = 185
     Height = 161
     Caption = 'Horarios'
@@ -882,12 +883,13 @@ object FDatos: TFDatos
     OnClick = Button13Click
   end
   object GroupBox3: TGroupBox
-    Left = 8
-    Top = 48
+    Left = 792
+    Top = 8
     Width = 257
     Height = 57
     Caption = 'Fecha'
     TabOrder = 11
+    Visible = False
     object MaskEdit5: TMaskEdit
       Left = 8
       Top = 24
@@ -898,7 +900,6 @@ object FDatos: TFDatos
       TabOrder = 0
       Text = '  /  /    '
       OnChange = MaskEdit5Change
-      OnKeyPress = MaskEdit5KeyPress
     end
     object Button3: TButton
       Left = 200
@@ -912,8 +913,8 @@ object FDatos: TFDatos
     end
   end
   object GroupBox4: TGroupBox
-    Left = 872
-    Top = 456
+    Left = 768
+    Top = 488
     Width = 185
     Height = 161
     Caption = 'Precios por noche'

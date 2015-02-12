@@ -1,6 +1,6 @@
 #Hospitals
 
-Es una app hecha con Delphi7 / Object Pascal donde su principal objetivo es manejar:
+Es una app hecha con Delphi7 / Object Pascal donde su principal objetivo es la gestion de:
 
 - hospitales
 - obras sociales
