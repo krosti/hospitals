@@ -1,6 +1,6 @@
 object FInternacion: TFInternacion
-  Left = 411
-  Top = 180
+  Left = 352
+  Top = 176
   Width = 760
   Height = 645
   Caption = 'Registrar Internacion'

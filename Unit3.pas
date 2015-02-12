@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Unit2, Unit7, Mask;
+  Dialogs, StdCtrls, SharedClasses, Unit7, Mask;
 
 type
   TFInternacion = class(TForm)

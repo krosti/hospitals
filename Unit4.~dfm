@@ -1,6 +1,6 @@
 object FConsultorios: TFConsultorios
-  Left = 237
-  Top = 169
+  Left = 203
+  Top = 165
   Width = 690
   Height = 480
   Caption = 'Reservar Consultorio'

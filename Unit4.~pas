@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,Unit2,Unit7, Mask;
+  Dialogs, StdCtrls, ViewDatos,Unit7, Mask;
 
 type
   TFConsultorios = class(TForm)
@@ -44,7 +44,7 @@ var
 
 implementation
 
-uses Unit1;
+uses MainProgram;
 
 {$R *.dfm}
 
