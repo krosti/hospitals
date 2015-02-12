@@ -1,6 +1,6 @@
 object FDatos: TFDatos
-  Left = 252
-  Top = 148
+  Left = 216
+  Top = 145
   Width = 1250
   Height = 709
   Caption = 'Cargar datos iniciales'
@@ -36,7 +36,7 @@ object FDatos: TFDatos
   object FechaActualLABEL: TLabel
     Left = 371
     Top = 8
-    Width = 101
+    Width = 3
     Height = 13
     Color = clHighlight
     ParentColor = False

@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, Unit2, Unit7, ExtCtrls;
+  Dialogs, StdCtrls, Buttons, SharedClasses, Unit7, ExtCtrls;
 
 type
   TInicial = class(TForm)
@@ -37,7 +37,6 @@ type
     { Private declarations }
   public
     { Public declarations }
-    function RGB
   end;
 
 var

@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls,Unit2,Unit7;
+  Dialogs, StdCtrls, Unit2,Unit7;
 
 type
   TFPaciente = class(TForm)
