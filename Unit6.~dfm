@@ -1,6 +1,6 @@
 object FConInter: TFConInter
-  Left = 209
-  Top = 169
+  Left = 179
+  Top = 165
   Width = 696
   Height = 480
   Caption = 'Consultar Internaci'#243'n'

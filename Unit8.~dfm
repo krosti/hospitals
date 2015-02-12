@@ -1,6 +1,6 @@
 object AsigUrgencias: TAsigUrgencias
-  Left = 237
-  Top = 169
+  Left = 203
+  Top = 165
   Width = 693
   Height = 403
   Caption = 'AsigUrgencias'

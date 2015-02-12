@@ -32,7 +32,9 @@ var
   AsigUrgencias: TAsigUrgencias;
 
 implementation
-     uses Unit1;
+
+uses MainProgram;
+
 {$R *.dfm}
 
 procedure TAsigUrgencias.Button1Click(Sender: TObject);
