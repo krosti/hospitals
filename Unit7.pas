@@ -133,6 +133,7 @@ type
     Button4: TButton;
     Label12: TLabel;
     FechaActualLABEL: TLabel;
+    ComboOS: TComboBox;
     procedure Button13Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
@@ -380,6 +381,22 @@ var
   nu:integer;
   no:string[15];
   ok:boolean;
+
+  procedure ActualizarComboOS;
+    var
+      os:ObraSocial;
+      i,nu:integer;
+    begin
+      i:=1;
+      ComboOS.Clear;
+      Repeat
+        os:=VObraSocial[i];
+        nu:=os.obtenernroobra;
+        ComboOS.Items.Add(inttostr(nu));
+        i:=i+1;
+      until i>IOS;
+    end;
+
 begin
   //Almacena los datos
   if digitos (edit40.Text)then
@@ -396,6 +413,8 @@ begin
       IOS:=IOS+1;
       //Carga en vector
       VObraSocial[IOS]:=os;
+      ActualizarComboOS;
+
       showmessage('Carga correcta');
     end
     else
@@ -414,23 +433,31 @@ var
   desc:string[15];
   ok:boolean;
 begin
+  ok := true;
   //Almacena los datos
+              //id
   if digitos(edit42.text) then
     n:=strtoint(edit42.text)
   else
     ok:=false;
 
-  if digitos(edit44.text) then
-    o:=strtoint(edit44.text)
+  //showmessage(edit42.text);
+              //os
+  //if digitos(edit44.text) then
+  if (ComboOS.ItemIndex <> -1) then
+    o:=strtoint(ComboOS.Text)
   else
     ok:=false;
 
+  //showmessage(ComboOS.Text);
   desc:=edit43.text;
 
   if digitos(edit45.text) then
     d:=strtoint(edit45.text)
   else
     ok:=false;
+
+  //showmessage(edit45.text);
 
   if ok then
     begin
@@ -446,7 +473,7 @@ begin
 
   Edit42.Text:='';
   Edit43.Text:='';
-  Edit44.Text:='';
+  //ComboOS.Clear;
   Edit45.Text:='';
 end;
 
@@ -748,7 +775,9 @@ procedure TFDatos.FormCreate(Sender: TObject);
 begin
   FActual := DateToStr(Date);
   FechaActualLABEL.Caption := FActual;
+  //ActualizarCombos();
 end;
-                           
+
+
 
 end.

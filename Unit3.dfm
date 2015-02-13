@@ -1,8 +1,8 @@
 object FInternacion: TFInternacion
   Left = 352
   Top = 176
-  Width = 760
-  Height = 645
+  Width = 740
+  Height = 544
   Caption = 'Registrar Internacion'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -51,7 +51,7 @@ object FInternacion: TFInternacion
   end
   object Button2: TButton
     Left = 368
-    Top = 512
+    Top = 456
     Width = 177
     Height = 25
     Caption = 'Registrar'
@@ -60,7 +60,7 @@ object FInternacion: TFInternacion
   end
   object Button3: TButton
     Left = 560
-    Top = 512
+    Top = 456
     Width = 153
     Height = 25
     Caption = 'Salir'
@@ -165,6 +165,8 @@ object FInternacion: TFInternacion
     Top = 112
     Width = 161
     Height = 313
+    Color = clActiveBorder
+    ParentColor = False
     TabOrder = 4
     Visible = False
     object Label11: TLabel
@@ -283,6 +285,7 @@ object FInternacion: TFInternacion
       Height = 21
       ItemHeight = 13
       TabOrder = 7
+      OnChange = ComboBox2Change
     end
     object ComboBox3: TComboBox
       Left = 80

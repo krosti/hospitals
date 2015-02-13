@@ -28,14 +28,14 @@ object FDatos: TFDatos
     ParentFont = False
   end
   object Label12: TLabel
-    Left = 696
+    Left = 840
     Top = 16
     Width = 66
     Height = 13
     Caption = 'Fecha Actual:'
   end
   object FechaActualLABEL: TLabel
-    Left = 771
+    Left = 915
     Top = 16
     Width = 3
     Height = 13
@@ -683,21 +683,21 @@ object FDatos: TFDatos
       Caption = 'Identificador:'
     end
     object Label44: TLabel
-      Left = 16
+      Left = 24
       Top = 48
       Width = 58
       Height = 13
       Caption = 'Descripci'#243'n:'
     end
     object Label45: TLabel
-      Left = 16
+      Left = 24
       Top = 72
       Width = 58
       Height = 13
       Caption = 'Obra Social:'
     end
     object Label46: TLabel
-      Left = 16
+      Left = 24
       Top = 96
       Width = 55
       Height = 13
@@ -705,35 +705,35 @@ object FDatos: TFDatos
     end
     object Label47: TLabel
       Left = 168
-      Top = 88
+      Top = 96
       Width = 11
       Height = 13
       Caption = '%'
     end
     object Edit42: TEdit
       Left = 88
-      Top = 16
+      Top = 24
       Width = 73
       Height = 21
       TabOrder = 0
     end
     object Edit43: TEdit
       Left = 88
-      Top = 40
+      Top = 48
       Width = 73
       Height = 21
       TabOrder = 1
     end
     object Edit44: TEdit
-      Left = 88
-      Top = 64
+      Left = 112
+      Top = 136
       Width = 73
       Height = 21
       TabOrder = 2
     end
     object Edit45: TEdit
       Left = 88
-      Top = 88
+      Top = 96
       Width = 73
       Height = 21
       TabOrder = 3
@@ -746,6 +746,14 @@ object FDatos: TFDatos
       Caption = 'Cargar'
       TabOrder = 4
       OnClick = Button11Click
+    end
+    object ComboOS: TComboBox
+      Left = 88
+      Top = 72
+      Width = 73
+      Height = 21
+      ItemHeight = 13
+      TabOrder = 5
     end
   end
   object GroupBox11: TGroupBox
@@ -883,7 +891,7 @@ object FDatos: TFDatos
     OnClick = Button13Click
   end
   object GroupBox3: TGroupBox
-    Left = 792
+    Left = 424
     Top = 8
     Width = 257
     Height = 57

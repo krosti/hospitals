@@ -80,6 +80,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button11Click(Sender: TObject);
     procedure CheckBox3Click(Sender: TObject);
+    procedure ComboBox2Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -96,8 +97,25 @@ uses MainProgram;
 {$R *.dfm}
 
 procedure TFInternacion.Button1Click(Sender: TObject);
+
+  procedure ActualizarComboOS;
+    var
+    os:ObraSocial;
+    i,nu:integer;
+  begin
+    i:=1;
+    ComboBox2.Clear;
+    Repeat
+      os:=VObraSocial[i];
+      nu:=os.obtenernroobra;
+      ComboBox2.Items.Add(inttostr(nu));
+      i:=i+1;
+    until i>IOS;
+  end;
+
 begin
 GroupBox2.visible:=true;
+ActualizarComboOS;
 end;
 
 procedure TFInternacion.Button7Click(Sender: TObject);
@@ -219,6 +237,7 @@ var
   i,n,o,obra:integer;
 begin
   i:=1;
+  Combobox3.Clear;
   If Combobox2.Text<>'' then
   begin
     obra:=strtoint(Combobox2.Text);
@@ -672,6 +691,37 @@ If CheckBox3.Checked then
     GroupBox7.Visible:=false;
     GroupBox9.Visible:=true;
   end;
+end;
+
+procedure TFInternacion.ComboBox2Change(Sender: TObject);
+
+procedure ActualizazComboOSCat;
+var
+  cat:CatObras;
+  i,n,o,obra:integer;
+begin
+  i:=1;
+  Combobox3.Clear;
+  If Combobox2.Text<>'' then
+  begin
+    obra:=strtoint(Combobox2.Text);
+    Repeat
+    cat:=VCatObras[i];
+    o:=cat.obteneroscat;
+    If (o=obra) then
+      begin
+        n:=cat.obtenernrocat;
+        Combobox3.Items.Add(inttostr(n));
+      end;
+    i:=i+1;
+    until i>ICO;
+  end
+  else
+    showmessage('Seleccione Obra Social primero');
+end;
+
+begin
+ActualizazComboOSCat;
 end;
 
 end.

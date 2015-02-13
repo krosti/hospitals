@@ -6623,6 +6623,28 @@ object Inicial: TInicial
       1FFFFFF803FFFFF007FFFFE00FFFFFF800FFFF001FFFFFFC000FF0003FFFFFFF
       00000000FFFFFFFFC0000003FFFFFFFFF000000FFFFFFFFFFE0000FFFFFF}
   end
+  object Label2: TLabel
+    Left = 96
+    Top = 328
+    Width = 31
+    Height = 13
+    Caption = 'Label2'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindow
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 24
+    Top = 328
+    Width = 66
+    Height = 13
+    Caption = 'Fecha Actual:'
+    Color = clHighlight
+    ParentColor = False
+  end
   object BitBtn1: TBitBtn
     Left = 584
     Top = 312
