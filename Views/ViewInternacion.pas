@@ -1,4 +1,4 @@
-unit Unit3;
+unit ViewInternacion;
 
 interface
 
@@ -721,7 +721,7 @@ begin
 end;
 
 begin
-ActualizazComboOSCat;
+  ActualizazComboOSCat;
 end;
 
 end.

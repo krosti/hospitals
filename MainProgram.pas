@@ -2,7 +2,7 @@ unit MainProgram;
 
 interface
 
-uses
+uses                           
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Buttons, SharedClasses, Unit7, ExtCtrls;
 
@@ -47,7 +47,7 @@ var
 
 implementation
 
-uses Unit3, Unit4, Unit5, Unit6, Unit8;
+uses ViewInternacion, Unit4, Unit5, Unit6, Unit8;
 
 {$R *.dfm}
 

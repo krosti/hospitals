@@ -4,7 +4,7 @@ uses
   Forms,
   MainProgram in 'MainProgram.pas' {Main},
   SharedClasses in 'Common/SharedClasses.pas',
-  Unit3 in 'Unit3.pas' {FInternacion},
+  ViewInternacion in 'Views/ViewInternacion.pas' {FInternacion},
   Unit4 in 'Unit4.pas' {FConsultorios},
   Unit5 in 'Unit5.pas' {FPaciente},
   Unit6 in 'Unit6.pas' {FConInter},

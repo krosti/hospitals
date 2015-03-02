@@ -134,6 +134,7 @@ type
     Label12: TLabel;
     FechaActualLABEL: TLabel;
     ComboOS: TComboBox;
+    Label13: TLabel;
     procedure Button13Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);

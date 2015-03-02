@@ -1,8 +1,8 @@
 object FDatos: TFDatos
   Left = 216
   Top = 145
-  Width = 1250
-  Height = 709
+  Width = 1150
+  Height = 551
   Caption = 'Cargar datos iniciales'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -42,12 +42,23 @@ object FDatos: TFDatos
     Color = clHighlight
     ParentColor = False
   end
+  object Label13: TLabel
+    Left = 8
+    Top = 56
+    Width = 52
+    Height = 13
+    Caption = 'PERSONAL'
+  end
   object GroupBox1: TGroupBox
-    Left = 176
-    Top = 488
+    Left = 8
+    Top = 328
     Width = 177
     Height = 161
+    BiDiMode = bdLeftToRight
     Caption = 'Salas Comunes'
+    Ctl3D = False
+    ParentBiDiMode = False
+    ParentCtl3D = False
     TabOrder = 0
     object Label2: TLabel
       Left = 8
@@ -74,39 +85,43 @@ object FDatos: TFDatos
       Left = 80
       Top = 24
       Width = 81
-      Height = 21
+      Height = 19
       TabOrder = 0
     end
     object Edit2: TEdit
       Left = 80
       Top = 48
       Width = 81
-      Height = 21
+      Height = 19
       TabOrder = 1
     end
     object Edit3: TEdit
       Left = 80
       Top = 72
       Width = 81
-      Height = 21
+      Height = 19
       TabOrder = 2
     end
     object Button1: TButton
-      Left = 8
+      Left = 96
       Top = 120
       Width = 65
       Height = 25
-      Caption = 'Cargar'
+      Caption = 'Guardar'
       TabOrder = 3
       OnClick = Button1Click
     end
   end
   object GroupBox2: TGroupBox
-    Left = 368
-    Top = 488
-    Width = 385
+    Left = 184
+    Top = 328
+    Width = 361
     Height = 161
     Caption = 'Salas Internaci'#243'n'
+    Color = cl3DLight
+    Ctl3D = False
+    ParentColor = False
+    ParentCtl3D = False
     TabOrder = 1
     object Label5: TLabel
       Left = 8
@@ -123,7 +138,7 @@ object FDatos: TFDatos
       Caption = 'Enfermera:'
     end
     object Label7: TLabel
-      Left = 208
+      Left = 184
       Top = 32
       Width = 39
       Height = 13
@@ -137,7 +152,7 @@ object FDatos: TFDatos
       Caption = 'Enfermera:'
     end
     object Label55: TLabel
-      Left = 208
+      Left = 184
       Top = 56
       Width = 70
       Height = 13
@@ -154,45 +169,45 @@ object FDatos: TFDatos
       Left = 80
       Top = 24
       Width = 81
-      Height = 21
+      Height = 19
       TabOrder = 0
     end
     object Edit5: TEdit
       Left = 80
       Top = 48
       Width = 81
-      Height = 21
+      Height = 19
       TabOrder = 1
     end
     object Edit6: TEdit
-      Left = 280
+      Left = 256
       Top = 24
       Width = 81
-      Height = 21
-      TabOrder = 2
+      Height = 19
+      TabOrder = 3
     end
     object Button2: TButton
-      Left = 296
+      Left = 272
       Top = 120
       Width = 65
       Height = 25
-      Caption = 'Cargar'
-      TabOrder = 3
+      Caption = 'Guardar'
+      TabOrder = 6
       OnClick = Button2Click
     end
     object Edit7: TEdit
       Left = 80
       Top = 72
       Width = 81
-      Height = 21
-      TabOrder = 4
+      Height = 19
+      TabOrder = 2
     end
     object Edit19: TEdit
-      Left = 280
+      Left = 256
       Top = 48
       Width = 81
-      Height = 21
-      TabOrder = 5
+      Height = 19
+      TabOrder = 4
     end
     object ComboBox1: TComboBox
       Left = 80
@@ -200,7 +215,7 @@ object FDatos: TFDatos
       Width = 121
       Height = 21
       ItemHeight = 13
-      TabOrder = 6
+      TabOrder = 5
       Items.Strings = (
         'Internacion Comun'
         'Terapia Intermedia'
@@ -208,11 +223,15 @@ object FDatos: TFDatos
     end
   end
   object GroupBox5: TGroupBox
-    Left = 176
+    Left = 8
     Top = 80
     Width = 177
     Height = 225
     Caption = 'M'#233'dicos'
+    Color = cl3DLight
+    Ctl3D = False
+    ParentColor = False
+    ParentCtl3D = False
     TabOrder = 2
     object Label17: TLabel
       Left = 8
@@ -259,64 +278,66 @@ object FDatos: TFDatos
     object Edit16: TEdit
       Left = 80
       Top = 24
-      Width = 73
-      Height = 21
+      Width = 80
+      Height = 19
       TabOrder = 0
     end
     object Edit17: TEdit
       Left = 80
       Top = 48
-      Width = 73
-      Height = 21
+      Width = 80
+      Height = 19
       TabOrder = 1
     end
     object Edit18: TEdit
       Left = 80
       Top = 72
-      Width = 73
-      Height = 21
+      Width = 80
+      Height = 19
       TabOrder = 2
     end
     object Edit20: TEdit
       Left = 80
       Top = 120
-      Width = 73
-      Height = 21
-      TabOrder = 3
+      Width = 80
+      Height = 19
+      TabOrder = 4
     end
     object Edit21: TEdit
       Left = 80
       Top = 144
-      Width = 73
-      Height = 21
-      TabOrder = 4
+      Width = 80
+      Height = 19
+      TabOrder = 5
     end
     object Button5: TButton
-      Left = 8
+      Left = 88
       Top = 184
       Width = 73
       Height = 25
-      Caption = 'Cargar'
-      TabOrder = 5
+      Caption = 'Guardar'
+      TabOrder = 6
       OnClick = Button5Click
     end
     object MaskEdit1: TMaskEdit
       Left = 80
       Top = 96
-      Width = 72
-      Height = 21
+      Width = 80
+      Height = 19
       EditMask = '!99/99/0000;1;_'
       MaxLength = 10
-      TabOrder = 6
+      TabOrder = 3
       Text = '  /  /    '
     end
   end
   object GroupBox6: TGroupBox
-    Left = 368
+    Left = 184
     Top = 80
     Width = 185
     Height = 225
     Caption = 'Enfermeras'
+    Ctl3D = False
+    ParentCtl3D = False
     TabOrder = 3
     object Label23: TLabel
       Left = 8
@@ -361,66 +382,72 @@ object FDatos: TFDatos
       Caption = 'Nombre:'
     end
     object Button6: TButton
-      Left = 8
+      Left = 96
       Top = 184
       Width = 73
       Height = 25
-      Caption = 'Cargar'
-      TabOrder = 0
+      Caption = 'Guardar'
+      TabOrder = 6
       OnClick = Button6Click
     end
     object Edit22: TEdit
-      Left = 80
+      Left = 88
       Top = 24
-      Width = 73
-      Height = 21
-      TabOrder = 1
+      Width = 80
+      Height = 19
+      TabOrder = 0
     end
     object Edit23: TEdit
-      Left = 80
+      Left = 88
       Top = 48
-      Width = 73
-      Height = 21
-      TabOrder = 2
+      Width = 80
+      Height = 19
+      TabOrder = 1
     end
     object Edit25: TEdit
-      Left = 80
+      Left = 88
       Top = 72
-      Width = 73
-      Height = 21
-      TabOrder = 3
+      Width = 80
+      Height = 19
+      TabOrder = 2
     end
     object Edit26: TEdit
-      Left = 80
+      Left = 88
       Top = 120
-      Width = 73
-      Height = 21
+      Width = 80
+      Height = 19
       TabOrder = 4
     end
     object Edit27: TEdit
-      Left = 80
+      Left = 88
       Top = 144
-      Width = 73
-      Height = 21
+      Width = 80
+      Height = 19
       TabOrder = 5
     end
     object MaskEdit2: TMaskEdit
-      Left = 80
+      Left = 88
       Top = 96
-      Width = 72
-      Height = 21
+      Width = 80
+      Height = 19
       EditMask = '!99/99/0000;1;_'
       MaxLength = 10
-      TabOrder = 6
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
       Text = '  /  /    '
     end
   end
   object GroupBox7: TGroupBox
-    Left = 568
+    Left = 368
     Top = 80
-    Width = 185
+    Width = 177
     Height = 225
     Caption = 'Auxiliares'
+    Color = cl3DLight
+    Ctl3D = False
+    ParentColor = False
+    ParentCtl3D = False
     TabOrder = 4
     object Label29: TLabel
       Left = 8
@@ -465,66 +492,82 @@ object FDatos: TFDatos
       Caption = 'Nombre:'
     end
     object Button7: TButton
-      Left = 8
+      Left = 88
       Top = 184
       Width = 73
       Height = 25
-      Caption = 'Cargar'
-      TabOrder = 0
+      Caption = 'Guardar'
+      TabOrder = 6
       OnClick = Button7Click
     end
     object Edit28: TEdit
       Left = 80
       Top = 144
-      Width = 73
-      Height = 21
-      TabOrder = 1
+      Width = 80
+      Height = 19
+      Constraints.MaxWidth = 80
+      Constraints.MinWidth = 80
+      TabOrder = 5
     end
     object Edit29: TEdit
       Left = 80
       Top = 120
-      Width = 73
-      Height = 21
-      TabOrder = 2
+      Width = 80
+      Height = 19
+      Constraints.MaxWidth = 80
+      Constraints.MinWidth = 80
+      TabOrder = 4
     end
     object Edit31: TEdit
       Left = 80
       Top = 72
-      Width = 73
-      Height = 21
-      TabOrder = 3
+      Width = 80
+      Height = 19
+      Constraints.MaxWidth = 80
+      Constraints.MinWidth = 80
+      TabOrder = 2
     end
     object Edit32: TEdit
       Left = 80
       Top = 48
-      Width = 73
-      Height = 21
-      TabOrder = 4
+      Width = 80
+      Height = 19
+      Constraints.MaxWidth = 80
+      Constraints.MinWidth = 80
+      TabOrder = 1
     end
     object Edit33: TEdit
       Left = 80
       Top = 24
-      Width = 73
-      Height = 21
-      TabOrder = 5
+      Width = 80
+      Height = 19
+      Constraints.MaxWidth = 80
+      Constraints.MinWidth = 80
+      TabOrder = 0
     end
     object MaskEdit3: TMaskEdit
       Left = 80
       Top = 96
-      Width = 72
-      Height = 21
+      Width = 80
+      Height = 19
+      Constraints.MaxWidth = 80
+      Constraints.MinWidth = 80
       EditMask = '!99/99/0000;1;_'
       MaxLength = 10
-      TabOrder = 6
+      TabOrder = 3
       Text = '  /  /    '
     end
   end
   object GroupBox8: TGroupBox
-    Left = 768
+    Left = 544
     Top = 80
     Width = 185
     Height = 225
     Caption = 'Secretarias'
+    Color = clBtnFace
+    Ctl3D = False
+    ParentColor = False
+    ParentCtl3D = False
     TabOrder = 5
     object Label35: TLabel
       Left = 8
@@ -569,66 +612,68 @@ object FDatos: TFDatos
       Caption = 'Nombre:'
     end
     object Button8: TButton
-      Left = 8
+      Left = 96
       Top = 184
       Width = 73
       Height = 25
-      Caption = 'Cargar'
-      TabOrder = 0
+      Caption = 'Guardar'
+      TabOrder = 6
       OnClick = Button8Click
     end
     object Edit34: TEdit
-      Left = 80
+      Left = 88
       Top = 144
-      Width = 73
-      Height = 21
-      TabOrder = 1
+      Width = 80
+      Height = 19
+      TabOrder = 5
     end
     object Edit35: TEdit
-      Left = 80
+      Left = 88
       Top = 120
-      Width = 73
-      Height = 21
-      TabOrder = 2
-    end
-    object Edit37: TEdit
-      Left = 80
-      Top = 72
-      Width = 73
-      Height = 21
-      TabOrder = 3
-    end
-    object Edit39: TEdit
-      Left = 80
-      Top = 24
-      Width = 73
-      Height = 21
+      Width = 80
+      Height = 19
       TabOrder = 4
     end
+    object Edit37: TEdit
+      Left = 88
+      Top = 72
+      Width = 80
+      Height = 19
+      TabOrder = 2
+    end
+    object Edit39: TEdit
+      Left = 88
+      Top = 24
+      Width = 80
+      Height = 19
+      TabOrder = 0
+    end
     object MaskEdit4: TMaskEdit
-      Left = 80
+      Left = 88
       Top = 96
-      Width = 72
-      Height = 21
+      Width = 80
+      Height = 19
       EditMask = '!99/99/0000;1;_'
       MaxLength = 10
-      TabOrder = 5
+      TabOrder = 3
       Text = '  /  /    '
     end
     object Edit38: TEdit
-      Left = 80
+      Left = 88
       Top = 48
-      Width = 73
-      Height = 21
-      TabOrder = 6
+      Width = 80
+      Height = 19
+      TabOrder = 1
     end
   end
   object GroupBox9: TGroupBox
-    Left = 176
-    Top = 312
+    Left = 744
+    Top = 80
     Width = 177
     Height = 161
     Caption = 'Obras Sociales'
+    Ctl3D = False
+    ParentCtl3D = False
     TabOrder = 6
     object Label41: TLabel
       Left = 8
@@ -645,35 +690,37 @@ object FDatos: TFDatos
       Caption = 'Nombre:'
     end
     object Button9: TButton
-      Left = 8
-      Top = 120
+      Left = 96
+      Top = 128
       Width = 65
       Height = 25
-      Caption = 'Cargar'
-      TabOrder = 0
+      Caption = 'Guardar'
+      TabOrder = 2
       OnClick = Button9Click
     end
     object Edit40: TEdit
-      Left = 96
+      Left = 88
       Top = 56
-      Width = 65
-      Height = 21
-      TabOrder = 1
+      Width = 80
+      Height = 19
+      TabOrder = 0
     end
     object Edit41: TEdit
-      Left = 96
+      Left = 88
       Top = 80
-      Width = 65
-      Height = 21
-      TabOrder = 2
+      Width = 80
+      Height = 19
+      TabOrder = 1
     end
   end
   object GroupBox10: TGroupBox
-    Left = 368
-    Top = 312
+    Left = 936
+    Top = 80
     Width = 185
     Height = 161
     Caption = 'Categor'#237'as'
+    Ctl3D = False
+    ParentCtl3D = False
     TabOrder = 7
     object Label43: TLabel
       Left = 16
@@ -713,55 +760,58 @@ object FDatos: TFDatos
     object Edit42: TEdit
       Left = 88
       Top = 24
-      Width = 73
-      Height = 21
+      Width = 80
+      Height = 19
       TabOrder = 0
     end
     object Edit43: TEdit
       Left = 88
       Top = 48
-      Width = 73
-      Height = 21
+      Width = 80
+      Height = 19
       TabOrder = 1
     end
     object Edit44: TEdit
-      Left = 112
-      Top = 136
+      Left = 8
+      Top = 128
       Width = 73
-      Height = 21
-      TabOrder = 2
+      Height = 19
+      TabOrder = 5
+      Visible = False
     end
     object Edit45: TEdit
       Left = 88
       Top = 96
-      Width = 73
-      Height = 21
+      Width = 80
+      Height = 19
       TabOrder = 3
     end
     object Button11: TButton
-      Left = 8
-      Top = 120
+      Left = 104
+      Top = 128
       Width = 73
       Height = 25
-      Caption = 'Cargar'
+      Caption = 'Guardar'
       TabOrder = 4
       OnClick = Button11Click
     end
     object ComboOS: TComboBox
       Left = 88
       Top = 72
-      Width = 73
+      Width = 80
       Height = 21
       ItemHeight = 13
-      TabOrder = 5
+      TabOrder = 2
     end
   end
   object GroupBox11: TGroupBox
-    Left = 568
-    Top = 312
-    Width = 185
+    Left = 744
+    Top = 248
+    Width = 177
     Height = 161
     Caption = 'Consultorios'
+    Ctl3D = False
+    ParentCtl3D = False
     TabOrder = 8
     object Label48: TLabel
       Left = 16
@@ -794,47 +844,49 @@ object FDatos: TFDatos
     object Edit46: TEdit
       Left = 88
       Top = 16
-      Width = 73
-      Height = 21
+      Width = 80
+      Height = 19
       TabOrder = 0
     end
     object Edit47: TEdit
       Left = 88
-      Top = 36
-      Width = 73
-      Height = 21
+      Top = 44
+      Width = 80
+      Height = 19
       TabOrder = 1
     end
     object Edit48: TEdit
       Left = 88
-      Top = 60
-      Width = 73
-      Height = 21
+      Top = 68
+      Width = 80
+      Height = 19
       TabOrder = 2
     end
     object Edit49: TEdit
       Left = 88
-      Top = 84
-      Width = 73
-      Height = 21
+      Top = 92
+      Width = 80
+      Height = 19
       TabOrder = 3
     end
     object Button10: TButton
-      Left = 8
-      Top = 120
+      Left = 96
+      Top = 128
       Width = 73
       Height = 25
-      Caption = 'Cargar'
+      Caption = 'Guardar'
       TabOrder = 4
       OnClick = Button10Click
     end
   end
   object GroupBox12: TGroupBox
-    Left = 768
-    Top = 312
+    Left = 936
+    Top = 248
     Width = 185
     Height = 161
     Caption = 'Horarios'
+    Ctl3D = False
+    ParentCtl3D = False
     TabOrder = 9
     object Label52: TLabel
       Left = 16
@@ -858,35 +910,35 @@ object FDatos: TFDatos
       Caption = 'Consultorio:'
     end
     object Button12: TButton
-      Left = 8
-      Top = 120
+      Left = 112
+      Top = 128
       Width = 65
       Height = 25
-      Caption = 'Cargar'
-      TabOrder = 0
+      Caption = 'Guardar'
+      TabOrder = 2
       OnClick = Button12Click
     end
     object Edit50: TEdit
       Left = 88
       Top = 32
-      Width = 65
-      Height = 21
-      TabOrder = 1
+      Width = 80
+      Height = 19
+      TabOrder = 0
     end
     object Edit51: TEdit
       Left = 88
-      Top = 88
-      Width = 73
-      Height = 21
-      TabOrder = 2
+      Top = 96
+      Width = 80
+      Height = 19
+      TabOrder = 1
     end
   end
   object Button13: TButton
-    Left = 8
-    Top = 632
-    Width = 161
-    Height = 25
-    Caption = 'Finalizar Carga'
+    Left = 912
+    Top = 440
+    Width = 209
+    Height = 57
+    Caption = 'Volver'
     TabOrder = 10
     OnClick = Button13Click
   end
@@ -921,46 +973,48 @@ object FDatos: TFDatos
     end
   end
   object GroupBox4: TGroupBox
-    Left = 768
-    Top = 488
+    Left = 544
+    Top = 328
     Width = 185
     Height = 161
     Caption = 'Precios por noche'
+    Ctl3D = False
+    ParentCtl3D = False
     TabOrder = 12
     object Label10: TLabel
       Left = 8
-      Top = 24
+      Top = 40
       Width = 76
       Height = 13
       Caption = 'Salas Comunes:'
     end
     object Label11: TLabel
       Left = 8
-      Top = 56
+      Top = 72
       Width = 68
       Height = 13
       Caption = 'Salas Terapia:'
     end
     object Edit8: TEdit
       Left = 96
-      Top = 24
-      Width = 65
-      Height = 21
+      Top = 40
+      Width = 80
+      Height = 19
       TabOrder = 0
     end
     object Edit9: TEdit
       Left = 96
-      Top = 56
-      Width = 65
-      Height = 21
+      Top = 72
+      Width = 80
+      Height = 19
       TabOrder = 1
     end
     object Button4: TButton
-      Left = 8
-      Top = 88
+      Left = 96
+      Top = 128
       Width = 65
       Height = 25
-      Caption = 'Cargar'
+      Caption = 'Guardar'
       TabOrder = 2
       OnClick = Button4Click
     end
