@@ -135,6 +135,7 @@ type
     FechaActualLABEL: TLabel;
     ComboOS: TComboBox;
     Label13: TLabel;
+    CargaDummyData: TButton;
     procedure Button13Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
@@ -150,6 +151,7 @@ type
     procedure Button4Click(Sender: TObject);
     procedure MaskEdit5Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure CargaDummyDataClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -780,5 +782,17 @@ begin
 end;
 
 
+
+procedure TFDatos.CargaDummyDataClick(Sender: TObject);
+
+var randomString: Integer;
+
+begin
+  // Medicos
+  randomString:= Random(1000);
+  Edit16.Text := 'Nombre0' + IntToStr(randomString);
+  Edit17.Text := 'Apellido0' + IntToStr(randomString);
+  Edit18.Text := '12322' + IntToStr(randomString);
+end;
 
 end.

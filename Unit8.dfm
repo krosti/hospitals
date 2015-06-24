@@ -1,6 +1,6 @@
 object AsigUrgencias: TAsigUrgencias
-  Left = 203
-  Top = 165
+  Left = 204
+  Top = 170
   Width = 693
   Height = 403
   Caption = 'AsigUrgencias'
@@ -32,7 +32,7 @@ object AsigUrgencias: TAsigUrgencias
     Width = 297
     Height = 193
     Caption = 'Asignaciones Actuales'
-    TabOrder = 0
+    TabOrder = 1
     object ListBox1: TListBox
       Left = 24
       Top = 40
@@ -48,7 +48,7 @@ object AsigUrgencias: TAsigUrgencias
     Width = 297
     Height = 193
     Caption = 'Nueva Urgencia'
-    TabOrder = 1
+    TabOrder = 0
     object Label3: TLabel
       Left = 40
       Top = 112
@@ -69,7 +69,7 @@ object AsigUrgencias: TAsigUrgencias
       Width = 65
       Height = 25
       Caption = 'Cargar'
-      TabOrder = 0
+      TabOrder = 3
       OnClick = Button1Click
     end
     object ComboBox1: TComboBox
@@ -96,7 +96,7 @@ object AsigUrgencias: TAsigUrgencias
       Width = 105
       Height = 25
       Caption = 'Actualizar Datos'
-      TabOrder = 3
+      TabOrder = 0
       OnClick = Button3Click
     end
   end

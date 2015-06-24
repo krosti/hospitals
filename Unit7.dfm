@@ -1,6 +1,6 @@
 object FDatos: TFDatos
-  Left = 216
-  Top = 145
+  Left = 217
+  Top = 149
   Width = 1150
   Height = 551
   Caption = 'Cargar datos iniciales'
@@ -59,7 +59,7 @@ object FDatos: TFDatos
     Ctl3D = False
     ParentBiDiMode = False
     ParentCtl3D = False
-    TabOrder = 0
+    TabOrder = 10
     object Label2: TLabel
       Left = 8
       Top = 32
@@ -122,7 +122,7 @@ object FDatos: TFDatos
     Ctl3D = False
     ParentColor = False
     ParentCtl3D = False
-    TabOrder = 1
+    TabOrder = 11
     object Label5: TLabel
       Left = 8
       Top = 32
@@ -177,14 +177,14 @@ object FDatos: TFDatos
       Top = 48
       Width = 81
       Height = 19
-      TabOrder = 1
+      TabOrder = 2
     end
     object Edit6: TEdit
       Left = 256
       Top = 24
       Width = 81
       Height = 19
-      TabOrder = 3
+      TabOrder = 1
     end
     object Button2: TButton
       Left = 272
@@ -200,14 +200,14 @@ object FDatos: TFDatos
       Top = 72
       Width = 81
       Height = 19
-      TabOrder = 2
+      TabOrder = 4
     end
     object Edit19: TEdit
       Left = 256
       Top = 48
       Width = 81
       Height = 19
-      TabOrder = 4
+      TabOrder = 3
     end
     object ComboBox1: TComboBox
       Left = 80
@@ -776,7 +776,7 @@ object FDatos: TFDatos
       Top = 128
       Width = 73
       Height = 19
-      TabOrder = 5
+      TabOrder = 4
       Visible = False
     end
     object Edit45: TEdit
@@ -792,7 +792,7 @@ object FDatos: TFDatos
       Width = 73
       Height = 25
       Caption = 'Guardar'
-      TabOrder = 4
+      TabOrder = 5
       OnClick = Button11Click
     end
     object ComboOS: TComboBox
@@ -939,7 +939,7 @@ object FDatos: TFDatos
     Width = 209
     Height = 57
     Caption = 'Volver'
-    TabOrder = 10
+    TabOrder = 13
     OnClick = Button13Click
   end
   object GroupBox3: TGroupBox
@@ -948,7 +948,7 @@ object FDatos: TFDatos
     Width = 257
     Height = 57
     Caption = 'Fecha'
-    TabOrder = 11
+    TabOrder = 0
     Visible = False
     object MaskEdit5: TMaskEdit
       Left = 8
@@ -1018,5 +1018,14 @@ object FDatos: TFDatos
       TabOrder = 2
       OnClick = Button4Click
     end
+  end
+  object CargaDummyData: TButton
+    Left = 1008
+    Top = 40
+    Width = 113
+    Height = 25
+    Caption = 'CargaDummyData'
+    TabOrder = 1
+    OnClick = CargaDummyDataClick
   end
 end

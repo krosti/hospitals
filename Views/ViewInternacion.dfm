@@ -1,6 +1,6 @@
 object FInternacion: TFInternacion
-  Left = 352
-  Top = 176
+  Left = 177
+  Top = 143
   Width = 740
   Height = 544
   Caption = 'Registrar Internacion'
@@ -46,7 +46,7 @@ object FInternacion: TFInternacion
     Width = 161
     Height = 25
     Caption = 'Registrar Nuevo Paciente'
-    TabOrder = 0
+    TabOrder = 3
     OnClick = Button1Click
   end
   object Button2: TButton
@@ -55,7 +55,7 @@ object FInternacion: TFInternacion
     Width = 177
     Height = 25
     Caption = 'Registrar'
-    TabOrder = 1
+    TabOrder = 14
     OnClick = Button2Click
   end
   object Button3: TButton
@@ -64,7 +64,7 @@ object FInternacion: TFInternacion
     Width = 153
     Height = 25
     Caption = 'Salir'
-    TabOrder = 2
+    TabOrder = 15
     OnClick = Button3Click
   end
   object GroupBox1: TGroupBox
@@ -73,7 +73,7 @@ object FInternacion: TFInternacion
     Width = 249
     Height = 217
     Caption = 'Acompa'#241'antes'
-    TabOrder = 3
+    TabOrder = 8
     Visible = False
     object Label5: TLabel
       Left = 8
@@ -143,7 +143,7 @@ object FInternacion: TFInternacion
       Top = 176
       Width = 113
       Height = 21
-      TabOrder = 3
+      TabOrder = 5
     end
     object Edit8: TEdit
       Left = 128
@@ -157,7 +157,7 @@ object FInternacion: TFInternacion
       Top = 128
       Width = 113
       Height = 21
-      TabOrder = 5
+      TabOrder = 3
     end
   end
   object GroupBox2: TGroupBox
@@ -167,7 +167,7 @@ object FInternacion: TFInternacion
     Height = 313
     Color = clActiveBorder
     ParentColor = False
-    TabOrder = 4
+    TabOrder = 5
     Visible = False
     object Label11: TLabel
       Left = 8
@@ -248,7 +248,7 @@ object FInternacion: TFInternacion
       Width = 89
       Height = 25
       Caption = 'Cargar Paciente'
-      TabOrder = 3
+      TabOrder = 9
       OnClick = Button4Click
     end
     object Button6: TButton
@@ -257,7 +257,7 @@ object FInternacion: TFInternacion
       Width = 73
       Height = 25
       Caption = 'Nro Paciente: '
-      TabOrder = 4
+      TabOrder = 8
       OnClick = Button6Click
     end
     object Button8: TButton
@@ -266,7 +266,7 @@ object FInternacion: TFInternacion
       Width = 65
       Height = 25
       Caption = 'Obra Social'
-      TabOrder = 5
+      TabOrder = 4
       OnClick = Button8Click
     end
     object Button9: TButton
@@ -284,7 +284,7 @@ object FInternacion: TFInternacion
       Width = 73
       Height = 21
       ItemHeight = 13
-      TabOrder = 7
+      TabOrder = 5
       OnChange = ComboBox2Change
     end
     object ComboBox3: TComboBox
@@ -293,7 +293,7 @@ object FInternacion: TFInternacion
       Width = 73
       Height = 21
       ItemHeight = 13
-      TabOrder = 8
+      TabOrder = 7
     end
     object MaskEdit3: TMaskEdit
       Left = 72
@@ -302,7 +302,7 @@ object FInternacion: TFInternacion
       Height = 21
       EditMask = '!99/99/0000;1;_'
       MaxLength = 10
-      TabOrder = 9
+      TabOrder = 3
       Text = '  /  /    '
     end
   end
@@ -312,7 +312,7 @@ object FInternacion: TFInternacion
     Width = 217
     Height = 49
     Caption = 'Sala Comun'
-    TabOrder = 5
+    TabOrder = 10
     Visible = False
     object CheckBox2: TCheckBox
       Left = 8
@@ -329,7 +329,7 @@ object FInternacion: TFInternacion
     Width = 217
     Height = 49
     Caption = 'Internaci'#243'n Com'#250'n'
-    TabOrder = 6
+    TabOrder = 11
     Visible = False
     object CheckBox1: TCheckBox
       Left = 8
@@ -347,7 +347,7 @@ object FInternacion: TFInternacion
     Width = 217
     Height = 81
     Caption = 'Tipo de Internaci'#243'n'
-    TabOrder = 7
+    TabOrder = 9
     object ComboBox1: TComboBox
       Left = 8
       Top = 20
@@ -378,7 +378,7 @@ object FInternacion: TFInternacion
     Width = 249
     Height = 81
     Caption = 'M'#233'dico'
-    TabOrder = 8
+    TabOrder = 2
     object Button10: TButton
       Left = 160
       Top = 8
@@ -404,7 +404,7 @@ object FInternacion: TFInternacion
     Height = 21
     EditMask = '!99/99/0000;1;_'
     MaxLength = 10
-    TabOrder = 9
+    TabOrder = 6
     Text = '  /  /    '
   end
   object MaskEdit2: TMaskEdit
@@ -414,7 +414,7 @@ object FInternacion: TFInternacion
     Height = 21
     EditMask = '!99/99/0000;1;_'
     MaxLength = 10
-    TabOrder = 10
+    TabOrder = 7
     Text = '  /  /    '
   end
   object GroupBox7: TGroupBox
@@ -423,14 +423,14 @@ object FInternacion: TFInternacion
     Width = 233
     Height = 81
     Caption = 'Paciente por Apellido'
-    TabOrder = 11
+    TabOrder = 1
     Visible = False
     object Edit2: TEdit
       Left = 8
       Top = 20
       Width = 137
       Height = 21
-      TabOrder = 0
+      TabOrder = 1
     end
     object Button11: TButton
       Left = 160
@@ -438,7 +438,7 @@ object FInternacion: TFInternacion
       Width = 65
       Height = 25
       Caption = 'Consultar'
-      TabOrder = 1
+      TabOrder = 0
       OnClick = Button11Click
     end
     object ComboBox5: TComboBox
@@ -457,7 +457,7 @@ object FInternacion: TFInternacion
     Width = 129
     Height = 33
     Caption = 'Obtener Nro Internacion:'
-    TabOrder = 12
+    TabOrder = 13
     OnClick = Button5Click
   end
   object GroupBox8: TGroupBox
@@ -465,7 +465,7 @@ object FInternacion: TFInternacion
     Top = 384
     Width = 65
     Height = 41
-    TabOrder = 13
+    TabOrder = 12
     object Label17: TLabel
       Left = 11
       Top = 10
@@ -484,7 +484,7 @@ object FInternacion: TFInternacion
     Top = 80
     Width = 233
     Height = 57
-    TabOrder = 14
+    TabOrder = 4
     object Label2: TLabel
       Left = 8
       Top = 20
@@ -506,7 +506,15 @@ object FInternacion: TFInternacion
     Width = 153
     Height = 17
     Caption = 'Buscar paciente por Apellido'
-    TabOrder = 15
+    TabOrder = 0
     OnClick = CheckBox3Click
+  end
+  object lgnfrmdptr1: TLoginFormAdapter
+    Left = 360
+    Top = 256
+    object TAdapterDefaultActions
+    end
+    object TAdapterDefaultFields
+    end
   end
 end

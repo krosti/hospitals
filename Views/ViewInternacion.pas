@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, SharedClasses, Unit7, Mask;
+  Dialogs, StdCtrls, SharedClasses, Unit7, Mask, WebAdapt, WebComp;
 
 type
   TFInternacion = class(TForm)
@@ -67,6 +67,7 @@ type
     Edit1: TEdit;
     Label2: TLabel;
     CheckBox3: TCheckBox;
+    lgnfrmdptr1: TLoginFormAdapter;
     procedure Button1Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
     procedure CheckBox1Click(Sender: TObject);
@@ -108,14 +109,18 @@ procedure TFInternacion.Button1Click(Sender: TObject);
     Repeat
       os:=VObraSocial[i];
       nu:=os.obtenernroobra;
-      ComboBox2.Items.Add(inttostr(nu));
-      i:=i+1;
+      if(nu <> 0)then
+        begin
+          ComboBox2.Items.Add(inttostr(nu));
+          i:=i+1;
+        end
+
     until i>IOS;
   end;
 
 begin
-GroupBox2.visible:=true;
-ActualizarComboOS;
+  GroupBox2.visible:=true;
+  ActualizarComboOS;
 end;
 
 procedure TFInternacion.Button7Click(Sender: TObject);
@@ -179,20 +184,20 @@ var
   o,c,n2:integer;
   ok:boolean;
 begin
-//10/13
+  //10/13
   //Tomo los datos
   ok:=true;
   n:=edit10.Text;
   a:=edit11.Text;
   f:=maskedit3.Text;
   If digitos (edit12.Text) then
-    d:=strtoint(edit12.text)
+    d := strtoint(edit12.text)
     else
       ok:=false;
   If ok then
     begin
       If (Combobox2.ItemIndex=-1)or(Combobox3.ItemIndex=-1) then
-        showmessage('Debe elegir Obra Social y categoría')
+        showmessage('Debe elegir Obra Social y categorï¿½a')
       else
       begin
         If Label18.Caption<>'' then
@@ -213,7 +218,7 @@ begin
       end;
     end
     else
-      showmessage('DNI inválido');
+      showmessage('DNI invï¿½lido');
 end;
 
 procedure TFInternacion.Button8Click(Sender: TObject);
@@ -242,14 +247,14 @@ begin
   begin
     obra:=strtoint(Combobox2.Text);
     Repeat
-    cat:=VCatObras[i];
-    o:=cat.obteneroscat;
-    If (o=obra) then
+      cat:=VCatObras[i];
+      o:=cat.obteneroscat;
+      If (o=obra) then
       begin
         n:=cat.obtenernrocat;
         Combobox3.Items.Add(inttostr(n));
       end;
-    i:=i+1;
+      i:=i+1;
     until i>ICO;
   end
   else
@@ -283,40 +288,45 @@ var
   Inco:InterSalaComunes;
   tv:boolean;
 
-      //subfuncion que mira si hay salas de este tipo disponibles
-function salacomun(var i:integer):boolean;
-var
-  Inco:Salas;
-  est:boolean;
-begin
-  i:=1;
-  est:=false;
-  While (i<=Isa)and(not est) do
-    begin
-      Inco:=VSalas[i];
-      est:=Inco.obtenereestadosala;
-      i:=i+1;
-    end;
-  If est then
+  {
+    hayTipoDeSala()
+    @description mira si hay salas de este tipo disponibles
+    @params i : integer - tipo de sala 
+    @return boolean
+  }
+  function hayTipoDeSala(var i:integer):boolean;
+  var
+    Inco:Salas;
+    est:boolean;
+  begin
+    i:=1;
+    est:=false;
+    While (i<=Isa)and(not est) do
       begin
-        i:=i-1;
-        VSalas[i].estalecerestadosala(false);
+        Inco:=VSalas[i];
+        est:=Inco.obtenereestadosala;
+        i:=i+1;
       end;
-  salacomun:=est;
-end;
+    If est then
+        begin
+          i:=i-1;
+          VSalas[i].estalecerestadosala(false);
+        end;
+    hayTipoDeSala:=est;
+  end;
 
 begin
   tv:=CheckBox2.Checked;
   // Invoca el procedimiento que le dice si hay salas disponibles y
-  // en que nro de sala se ubicará la internación
-  If salacomun(s) then
+  // en que nro de sala se ubicarï¿½ la internaciï¿½n
+  If hayTipoDeSala(s) then
     begin
       Inco:=InterSalaComunes.crearintersalacomun(ni,np,s,med,fi,ff,tv,e,true);
       Inco.establecerprecio(PSC);
       IIsc:=IIsc+1;
       VInterSalaComunes[IIsc]:=Inco;
       Int:=Int+1;
-      showmessage('Internación registrada con éxito');
+      showmessage('Internaciï¿½n registrada con ï¿½xito');
     end
     else
     begin
@@ -333,43 +343,48 @@ var
   s:integer;
   aco1,aco2:Personas;
 
-//Subfuncion que mira si hay salas disponibles
-function salasc(s:integer):boolean;
-var
-  SInter:SInternaciones;
-  Enc:boolean;
-  c,o,t:integer;
-begin
-  i:=1;
-  enc:=false;
-  While (i<=Isi)and(not enc) do
-    begin
-      SInter:=VSInternaciones[i];
-      t:=SInter.obtenertipo;
-      If t=0 then
+  {
+    haySalasDisponibles()
+    @description mira si hay salas disponibles
+    @param s : integer
+    @return boolean
+  }
+  function haySalasDisponibles(s:integer):boolean;
+  var
+    SInter:SInternaciones;
+    Enc:boolean;
+    c,o,t:integer;
+  begin
+    i:=1;
+    enc:=false;
+    While (i<=Isi)and(not enc) do
       begin
-        c:=SInter.obtenercamas;
-        o:=SInter.obtenernroocupadas;
-        If o<c then
-          enc:=true;
+        SInter:=VSInternaciones[i];
+        t:=SInter.obtenertipo;
+        If t=0 then
+        begin
+          c:=SInter.obtenercamas;
+          o:=SInter.obtenernroocupadas;
+          If o<c then
+            enc:=true;
+        end;
+        i:=i+1;
       end;
-      i:=i+1;
-    end;
-  If enc then
-      begin
-        i:=i-1;
-        o:=o+1;
-        SInter.establecernroocupadas(o);
-        VSInternaciones[i]:=SInter;
-      end;
-  salasc:=enc;
-end;
+    If enc then
+        begin
+          i:=i-1;
+          o:=o+1;
+          SInter.establecernroocupadas(o);
+          VSInternaciones[i]:=SInter;
+        end;
+    haySalasDisponibles:=enc;
+  end;
 
 begin
   ok:=true;
     // Invoca el procedimiento que le dice si hay salas disponibles y
-    // en que nro de sala se ubicará la internación
-    If salasc(s) then
+    // en que nro de sala se ubicarï¿½ la internaciï¿½n
+    If haySalasDisponibles(s) then
      begin
        If CheckBox1.Checked then
        begin
@@ -407,14 +422,14 @@ begin
 		IIco:=IIco+1;
 		VInterComunes[IIco]:=IntC;
 		Int:=Int+1;
-		showmessage('Internación registrada con éxito');
+		showmessage('Internaciï¿½n registrada con ï¿½xito');
 	   end
 	   else
 	    showmessage('Hay datos incompatibles');
 	 end
      else
       begin
-      showmessage('No hay salas de internación común disponibles');
+      showmessage('No hay salas de internaciï¿½n comï¿½n disponibles');
       end;
 end;
 
@@ -424,49 +439,54 @@ var
   ok:boolean;
   s:integer;
 
-//Subfuncion que mira si hay salas disponibles
-function salasti(var s:integer):boolean;
-var
-  SInter:SInternaciones;
-  Enc:boolean;
-  c,o,t:integer;
-begin
-  i:=1;
-  enc:=false;
-  While (i<=Isi)and(not enc) do
-    begin
-      SInter:=VSInternaciones[i];
-      t:=SInter.obtenertipo;
-      If t=2 then
+  {
+    haySalasDisponibles()
+    @description Subfuncion que mira si hay salas disponibles
+    @param integer:
+    @return boolean
+  }
+  function haySalasDisponibles(var s:integer):boolean;
+  var
+    SInter:SInternaciones;
+    Enc:boolean;
+    c,o,t:integer;
+  begin
+    i:=1;
+    enc:=false;
+    While (i<=Isi)and(not enc) do
       begin
-        c:=SInter.obtenercamas;
-        o:=SInter.obtenernroocupadas;
-        If o<c then
-          enc:=true;
+        SInter:=VSInternaciones[i];
+        t:=SInter.obtenertipo;
+        If t=2 then
+        begin
+          c:=SInter.obtenercamas;
+          o:=SInter.obtenernroocupadas;
+          If o<c then
+            enc:=true;
+        end;
+        i:=i+1;
       end;
-      i:=i+1;
-    end;
-  If enc then
-      begin
-        i:=i-1;
-        o:=o+1;
-        SInter.establecernroocupadas(o);
-        VSInternaciones[i]:=SInter;
-      end;
-  salasti:=enc;
-end;
+    If enc then
+        begin
+          i:=i-1;
+          o:=o+1;
+          SInter.establecernroocupadas(o);
+          VSInternaciones[i]:=SInter;
+        end;
+    haySalasDisponibles:=enc;
+  end;
 
 begin
     // Invoca el procedimiento que le dice si hay salas disponibles y
-    // en que nro de sala se ubicará la internación
-    If salasti(s) then
+    // en que nro de sala se ubicarï¿½ la internaciï¿½n
+    If haySalasDisponibles(s) then
      begin
        IntT:=InterTerapias.crearinterterapia(ni,np,s,med,fi,ff,e,true,true);
        IntT.establecerprecio(PSI);
        IIte:=IIte+1;
        VInterTerapias[IIte]:=IntT;
        Int:=Int+1;
-       showmessage('Internación registrada con éxito');
+       showmessage('Internaciï¿½n registrada con ï¿½xito');
      end
      else
       begin
@@ -480,189 +500,202 @@ var
   ok:boolean;
   s:integer;
 
-//Subfuncion que mira si hay salas disponibles
-function salasti(var s:integer):boolean;
-var
-  SInter:SInternaciones;
-  Enc:boolean;
-  c,o,t:integer;
-begin
-  i:=1;
-  enc:=false;
-  While (i<=Isi)and(not enc) do
-    begin
-      SInter:=VSInternaciones[i];
-      t:=SInter.obtenertipo;
-      If t=3 then
+  //Subfuncion que mira si hay salas disponibles
+  function haySalasDisponibles(var s:integer):boolean;
+    var
+      SInter:SInternaciones;
+      Enc:boolean;
+      c,o,t:integer;
+  begin
+    i:=1;
+    enc:=false;
+    While (i<=Isi)and(not enc) do
       begin
-        c:=SInter.obtenercamas;
-        o:=SInter.obtenernroocupadas;
-        If o<c then
-          enc:=true;
+        SInter:=VSInternaciones[i];
+        t:=SInter.obtenertipo;
+        If t=3 then
+        begin
+          c:=SInter.obtenercamas;
+          o:=SInter.obtenernroocupadas;
+          If o<c then
+            enc:=true;
+        end;
+        i:=i+1;
       end;
-      i:=i+1;
-    end;
-  If enc then
-      begin
-        i:=i-1;
-        o:=o+1;
-        SInter.establecernroocupadas(o);
-        VSInternaciones[i]:=SInter;
-      end;
-  salasti:=enc;
-end;
+    If enc then
+        begin
+          i:=i-1;
+          o:=o+1;
+          SInter.establecernroocupadas(o);
+          VSInternaciones[i]:=SInter;
+        end;
+    haySalasDisponibles:=enc;
+  end;
 
 begin
-    // Invoca el procedimiento que le dice si hay salas disponibles y
-    // en que nro de sala se ubicará la internación
-    If salasti(s) then
-     begin
-       IntT:=InterTerapias.crearinterterapia(ni,np,s,med,fi,ff,e,false,true);
-       IIte:=IIte+1;
-       VInterTerapias[IIte]:=IntT;
-       Int:=Int+1;
-       showmessage('Internación registrada con éxito');
-     end
-     else
-      begin
+  // Invoca el procedimiento que le dice si hay salas disponibles y
+  // en que nro de sala se ubicarï¿½ la internaciï¿½n
+  If haySalasDisponibles(s) then
+    begin
+      IntT:=InterTerapias.crearinterterapia(ni,np,s,med,fi,ff,e,false,true);
+      IIte:=IIte+1;
+      VInterTerapias[IIte]:=IntT;
+      Int:=Int+1;
+      showmessage('Internaciï¿½n registrada con ï¿½xito');
+    end
+  else
+    begin
       showmessage('No hay salas disponibles para terapia intermedia');
+    end;
+end;
+
+  function internado(var p:integer):boolean;
+  var
+    i,nro:integer;enc,a:boolean;
+    ISC:InterSalaComunes;
+    Ico:InterComunes;
+    Ite:InterTerapias;
+  begin
+    i:=1;enc:=false;
+    While (IIsc>0)and(not enc)and(i<=IIsc)do
+      begin
+        ISC:=VInterSalaComunes[i];
+        nro:=ISC.obtenerpacinter;
+        If nro=p then
+          begin
+            a:=ISC.obteneractiva;
+            If a then
+              enc:=true;
+          end;
+        i:=i+1;
       end;
-end;
+    i:=1;
+    While (IIco>0)and(not enc)and(i<=IIco)do
+      begin
+        Ico:=VInterComunes[i];
+        nro:=Ico.obtenerpacinter;
+        If nro=p then
+          begin
+            a:=Ico.obteneractiva;
+            If a then
+              enc:=true;
+          end;
+        i:=i+1;
+      end;
+    i:=1;
+    While (IIte>0)and(not enc)and(i<=IIte)do
+      begin
+        Ite:=VInterTerapias[i];
+        nro:=Ite.obtenerpacinter;
+        If nro=p then
+          begin
+            a:=Ite.obteneractiva;
+            If a then
+              enc:=true;
+          end;
+        i:=i+1;
+      end;
+    internado:=enc;
+  end;
 
-function internado(var p:integer):boolean;
-var
-  i,nro:integer;enc,a:boolean;
-  ISC:InterSalaComunes;
-  Ico:InterComunes;
-  Ite:InterTerapias;
-begin
-  i:=1;enc:=false;
-  While (IIsc>0)and(not enc)and(i<=IIsc)do
-    begin
-      ISC:=VInterSalaComunes[i];
-      nro:=ISC.obtenerpacinter;
-      If nro=p then
-        begin
-          a:=ISC.obteneractiva;
-          If a then
-            enc:=true;
-        end;
-      i:=i+1;
-    end;
-  i:=1;
-  While (IIco>0)and(not enc)and(i<=IIco)do
-    begin
-      Ico:=VInterComunes[i];
-      nro:=Ico.obtenerpacinter;
-      If nro=p then
-        begin
-          a:=Ico.obteneractiva;
-          If a then
-            enc:=true;
-        end;
-      i:=i+1;
-    end;
-  i:=1;
-  While (IIte>0)and(not enc)and(i<=IIte)do
-    begin
-      Ite:=VInterTerapias[i];
-      nro:=Ite.obtenerpacinter;
-      If nro=p then
-        begin
-          a:=Ite.obteneractiva;
-          If a then
-            enc:=true;
-        end;
-      i:=i+1;
-    end;
-  internado:=enc;
-end;
-
-function nropaciente(cad:string):integer;
-var
-  i,int:integer;
-  c:char;
-begin
-  Combobox5.Clear;
-  i:=1;
-  c:='a';
-  int:=0;
-  If Length(cad)>0 then
-    While c<>'-' do
+  {
+    getNroPaciente()
+    @param string
+    @return integer
+  }
+  function getNroPaciente(cad:string):integer;
+    var
+      i,int:integer;
+      c:char;
+  begin
+    Combobox5.Clear;
+    i:=1;
+    c:='a';
+    int:=0;
+    If Length(cad)>0 then
+      While c<>'-' do
       begin
         int:=(int*10+strtoint(cad[i]));
         c:=cad[i];
         i:=i+1;
       end;
-  nropaciente:=int;
-end;
+    // return
+    getNroPaciente:=int;
+  end;
 
 
-//PROCEDIMIENTO GRAL. DE CARGA DE INTERNACIONES
+//PROCEDIMIENTO DE CARGA DE INTERNACIONES
 begin
-  //Controlo que seleccione un médico para la internación
+  //Controlo que seleccione un mï¿½dico para la internaciï¿½n
   If Combobox4.ItemIndex<>-1 then
-    //Tomo el nro de paciente pero controlo que sólo sean números
+    //Tomo el nro de paciente pero controlo que sï¿½lo sean nï¿½meros
     begin
 	    If CheckBox3.Checked then
-	      begin
+      begin
 		    If ComboBox5.ItemIndex<>-1 then
-				np:=nropaciente(Combobox5.Text)
-	        else
-				showmessage('No se seleccionó paciente');
+				  np:=getNroPaciente(Combobox5.Text)
+        else
+				  showmessage('No se seleccionÃ³ paciente');
 		  end
-		  else
-	    begin
+		  else begin
 				If digitos(edit1.text) then
 					np:=strtoint(edit1.text)
 					else
 						ok:=false;
-			        //Verifica que ese paciente no esté internado
-			    If ok then
-					begin
-						If not internado(np) then
-					      begin
-				            e:=false;
-							ni:=strtoint(Label17.Caption);
-							fi:=MaskEdit1.Text;
-							ff:=MaskEdit2.Text;
-							med:=strtoint(Combobox4.Text);
-							//Si está en 0 es una Internación en sala común
-							If Combobox1.ItemIndex=0 then
-								internacionsalacomun(e,ni,np,med,fi,ff)
-								  else
-								    If Combobox1.ItemIndex=1 then
-								      internacioncomun(e,ni,np,med,fi,ff)
-								        else
-								          If Combobox1.ItemIndex=2 then
-								            interterapiai(e,ni,np,med,fi,ff)
-								              else
-								                If Combobox1.ItemIndex=3 then
-													interterapiaintensiva(e,ni,np,med,fi,ff)
-													  else
-													   	showmessage ('Debe elegir un tipo de Internación');
-				          end
-						  else
-							showmessage ('El paciente ya se encuentra internado')
-				    end
-					else
-					  showmessage ('Nro de paciente inválido')
-        end;
-				end
-				else
-					showmessage ('Debe elegir un médico para la internación');
 
-Label17.Caption:='';
-Edit1.Text:='';
-MaskEdit1.Text:='';
-MaskEdit2.Text:='';
+        //Verifica que ese paciente no estï¿½ internado
+        If ok then
+        begin
+          If not internado(np) then
+            begin
+              e:=false;
+              ni:=strtoint(Label17.Caption);
+              fi:=MaskEdit1.Text;
+              ff:=MaskEdit2.Text;
+              med:=strtoint(Combobox4.Text);
+
+            {
+              0: internacion sala comun
+              1: internacion comun
+              2: internacion terapia intermedia
+              3: internacion terapia intensiva
+            }
+            If Combobox1.ItemIndex=0 then
+              internacionsalacomun(e,ni,np,med,fi,ff)
+            else
+              If Combobox1.ItemIndex=1 then
+                internacioncomun(e,ni,np,med,fi,ff)
+              else
+                If Combobox1.ItemIndex=2 then
+                  interterapiai(e,ni,np,med,fi,ff)
+                else
+                  If Combobox1.ItemIndex=3 then
+                    interterapiaintensiva(e,ni,np,med,fi,ff)
+                  else
+                    showmessage ('Debe elegir un tipo de InternaciÃ³n');
+            end // not internado
+          else
+            showmessage('El paciente ya se encuentra internado')
+        end
+        else  // si el paciente NO esta internado
+          showmessage ('Nro de paciente invï¿½lido')
+      end;
+    end
+  else  // no hay medico seleccionado
+    showmessage ('Debe elegir un mï¿½dico para la internaciï¿½n');
+
+  // clean labels
+  Label17.Caption:='';
+  Edit1.Text:='';
+  MaskEdit1.Text:='';
+  MaskEdit2.Text:='';
 end;
 
 procedure TFInternacion.Button11Click(Sender: TObject);
-var
-ap,no:string;
-i,nu:integer;
-pac:Pacientes;
+  var
+  ap,no:string;
+  i,nu:integer;
+  pac:Pacientes;
 begin
   i:=1;
   While (IPac>0)and(i<=IPac)do
@@ -695,30 +728,30 @@ end;
 
 procedure TFInternacion.ComboBox2Change(Sender: TObject);
 
-procedure ActualizazComboOSCat;
-var
-  cat:CatObras;
-  i,n,o,obra:integer;
-begin
-  i:=1;
-  Combobox3.Clear;
-  If Combobox2.Text<>'' then
+  procedure ActualizazComboOSCat;
+  var
+    cat:CatObras;
+    i,n,o,obra:integer;
   begin
-    obra:=strtoint(Combobox2.Text);
-    Repeat
-    cat:=VCatObras[i];
-    o:=cat.obteneroscat;
-    If (o=obra) then
-      begin
-        n:=cat.obtenernrocat;
-        Combobox3.Items.Add(inttostr(n));
-      end;
-    i:=i+1;
-    until i>ICO;
-  end
-  else
-    showmessage('Seleccione Obra Social primero');
-end;
+    i:=1;
+    Combobox3.Clear;
+    If Combobox2.Text<>'' then
+    begin
+      obra:=strtoint(Combobox2.Text);
+      Repeat
+      cat:=VCatObras[i];
+      o:=cat.obteneroscat;
+      If (o=obra) then
+        begin
+          n:=cat.obtenernrocat;
+          Combobox3.Items.Add(inttostr(n));
+        end;
+      i:=i+1;
+      until i>ICO;
+    end
+    else
+      showmessage('Seleccione Obra Social primero');
+  end;
 
 begin
   ActualizazComboOSCat;

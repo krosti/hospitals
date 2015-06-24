@@ -1,6 +1,6 @@
 object Inicial: TInicial
-  Left = 186
-  Top = 177
+  Left = 480
+  Top = 192
   Width = 693
   Height = 403
   Caption = 'Administracion de Hospitales - v1'

@@ -615,7 +615,14 @@ end;
 
 function ObraSocial.obtenernroobra ():integer;
 begin
-  obtenernroobra:=nro;
+
+  try
+    obtenernroobra:=nro;
+  except
+    obtenernroobra := 0;
+    ShowMessage('no se encontraron Obras Sociales');
+  end;
+
 end;
 
 function ObraSocial.obtenernombreobra ():string;
