@@ -47,7 +47,7 @@ var
 
 implementation
 
-uses ViewInternacion, Unit4, Unit5, Unit6, Unit8;
+uses Unit4, Unit5, Unit6, Unit8, ViewInternacion;
 
 {$R *.dfm}
 

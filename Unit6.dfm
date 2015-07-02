@@ -1,8 +1,8 @@
 object FConInter: TFConInter
   Left = 179
   Top = 165
-  Width = 696
-  Height = 480
+  Width = 611
+  Height = 456
   Caption = 'Consultar Internaci'#243'n'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,21 +15,21 @@ object FConInter: TFConInter
   TextHeight = 13
   object Label1: TLabel
     Left = 16
-    Top = 32
-    Width = 141
-    Height = 16
+    Top = 16
+    Width = 255
+    Height = 33
     Caption = 'Consultar Internaci'#243'n'
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
+    Font.Color = clSilver
+    Font.Height = -27
     Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
   end
   object Button1: TButton
-    Left = 568
-    Top = 400
-    Width = 105
+    Left = 512
+    Top = 8
+    Width = 73
     Height = 33
     Caption = 'Salir'
     TabOrder = 0
@@ -38,8 +38,15 @@ object FConInter: TFConInter
   object GroupBox1: TGroupBox
     Left = 16
     Top = 80
-    Width = 297
+    Width = 249
     Height = 129
+    Caption = 'Buscar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
     TabOrder = 1
     object Label2: TLabel
       Left = 15
@@ -47,6 +54,12 @@ object FConInter: TFConInter
       Width = 98
       Height = 13
       Caption = 'Nro. de Internaci'#243'n:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
     end
     object Label17: TLabel
       Left = 16
@@ -54,30 +67,36 @@ object FConInter: TFConInter
       Width = 97
       Height = 13
       Caption = 'Tipo de Internaci'#243'n:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
     end
     object Edit1: TEdit
-      Left = 160
-      Top = 48
+      Left = 120
+      Top = 56
       Width = 113
       Height = 21
-      TabOrder = 0
+      TabOrder = 1
     end
     object Button2: TButton
-      Left = 8
+      Left = 128
       Top = 88
       Width = 105
       Height = 25
       Caption = 'Ok'
-      TabOrder = 1
+      TabOrder = 2
       OnClick = Button2Click
     end
     object ComboBox2: TComboBox
-      Left = 160
+      Left = 120
       Top = 24
       Width = 113
       Height = 21
       ItemHeight = 13
-      TabOrder = 2
+      TabOrder = 0
       Items.Strings = (
         'Sala Comun'
         'Internaci'#243'n Comun'
@@ -86,10 +105,10 @@ object FConInter: TFConInter
     end
   end
   object GroupBox2: TGroupBox
-    Left = 320
-    Top = 80
+    Left = 16
+    Top = 232
     Width = 201
-    Height = 129
+    Height = 137
     Caption = 'Datos Internaci'#243'n'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -97,7 +116,7 @@ object FConInter: TFConInter
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 3
     object Label3: TLabel
       Left = 8
       Top = 32
@@ -200,9 +219,9 @@ object FConInter: TFConInter
     end
   end
   object GroupBox3: TGroupBox
-    Left = 528
+    Left = 280
     Top = 80
-    Width = 153
+    Width = 241
     Height = 129
     Caption = 'Modificar'
     Font.Charset = DEFAULT_CHARSET
@@ -211,11 +230,11 @@ object FConInter: TFConInter
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 2
     Visible = False
     object Label12: TLabel
-      Left = 8
-      Top = 36
+      Left = 96
+      Top = 28
       Width = 139
       Height = 13
       Caption = 'Nueva Fecha de Finalizaci'#243'n:'
@@ -227,7 +246,7 @@ object FConInter: TFConInter
       ParentFont = False
     end
     object Button3: TButton
-      Left = 8
+      Left = 128
       Top = 88
       Width = 105
       Height = 25
@@ -238,26 +257,37 @@ object FConInter: TFConInter
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 0
+      TabOrder = 1
       OnClick = Button3Click
     end
     object MaskEdit1: TMaskEdit
-      Left = 8
+      Left = 96
       Top = 56
-      Width = 96
+      Width = 136
       Height = 21
+      BorderStyle = bsNone
+      Ctl3D = True
       EditMask = '!99/99/0000;1;_'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
       MaxLength = 10
-      TabOrder = 1
+      ParentCtl3D = False
+      ParentFont = False
+      TabOrder = 0
       Text = '  /  /    '
     end
   end
   object GroupBox4: TGroupBox
-    Left = 16
-    Top = 248
+    Left = 224
+    Top = 232
     Width = 297
     Height = 169
     Caption = 'Pago de Internaci'#243'n'
+    Color = clGradientActiveCaption
+    ParentColor = False
     TabOrder = 4
     Visible = False
     object Label6: TLabel

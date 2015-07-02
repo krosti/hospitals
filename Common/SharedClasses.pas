@@ -15,10 +15,10 @@ Personas = class
     FechaNac:string[15];
   public
     constructor crearpersona(d:longint;a,n,f:string);
-//    procedure establecerdni (d:longint);
-//    procedure establecernombre (n:string);
-//    procedure establecerapellido (a:string);
-//    procedure establecerfechanac (f:string);
+    // procedure establecerdni (d:longint);
+    // procedure establecernombre (n:string);
+    // procedure establecerapellido (a:string);
+    // procedure establecerfechanac (f:string);
     function obtenerfechanac ():string;
     function obtenerdni ():longint;
     function obtenernombre ():string;
@@ -99,7 +99,7 @@ Salas = class
     function obtenerenfsala (): integer;
     function obtenerauxsala ():integeR;
     function obtenernrosala ():integer;
-    function obtenereestadosala ():boolean; //si es true está disponible
+    function obtenereestadosala ():boolean; //si es true estï¿½ disponible
 end;
 
 SInternaciones = class(salas)
@@ -224,9 +224,9 @@ Internaciones = class
     FechaI:string[15];
     FechaF:string[15];
     Medico:integer;
-    Estado:boolean; //es para saber si están pagadas o no
-    Activa:boolean; //es para saber si ya pasó, o sea si la fecha de
-                    //finalización ya pasó y el paciente quedó liberado.
+    Estado:boolean; //es para saber si estï¿½n pagadas o no
+    Activa:boolean; //es para saber si ya pasï¿½, o sea si la fecha de
+                    //finalizaciï¿½n ya pasï¿½ y el paciente quedï¿½ liberado.
     Precio:real;
   public
     constructor crearinternacion (n,p,s,m:integer;fi,ff:string;e,a:boolean);
@@ -276,7 +276,7 @@ end;
 InterTerapias = class(Internaciones)
   private
     Tipo:boolean;  //si fueran mas habria que hacer una clase aparte
-  public           //acá dejo true intermedia false intensiva
+  public           //acï¿½ dejo true intermedia false intensiva
     constructor crearinterterapia (n,p,s,med:integer;fi,ff:string;e,t,a:boolean);
 //    procedure establecermat (m:boolean);
   function obtenertipointerterapia ():boolean;
@@ -766,7 +766,7 @@ end;
 
 //FIN INTERNACIONES SALA COMUN (LA DE LA TV)-------------------------------------------------
 
-//INTERNACIONES COMUNES (LA DE LOS ACOMPAÑANTES)------------------------------------
+//INTERNACIONES COMUNES (LA DE LOS ACOMPAï¿½ANTES)------------------------------------
 constructor InterComunes.crearintercomun (n,p,s,m,a1,a2:integer;fi,ff:string;e,a:boolean);
 begin
   inherited crearinternacion (n,p,s,m,fi,ff,e,a);
@@ -788,7 +788,7 @@ procedure InterComunes.establecerprecio(p:real);
 begin
   precio:=((strtodate(Fechaf))-(strtodate(Fechai))*p);
 end;
-//FIN INTERNACIONES COMUNES (LA DE LOS ACOMPAÑANTES)-------------------------------
+//FIN INTERNACIONES COMUNES (LA DE LOS ACOMPAï¿½ANTES)-------------------------------
 
 //INTERNACIONES DE TERAPIA-----------------------------------------------------
 constructor InterTerapias.crearinterterapia (n,p,s,med:integer;fi,ff:string;e,t,a:boolean);

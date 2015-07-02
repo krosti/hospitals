@@ -44,6 +44,7 @@ type
     Label27: TLabel;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Edit1KeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -73,191 +74,191 @@ var
   ok,enco:boolean;
   dni:longint;
 
-function encontrado(var dni:longint;var nu,os,cat:integer;var ap,no,fn:string):boolean;
-var
-nro,i:integer;
-p:Pacientes;
-enc:boolean;
-begin
-  i:=1;enc:=false;
-  While (IPac>0)and(not enc)and(i<=IPac) do
-    begin
-      p:=VPacientes[i];
-      nro:=p.obtenernropac;
-      If nro=nu then
-        begin
-        no:=p.obtenernombre;
-        ap:=p.obtenerapellido;
-        fn:=p.obtenerfechanac;
-        os:=p.obtenerobrapac;
-        cat:=p.obtenercatopac;
-        dni:=p.obtenerdni;
-        enc:=true;
-        end;
-      i:=i+1;
-    end;
-  encontrado:=enc;
-end;
+  function encontrado(var dni:longint;var nu,os,cat:integer;var ap,no,fn:string):boolean;
+  var
+  nro,i:integer;
+  p:Pacientes;
+  enc:boolean;
+  begin
+    i:=1;enc:=false;
+    While (IPac>0)and(not enc)and(i<=IPac) do
+      begin
+        p:=VPacientes[i];
+        nro:=p.obtenernropac;
+        If nro=nu then
+          begin
+          no:=p.obtenernombre;
+          ap:=p.obtenerapellido;
+          fn:=p.obtenerfechanac;
+          os:=p.obtenerobrapac;
+          cat:=p.obtenercatopac;
+          dni:=p.obtenerdni;
+          enc:=true;
+          end;
+        i:=i+1;
+      end;
+    encontrado:=enc;
+  end;
 
-function internado(var p,sala,med,tipo:integer;var fi,ff:string):boolean;
-var
-  i,nro:integer;enc:boolean;
-  ISC:InterSalaComunes;
-  Ico:InterComunes;
-  Ite:InterTerapias;
-  t,a:boolean;
-begin
-  i:=1;enc:=false;
-  While (IIsc>0)and(not enc)and(i<=IIsc)do
-    begin
-      ISC:=VInterSalaComunes[i];
-      nro:=ISC.obtenerpacinter;
-      If nro=p then
-        begin
-          a:=ISC.obteneractiva;
-          If a then
-             begin
-              enc:=true;
-              med:=ISC.obtenermedicointer;
-              sala:=ISC.obtenersalainter;
-              tipo:=0;
-              fi:=ISC.obtenerfechai;
-              ff:=ISC.obtenerfechaf;
-             end;
-        end;
-      i:=i+1;
-    end;
-  i:=1;
-  While (IIco>0)and(not enc)and(i<=IIco)do
-    begin
-      Ico:=VInterComunes[i];
-      nro:=Ico.obtenerpacinter;
-      If nro=p then
-        begin
-          a:=Ico.obteneractiva;
-          If a then
-             begin
-              enc:=true;
-              med:=ICO.obtenermedicointer;
-              sala:=ICO.obtenersalainter;
-              tipo:=0;
-              fi:=ICO.obtenerfechai;
-              ff:=ICO.obtenerfechaf;
-             end;
-        end;
-      i:=i+1;
-    end;
-  i:=1;
-  While (IIte>0)and(not enc)and(i<=IIte)do
-    begin
-      Ite:=VInterTerapias[i];
-      nro:=Ite.obtenerpacinter;
-      If nro=p then
-        begin
-          a:=Ite.obteneractiva;
-          If a then
-             begin
-              enc:=true;
-              med:=Ite.obtenermedicointer;
-              sala:=Ite.obtenersalainter;
-              If t then
-                tipo:=2
+  function internado(var p,sala,med,tipo:integer;var fi,ff:string):boolean;
+  var
+    i,nro:integer;enc:boolean;
+    ISC:InterSalaComunes;
+    Ico:InterComunes;
+    Ite:InterTerapias;
+    t,a:boolean;
+  begin
+    i:=1;enc:=false;
+    While (IIsc>0)and(not enc)and(i<=IIsc)do
+      begin
+        ISC:=VInterSalaComunes[i];
+        nro:=ISC.obtenerpacinter;
+        If nro=p then
+          begin
+            a:=ISC.obteneractiva;
+            If a then
+               begin
+                enc:=true;
+                med:=ISC.obtenermedicointer;
+                sala:=ISC.obtenersalainter;
+                tipo:=0;
+                fi:=ISC.obtenerfechai;
+                ff:=ISC.obtenerfechaf;
+               end;
+          end;
+        i:=i+1;
+      end;
+    i:=1;
+    While (IIco>0)and(not enc)and(i<=IIco)do
+      begin
+        Ico:=VInterComunes[i];
+        nro:=Ico.obtenerpacinter;
+        If nro=p then
+          begin
+            a:=Ico.obteneractiva;
+            If a then
+               begin
+                enc:=true;
+                med:=ICO.obtenermedicointer;
+                sala:=ICO.obtenersalainter;
+                tipo:=0;
+                fi:=ICO.obtenerfechai;
+                ff:=ICO.obtenerfechaf;
+               end;
+          end;
+        i:=i+1;
+      end;
+    i:=1;
+    While (IIte>0)and(not enc)and(i<=IIte)do
+      begin
+        Ite:=VInterTerapias[i];
+        nro:=Ite.obtenerpacinter;
+        If nro=p then
+          begin
+            a:=Ite.obteneractiva;
+            If a then
+               begin
+                enc:=true;
+                med:=Ite.obtenermedicointer;
+                sala:=Ite.obtenersalainter;
+                If t then
+                  tipo:=2
+                  else
+                  tipo:=3;
+                fi:=Ite.obtenerfechai;
+                ff:=Ite.obtenerfechaf;
+               end;
+          end;
+        i:=i+1;
+      end;
+    internado:=enc;
+  end;
+
+  procedure historial(var pac:integer);
+  var
+    i,nro:integer;
+    ISC:InterSalaComunes;
+    Ico:InterComunes;
+    Ite:InterTerapias;
+    sala,med:integer;
+    fi,ff:string[15];
+    est,a,tipo:boolean;
+  begin
+    ListBox1.Clear;
+    i:=1;
+    GroupBox3.Visible:=true;
+    Listbox1.Visible:=true;
+    ListBox1.Items.Add('Nro. - Tipo - Sala - Médico - FechaInicio - FechaFin - Pagada' );
+    While (IIsc>0)and(i<=IIsc)do
+      begin
+        ISC:=VInterSalaComunes[i];
+        nro:=ISC.obtenerpacinter;
+        a:=ISC.obteneractiva;
+        If (nro=pac)and(not a) then
+          begin
+            est:=ISC.obtenerestado;
+            sala:=ISC.obtenersalainter;
+            med:=ISC.obtenermedicointer;
+            fi:=ISC.obtenerfechai;
+            ff:=ISC.obtenerfechaf;
+            If est then
+              Listbox1.Items.Add(inttostr(i)+' - Privada - '+inttostr(sala)+' - '+inttostr(med)+' - '+fi+' - '+ff+' - SI')
+              else
+              Listbox1.Items.Add(inttostr(i)+' - Privada - '+inttostr(sala)+' - '+inttostr(med)+' - '+fi+' - '+ff+' - NO');
+          end;
+        i:=i+1;
+      end;
+    i:=1;
+    While (IIco>0)and(i<=IIco)do
+      begin
+        ICO:=VInterComunes[i];
+        nro:=ICO.obtenerpacinter;
+        a:=ICO.obteneractiva;
+        If (nro=pac)and(not a) then
+          begin
+            est:=ICO.obtenerestado;
+            sala:=ICO.obtenersalainter;
+            med:=ICO.obtenermedicointer;
+            fi:=ICO.obtenerfechai;
+            ff:=ICO.obtenerfechaf;
+            If est then
+              Listbox1.Items.Add(inttostr(i)+' - Int. Común - '+inttostr(sala)+' - '+inttostr(med)+' - '+fi+' - '+ff+' - SI')
+              else
+              Listbox1.Items.Add(inttostr(i)+' - Int. Común - '+inttostr(sala)+' - '+inttostr(med)+' - '+fi+' - '+ff+' - NO');
+          end;
+        i:=i+1;
+      end;
+    i:=1;
+    While (IIte>0)and(i<=IIte)do
+      begin
+        Ite:=VInterTerapias[i];
+        nro:=Ite.obtenerpacinter;
+        a:=Ite.obteneractiva;
+        If (nro=pac)and(not a) then
+          begin
+            est:=Ite.obtenerestado;
+            sala:=Ite.obtenersalainter;
+            med:=Ite.obtenermedicointer;
+            fi:=Ite.obtenerfechai;
+            ff:=Ite.obtenerfechaf;
+            tipo:=Ite.obtenertipointerterapia;
+            If est then
+              If tipo then
+                Listbox1.Items.Add(inttostr(i)+' - Ter.Interm. - '+inttostr(sala)+' - '+inttostr(med)+' - '+fi+' - '+ff+' - SI')
                 else
-                tipo:=3;
-              fi:=Ite.obtenerfechai;
-              ff:=Ite.obtenerfechaf;
-             end;
-        end;
-      i:=i+1;
-    end;
-  internado:=enc;
-end;
-
-procedure historial(var pac:integer);
-var
-  i,nro:integer;
-  ISC:InterSalaComunes;
-  Ico:InterComunes;
-  Ite:InterTerapias;
-  sala,med:integer;
-  fi,ff:string[15];
-  est,a,tipo:boolean;
-begin
-  ListBox1.Clear;
-  i:=1;
-  GroupBox3.Visible:=true;
-  Listbox1.Visible:=true;
-  ListBox1.Items.Add('Nro. - Tipo - Sala - Médico - FechaInicio - FechaFin - Pagada' );
-  While (IIsc>0)and(i<=IIsc)do
-    begin
-      ISC:=VInterSalaComunes[i];
-      nro:=ISC.obtenerpacinter;
-      a:=ISC.obteneractiva;
-      If (nro=pac)and(not a) then
-        begin
-          est:=ISC.obtenerestado;
-          sala:=ISC.obtenersalainter;
-          med:=ISC.obtenermedicointer;
-          fi:=ISC.obtenerfechai;
-          ff:=ISC.obtenerfechaf;
-          If est then
-            Listbox1.Items.Add(inttostr(i)+' - Privada - '+inttostr(sala)+' - '+inttostr(med)+' - '+fi+' - '+ff+' - SI')
+                Listbox1.Items.Add(inttostr(i)+' - Ter.Intens. - '+inttostr(sala)+' - '+ inttostr(med)+' - '+fi+' - '+ff+' - SI')
             else
-            Listbox1.Items.Add(inttostr(i)+' - Privada - '+inttostr(sala)+' - '+inttostr(med)+' - '+fi+' - '+ff+' - NO');
-        end;
-      i:=i+1;
-    end;
-  i:=1;
-  While (IIco>0)and(i<=IIco)do
-    begin
-      ICO:=VInterComunes[i];
-      nro:=ICO.obtenerpacinter;
-      a:=ICO.obteneractiva;
-      If (nro=pac)and(not a) then
-        begin
-          est:=ICO.obtenerestado;
-          sala:=ICO.obtenersalainter;
-          med:=ICO.obtenermedicointer;
-          fi:=ICO.obtenerfechai;
-          ff:=ICO.obtenerfechaf;
-          If est then
-            Listbox1.Items.Add(inttostr(i)+' - Int. Común - '+inttostr(sala)+' - '+inttostr(med)+' - '+fi+' - '+ff+' - SI')
-            else
-            Listbox1.Items.Add(inttostr(i)+' - Int. Común - '+inttostr(sala)+' - '+inttostr(med)+' - '+fi+' - '+ff+' - NO');
-        end;
-      i:=i+1;
-    end;
-  i:=1;
-  While (IIte>0)and(i<=IIte)do
-    begin
-      Ite:=VInterTerapias[i];
-      nro:=Ite.obtenerpacinter;
-      a:=Ite.obteneractiva;
-      If (nro=pac)and(not a) then
-        begin
-          est:=Ite.obtenerestado;
-          sala:=Ite.obtenersalainter;
-          med:=Ite.obtenermedicointer;
-          fi:=Ite.obtenerfechai;
-          ff:=Ite.obtenerfechaf;
-          tipo:=Ite.obtenertipointerterapia;
-          If est then
-            If tipo then
-              Listbox1.Items.Add(inttostr(i)+' - Ter.Interm. - '+inttostr(sala)+' - '+inttostr(med)+' - '+fi+' - '+ff+' - SI')
-              else
-              Listbox1.Items.Add(inttostr(i)+' - Ter.Intens. - '+inttostr(sala)+' - '+ inttostr(med)+' - '+fi+' - '+ff+' - SI')
-          else
-            If tipo then
-              Listbox1.Items.Add(inttostr(i)+' - Ter.Interm. - '+inttostr(sala)+' - '+ inttostr(med)+' - '+fi+' - '+ff+' - NO')
-              else
-              Listbox1.Items.Add(inttostr(i)+' - Ter.Intens. - '+ inttostr(sala)+' - '+ inttostr(med)+' - '+fi+' - '+ff+' - NO');
+              If tipo then
+                Listbox1.Items.Add(inttostr(i)+' - Ter.Interm. - '+inttostr(sala)+' - '+ inttostr(med)+' - '+fi+' - '+ff+' - NO')
+                else
+                Listbox1.Items.Add(inttostr(i)+' - Ter.Intens. - '+ inttostr(sala)+' - '+ inttostr(med)+' - '+fi+' - '+ff+' - NO');
 
-        end;
-      i:=i+1;
-    end;
-end;
+          end;
+        i:=i+1;
+      end;
+  end;
 
-
+// main function
 begin
 enco:=false;
 If digitos(Edit1.Text) then
@@ -299,6 +300,14 @@ If digitos(Edit1.Text) then
     showmessage('Datos no válidos');
   If enco then
     historial(nu);
+end;
+
+procedure TFPaciente.Edit1KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Ord(Key) = 13 then
+    begin
+      Button1Click(Sender);
+    end;
 end;
 
 end.

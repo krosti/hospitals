@@ -1,6 +1,6 @@
 object Inicial: TInicial
-  Left = 480
-  Top = 192
+  Left = 481
+  Top = 193
   Width = 693
   Height = 403
   Caption = 'Administracion de Hospitales - v1'
@@ -33542,7 +33542,7 @@ object Inicial: TInicial
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 2
       OnClick = InternacionesBTNClick
     end
     object ConsultaIntrBTN: TButton
@@ -33551,7 +33551,7 @@ object Inicial: TInicial
       Width = 153
       Height = 33
       Caption = 'Consultar Internaci'#243'n'
-      TabOrder = 2
+      TabOrder = 3
       OnClick = ConsultaIntrBTNClick
     end
     object ConsultoriosBTN: TButton

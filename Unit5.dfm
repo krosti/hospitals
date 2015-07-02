@@ -28,25 +28,33 @@ object FPaciente: TFPaciente
   end
   object Label2: TLabel
     Left = 16
-    Top = 88
+    Top = 72
     Width = 68
     Height = 13
     Caption = 'Nro Paciente: '
   end
   object Edit1: TEdit
-    Left = 104
+    Left = 16
     Top = 88
     Width = 81
-    Height = 21
-    TabOrder = 0
+    Height = 33
+    BorderStyle = bsNone
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    OnKeyPress = Edit1KeyPress
   end
   object Button1: TButton
-    Left = 16
-    Top = 120
+    Left = 104
+    Top = 88
     Width = 57
-    Height = 25
+    Height = 33
     Caption = 'Consultar'
-    TabOrder = 1
+    TabOrder = 2
     OnClick = Button1Click
   end
   object Button2: TButton
@@ -55,7 +63,7 @@ object FPaciente: TFPaciente
     Width = 89
     Height = 33
     Caption = 'Salir'
-    TabOrder = 2
+    TabOrder = 5
     OnClick = Button2Click
   end
   object GroupBox1: TGroupBox
@@ -215,7 +223,7 @@ object FPaciente: TFPaciente
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 0
     Visible = False
     object Label9: TLabel
       Left = 8
@@ -422,7 +430,7 @@ object FPaciente: TFPaciente
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 4
     Visible = False
     object ListBox1: TListBox
       Left = 8
