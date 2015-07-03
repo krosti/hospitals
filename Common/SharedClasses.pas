@@ -307,6 +307,8 @@ end;
 function digitos(cad:string):boolean;
 function fecha(fa,ff:string):boolean;
 
+var IPac: integer;
+
 implementation
 
 //PERSONAS --------------------------------------------------
@@ -616,12 +618,10 @@ end;
 function ObraSocial.obtenernroobra ():integer;
 begin
 
-  try
-    obtenernroobra:=nro;
-  except
-    obtenernroobra := 0;
-    ShowMessage('no se encontraron Obras Sociales');
-  end;
+  if nro <> 0 then
+    begin
+      obtenernroobra := nro;
+    end;
 
 end;
 

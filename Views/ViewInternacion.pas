@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, SharedClasses, Unit7, Mask, WebAdapt, WebComp;
+  Dialogs, StdCtrls, SharedClasses, Unit7, Mask, WebAdapt, WebComp,
+  madExceptVcl;
 
 type
   TFInternacion = class(TForm)
@@ -68,6 +69,7 @@ type
     Label2: TLabel;
     CheckBox3: TCheckBox;
     lgnfrmdptr1: TLoginFormAdapter;
+    mdxcptnhndlr1: TMadExceptionHandler;
     procedure Button1Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
     procedure CheckBox1Click(Sender: TObject);
@@ -108,9 +110,9 @@ procedure TFInternacion.Button1Click(Sender: TObject);
     ComboBox2.Clear;
     Repeat
       os:=VObraSocial[i];
-      nu:=os.obtenernroobra;
-      if(nu <> 0)then
+      if os <> nil then
         begin
+          nu:=os.obtenernroobra;
           ComboBox2.Items.Add(inttostr(nu));
           i:=i+1;
         end
@@ -197,7 +199,7 @@ begin
   If ok then
     begin
       If (Combobox2.ItemIndex=-1)or(Combobox3.ItemIndex=-1) then
-        showmessage('Debe elegir Obra Social y categor�a')
+        showmessage('Debe elegir Obra Social y Categoria')
       else
       begin
         If Label18.Caption<>'' then
@@ -232,7 +234,7 @@ begin
     os:=VObraSocial[i];
     nu:=os.obtenernroobra;
     ComboBox2.Items.Add(inttostr(nu));
-    i:=i+1
+    i:=i+1;
   until i>IOS;
 end;
 

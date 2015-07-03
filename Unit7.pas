@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, SharedClasses, Mask;
+  Dialogs, StdCtrls, SharedClasses, Mask, Buttons, madExceptVcl;
 
 type
   TFDatos = class(TForm)
@@ -136,6 +136,8 @@ type
     ComboOS: TComboBox;
     Label13: TLabel;
     CargaDummyData: TButton;
+    helpbtn1: TSpeedButton;
+    mdxcptnhndlr1: TMadExceptionHandler;
     procedure Button13Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
@@ -152,6 +154,8 @@ type
     procedure MaskEdit5Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure CargaDummyDataClick(Sender: TObject);
+    procedure mdxcptnhndlr1Exception(const exceptIntf: IMEException;
+      var handled: Boolean);
 
   private
     { Private declarations }
@@ -324,7 +328,7 @@ begin
 
   if ok then
     begin
-      // Incremento el índice
+      // Incremento el ï¿½ndice
       ICns:=ICns+1;
       // Creo un nuevo objeto de esta clase
       Cons:=Consultorios.crearconsultorio(n,m,s,e);
@@ -361,7 +365,7 @@ begin
 
   if ok then
     begin
-      // Incremento el índice
+      // Incremento el ï¿½ndice
       IHor:=IHor+1;
       // Creo un nuevo objeto
       Horario:=Horarios.crearhorario(n,c);
@@ -514,7 +518,7 @@ begin
       showmessage ('Sala cargada')
     end
     else
-      showmessage('Hay datos inválidos');
+      showmessage('Hay datos invï¿½lidos');
 
   Edit1.Text:='';
   Edit2.Text:='';
@@ -763,7 +767,7 @@ begin
     showmessage('Precios establecidos');
   end
   else
-    showmessage ('Datos inválidos');
+    showmessage ('Datos invï¿½lidos');
 end;
 
 procedure TFDatos.MaskEdit5Change(Sender: TObject);
@@ -793,6 +797,26 @@ begin
   Edit16.Text := 'Nombre0' + IntToStr(randomString);
   Edit17.Text := 'Apellido0' + IntToStr(randomString);
   Edit18.Text := '12322' + IntToStr(randomString);
+  MaskEdit1.Text := '10/10/1958';
+  Edit20.Text := '00' + IntToStr(randomString);
+  Edit21.Text := 'AA00' + IntToStr(randomString);
+
+  // Enfermeras
+  Edit22.Text := 'Enf0' + IntToStr(randomString);
+  Edit23.Text := 'EnfApellido0' + IntToStr(randomString);
+  Edit25.Text := '12322' + IntToStr(randomString);
+  MaskEdit2.Text := '10/10/1958';
+  Edit26.Text := '00' + IntToStr(randomString);
+  Edit27.Text := 'AA00' + IntToStr(randomString);
+end;
+
+procedure TFDatos.mdxcptnhndlr1Exception(const exceptIntf: IMEException;
+  var handled: Boolean);
+begin
+  if(handled = true) then
+  begin
+    ShowMessage('error!');
+  end;
 end;
 
 end.

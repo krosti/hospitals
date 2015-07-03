@@ -28,6 +28,7 @@ type
     Image8: TImage;
     Label2: TLabel;
     Label3: TLabel;
+    VerPacientesBTN: TButton;
     procedure InternacionesBTNClick(Sender: TObject);
     procedure ConsultoriosBTNClick(Sender: TObject);
     procedure ConsultasPacientesBTNClick(Sender: TObject);
@@ -35,6 +36,7 @@ type
     procedure CargaDatosBTNClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure UrgenciasBTNClick(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -213,6 +215,11 @@ procedure TInicial.UrgenciasBTNClick(Sender: TObject);
 begin
   Main.Hide;
   AsigUrgencias.show;
+end;
+
+procedure TInicial.BitBtn1Click(Sender: TObject);
+begin
+  Main.Close;
 end;
 
 end.

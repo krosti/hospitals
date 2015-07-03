@@ -1,6 +1,6 @@
 object FDatos: TFDatos
-  Left = 217
-  Top = 149
+  Left = 283
+  Top = 271
   Width = 1150
   Height = 551
   Caption = 'Cargar datos iniciales'
@@ -28,14 +28,14 @@ object FDatos: TFDatos
     ParentFont = False
   end
   object Label12: TLabel
-    Left = 840
+    Left = 1008
     Top = 16
     Width = 66
     Height = 13
     Caption = 'Fecha Actual:'
   end
   object FechaActualLABEL: TLabel
-    Left = 915
+    Left = 1083
     Top = 16
     Width = 3
     Height = 13
@@ -48,6 +48,40 @@ object FDatos: TFDatos
     Width = 52
     Height = 13
     Caption = 'PERSONAL'
+  end
+  object helpbtn1: TSpeedButton
+    Left = 984
+    Top = 40
+    Width = 23
+    Height = 22
+    Flat = True
+    Glyph.Data = {
+      36030000424D3603000000000000360000002800000010000000100000000100
+      1800000000000003000000000000000000000000000000000000EEEEEEEEEEEE
+      EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+      EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEDDD5CABAA4899F744690
+      5F379A704E9B7555A3957ED4D1CBEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+      EEEEEECEB69DC28C5EE0C9B4F7F1ECFEFDFCFEFDFCF5F0ECDCCAB9B3977EB2AB
+      9CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEED5BA9DDBAC82F8EFE7E2BBA6CC7E56C1
+      5823C05722C97F56DEBAA7F2EBE7B79A7FB1A99AEEEEEEEEEEEEEEEEEEE3D7CA
+      D79E73F9F0E7DDA488C75013C04E11DCA688FFFFFFB54911B64A10D59E82F3EC
+      E7AA8B71D2CFC8EEEEEEEEEEEED1B393EFD6C1EDC5B2DD5A1AD55617D25313D8
+      7D4DE3A686BB4C11B34A12B64A10DEB9A6DCCAB9A2957DEEEEEEEEEEEED18E5C
+      FCF4ECEC9772E86021E05A1DDB5819EDAA89FFFFFFC84E12B94C11B34C13C77B
+      53F6F0EC976E4EEEEEEEEEEEEECF864FFFFEFEF87A46F96829F66525F16020F1
+      8653FFFFFFF0BFA8C55A24B64C15B75724FEFEFD8D5D35EEEEEEEEEEEECF8956
+      FFFEFEFC814CFF7031FF6B2CFD6928F86523F49265FDF5F1F4D4C5C65018BA59
+      27FEFEFD905D35EEEEEEEEEEEED89C71FCF7F1FAA582FF733AFF844EFFAE8AFE
+      6C2DF76727F19268FFFFFFE98354D78560F8F1ECA2845EEEEEEEEEEEEEDDC2A7
+      F0DAC3FAD1C0FF7940FF986EFFFFFFFFC9B2FD9164FAC6AFFEF5F1F5773DEDC5
+      B3E4CBB3C2AA8EEEEEEEEEEEEEE7DBD0DDA77FFCF5EEFABFA6FF7A43FFBB9EFF
+      F6F3FFFFFFFEEDE5FA9970F3B69CF8F0E6C19768DDD3C8EEEEEEEEEEEEEEEEEE
+      DFC8B1E5BB9DFCF5EEFBD2C1FAA887FD8757FD8454F8A582F7CEBDFAF1E7D3AA
+      7ED1BCA3EEEDECEEEEEEEEEEEEEEEEEEEEEEEEDFC8B1DDA77FF3DAC7FCF7F1FF
+      FEFEFFFEFEFCF5EEF1D6C0CB9D6CD5C3AEEEEDECEEEEEEEEEEEEEEEEEEEEEEEE
+      EEEEEEEEEEEEE7DBCFDABD9FDDAE8AD9A078D59869DBA782D4BBA1E6DED5EEEE
+      EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+      EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE}
   end
   object GroupBox1: TGroupBox
     Left = 8
@@ -83,21 +117,21 @@ object FDatos: TFDatos
     end
     object Edit1: TEdit
       Left = 80
-      Top = 24
+      Top = 32
       Width = 81
       Height = 19
       TabOrder = 0
     end
     object Edit2: TEdit
       Left = 80
-      Top = 48
+      Top = 56
       Width = 81
       Height = 19
       TabOrder = 1
     end
     object Edit3: TEdit
       Left = 80
-      Top = 72
+      Top = 80
       Width = 81
       Height = 19
       TabOrder = 2
@@ -167,21 +201,21 @@ object FDatos: TFDatos
     end
     object Edit4: TEdit
       Left = 80
-      Top = 24
+      Top = 32
       Width = 81
       Height = 19
       TabOrder = 0
     end
     object Edit5: TEdit
       Left = 80
-      Top = 48
+      Top = 56
       Width = 81
       Height = 19
       TabOrder = 2
     end
     object Edit6: TEdit
       Left = 256
-      Top = 24
+      Top = 32
       Width = 81
       Height = 19
       TabOrder = 1
@@ -197,14 +231,14 @@ object FDatos: TFDatos
     end
     object Edit7: TEdit
       Left = 80
-      Top = 72
+      Top = 80
       Width = 81
       Height = 19
       TabOrder = 4
     end
     object Edit19: TEdit
       Left = 256
-      Top = 48
+      Top = 56
       Width = 81
       Height = 19
       TabOrder = 3
@@ -277,35 +311,35 @@ object FDatos: TFDatos
     end
     object Edit16: TEdit
       Left = 80
-      Top = 24
+      Top = 32
       Width = 80
       Height = 19
       TabOrder = 0
     end
     object Edit17: TEdit
       Left = 80
-      Top = 48
+      Top = 56
       Width = 80
       Height = 19
       TabOrder = 1
     end
     object Edit18: TEdit
       Left = 80
-      Top = 72
+      Top = 80
       Width = 80
       Height = 19
       TabOrder = 2
     end
     object Edit20: TEdit
       Left = 80
-      Top = 120
+      Top = 128
       Width = 80
       Height = 19
       TabOrder = 4
     end
     object Edit21: TEdit
       Left = 80
-      Top = 144
+      Top = 152
       Width = 80
       Height = 19
       TabOrder = 5
@@ -321,7 +355,7 @@ object FDatos: TFDatos
     end
     object MaskEdit1: TMaskEdit
       Left = 80
-      Top = 96
+      Top = 104
       Width = 80
       Height = 19
       EditMask = '!99/99/0000;1;_'
@@ -392,42 +426,42 @@ object FDatos: TFDatos
     end
     object Edit22: TEdit
       Left = 88
-      Top = 24
+      Top = 32
       Width = 80
       Height = 19
       TabOrder = 0
     end
     object Edit23: TEdit
       Left = 88
-      Top = 48
+      Top = 56
       Width = 80
       Height = 19
       TabOrder = 1
     end
     object Edit25: TEdit
       Left = 88
-      Top = 72
+      Top = 80
       Width = 80
       Height = 19
       TabOrder = 2
     end
     object Edit26: TEdit
       Left = 88
-      Top = 120
+      Top = 128
       Width = 80
       Height = 19
       TabOrder = 4
     end
     object Edit27: TEdit
       Left = 88
-      Top = 144
+      Top = 152
       Width = 80
       Height = 19
       TabOrder = 5
     end
     object MaskEdit2: TMaskEdit
       Left = 88
-      Top = 96
+      Top = 104
       Width = 80
       Height = 19
       EditMask = '!99/99/0000;1;_'
@@ -502,7 +536,7 @@ object FDatos: TFDatos
     end
     object Edit28: TEdit
       Left = 80
-      Top = 144
+      Top = 152
       Width = 80
       Height = 19
       Constraints.MaxWidth = 80
@@ -511,7 +545,7 @@ object FDatos: TFDatos
     end
     object Edit29: TEdit
       Left = 80
-      Top = 120
+      Top = 128
       Width = 80
       Height = 19
       Constraints.MaxWidth = 80
@@ -520,7 +554,7 @@ object FDatos: TFDatos
     end
     object Edit31: TEdit
       Left = 80
-      Top = 72
+      Top = 80
       Width = 80
       Height = 19
       Constraints.MaxWidth = 80
@@ -529,7 +563,7 @@ object FDatos: TFDatos
     end
     object Edit32: TEdit
       Left = 80
-      Top = 48
+      Top = 56
       Width = 80
       Height = 19
       Constraints.MaxWidth = 80
@@ -538,7 +572,7 @@ object FDatos: TFDatos
     end
     object Edit33: TEdit
       Left = 80
-      Top = 24
+      Top = 32
       Width = 80
       Height = 19
       Constraints.MaxWidth = 80
@@ -547,7 +581,7 @@ object FDatos: TFDatos
     end
     object MaskEdit3: TMaskEdit
       Left = 80
-      Top = 96
+      Top = 104
       Width = 80
       Height = 19
       Constraints.MaxWidth = 80
@@ -622,35 +656,35 @@ object FDatos: TFDatos
     end
     object Edit34: TEdit
       Left = 88
-      Top = 144
+      Top = 152
       Width = 80
       Height = 19
       TabOrder = 5
     end
     object Edit35: TEdit
       Left = 88
-      Top = 120
+      Top = 128
       Width = 80
       Height = 19
       TabOrder = 4
     end
     object Edit37: TEdit
       Left = 88
-      Top = 72
+      Top = 80
       Width = 80
       Height = 19
       TabOrder = 2
     end
     object Edit39: TEdit
       Left = 88
-      Top = 24
+      Top = 32
       Width = 80
       Height = 19
       TabOrder = 0
     end
     object MaskEdit4: TMaskEdit
       Left = 88
-      Top = 96
+      Top = 104
       Width = 80
       Height = 19
       EditMask = '!99/99/0000;1;_'
@@ -660,7 +694,7 @@ object FDatos: TFDatos
     end
     object Edit38: TEdit
       Left = 88
-      Top = 48
+      Top = 56
       Width = 80
       Height = 19
       TabOrder = 1
@@ -690,7 +724,7 @@ object FDatos: TFDatos
       Caption = 'Nombre:'
     end
     object Button9: TButton
-      Left = 96
+      Left = 104
       Top = 128
       Width = 65
       Height = 25
@@ -787,7 +821,7 @@ object FDatos: TFDatos
       TabOrder = 3
     end
     object Button11: TButton
-      Left = 104
+      Left = 96
       Top = 128
       Width = 73
       Height = 25
@@ -815,56 +849,56 @@ object FDatos: TFDatos
     TabOrder = 8
     object Label48: TLabel
       Left = 16
-      Top = 92
+      Top = 100
       Width = 53
       Height = 13
       Caption = 'Secretaria:'
     end
     object Label49: TLabel
       Left = 16
-      Top = 68
+      Top = 76
       Width = 37
       Height = 13
       Caption = 'M'#233'dico:'
     end
     object Label50: TLabel
       Left = 16
-      Top = 44
+      Top = 52
       Width = 62
       Height = 13
       Caption = 'Especialidad:'
     end
     object Label51: TLabel
       Left = 16
-      Top = 24
+      Top = 26
       Width = 21
       Height = 13
       Caption = 'Nro:'
     end
     object Edit46: TEdit
       Left = 88
-      Top = 16
+      Top = 24
       Width = 80
       Height = 19
       TabOrder = 0
     end
     object Edit47: TEdit
       Left = 88
-      Top = 44
+      Top = 52
       Width = 80
       Height = 19
       TabOrder = 1
     end
     object Edit48: TEdit
       Left = 88
-      Top = 68
+      Top = 76
       Width = 80
       Height = 19
       TabOrder = 2
     end
     object Edit49: TEdit
       Left = 88
-      Top = 92
+      Top = 100
       Width = 80
       Height = 19
       TabOrder = 3
@@ -896,11 +930,19 @@ object FDatos: TFDatos
       Caption = 'Nro:'
     end
     object Label53: TLabel
-      Left = 16
-      Top = 56
+      Left = 24
+      Top = 64
       Width = 137
       Height = 13
       Caption = '(Horario fijos de media hora)'
+      Color = clBtnFace
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clGray
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
     end
     object Label54: TLabel
       Left = 16
@@ -910,7 +952,7 @@ object FDatos: TFDatos
       Caption = 'Consultorio:'
     end
     object Button12: TButton
-      Left = 112
+      Left = 104
       Top = 128
       Width = 65
       Height = 25
@@ -920,7 +962,7 @@ object FDatos: TFDatos
     end
     object Edit50: TEdit
       Left = 88
-      Top = 32
+      Top = 40
       Width = 80
       Height = 19
       TabOrder = 0
@@ -935,7 +977,7 @@ object FDatos: TFDatos
   end
   object Button13: TButton
     Left = 912
-    Top = 440
+    Top = 432
     Width = 209
     Height = 57
     Caption = 'Volver'
@@ -1027,5 +1069,10 @@ object FDatos: TFDatos
     Caption = 'CargaDummyData'
     TabOrder = 1
     OnClick = CargaDummyDataClick
+  end
+  object mdxcptnhndlr1: TMadExceptionHandler
+    OnException = mdxcptnhndlr1Exception
+    Left = 944
+    Top = 24
   end
 end

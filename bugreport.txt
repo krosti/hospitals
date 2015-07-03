@@ -1,0 +1,821 @@
+date/time          : 2015-07-02, 18:46:47, 206ms
+computer name      : KROSTI-PC
+user name          : krosti
+registered owner   : Windows User
+operating system   : Windows 7 x64 Service Pack 1 build 7601
+system language    : English
+system up time     : 4 hours 4 minutes
+program up time    : 1 second
+processor          : Intel(R) Core(TM) i7-4578U CPU @ 3.00GHz
+physical memory    : 134/512 MB (free/total)
+free disk space    : (C:) 5.75 GB
+display mode       : 1920x1014, 32 bit
+process id         : $248
+allocated memory   : 28.48 MB
+largest free block : 1.71 GB
+executable         : Hospitales.exe
+exec. date/time    : 2015-07-02 18:39
+compiled with      : Delphi 7
+madExcept version  : 4.0.12
+callstack crc      : $43ffed6d, $3a513bb4, $3a513bb4
+count              : 2
+exception number   : 1
+exception class    : EAccessViolation
+exception message  : Access violation at address 004CCF20 in module 'Hospitales.exe'. Read of address 00000004.
+
+main thread ($900):
+004ccf20 +000 Hospitales.exe SharedClasses   619 +0 ObraSocial.obtenernroobra
+004fc39f +037 Hospitales.exe ViewInternacion 113 +5 ActualizarComboOS
+004fc414 +018 Hospitales.exe ViewInternacion 125 +2 TFInternacion.Button1Click
+004a8fa8 +064 Hospitales.exe Controls               TControl.Click
+0049eef8 +01c Hospitales.exe StdCtrls               TButton.Click
+0049efec +00c Hospitales.exe StdCtrls               TButton.CNCommand
+004a8e10 +188 Hospitales.exe Controls               TControl.WndProc
+004abd5b +157 Hospitales.exe Controls               TWinControl.WndProc
+0049edbc +06c Hospitales.exe StdCtrls               TButtonControl.WndProc
+004a8be0 +024 Hospitales.exe Controls               TControl.Perform
+004abe93 +023 Hospitales.exe Controls               DoControlMsg
+004ac4eb +00b Hospitales.exe Controls               TWinControl.WMCommand
+004c3148 +02c Hospitales.exe Forms                  TCustomForm.WMCommand
+004a8e10 +188 Hospitales.exe Controls               TControl.WndProc
+004abd5b +157 Hospitales.exe Controls               TWinControl.WndProc
+004c11a1 +421 Hospitales.exe Forms                  TCustomForm.WndProc
+00483504 +014 Hospitales.exe Classes                StdWndProc
+004ab9d8 +02c Hospitales.exe Controls               TWinControl.MainWndProc
+00483504 +014 Hospitales.exe Classes                StdWndProc
+74d896c0 +047 user32.dll                            SendMessageW
+74d97945 +016 user32.dll                            CallWindowProcA
+004abe3f +0d7 Hospitales.exe Controls               TWinControl.DefaultHandler
+004a93b0 +010 Hospitales.exe Controls               TControl.WMLButtonUp
+004a9326 +06e Hospitales.exe Controls               TControl.WMMouseMove
+004a8e10 +188 Hospitales.exe Controls               TControl.WndProc
+004abd5b +157 Hospitales.exe Controls               TWinControl.WndProc
+0049edbc +06c Hospitales.exe StdCtrls               TButtonControl.WndProc
+004ab9d8 +02c Hospitales.exe Controls               TWinControl.MainWndProc
+00483504 +014 Hospitales.exe Classes                StdWndProc
+74d87bc5 +00a user32.dll                            DispatchMessageA
+004c74b7 +083 Hospitales.exe Forms                  TApplication.ProcessMessage
+004c74d6 +00a Hospitales.exe Forms                  TApplication.HandleMessage
+004c76f6 +096 Hospitales.exe Forms                  TApplication.Run
+00500c5d +0a5 Hospitales.exe Hospitales       30 +9 initialization
+752d3378 +010 kernel32.dll                          BaseThreadInitThunk
+
+thread $884:
+76f81f8b +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+752d3378 +10 kernel32.dll  BaseThreadInitThunk
+
+modules:
+00400000 Hospitales.exe                    \\VBOXSVR\Vuze_Downloads\Final\v1
+72030000 FaultRep.dll   6.1.7601.17514     C:\Windows\system32
+72d20000 uxtheme.dll    6.1.7600.16385     C:\Windows\system32
+72f10000 propsys.dll    7.0.7601.17514     C:\Windows\system32
+73010000 comctl32.DLL   6.10.7601.18837    C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d
+731b0000 version.dll    6.1.7600.16385     C:\Windows\system32
+735a0000 ntmarta.dll    6.1.7600.16385     C:\Windows\system32
+73740000 dwmapi.dll     6.1.7600.16385     C:\Windows\system32
+73ae0000 comctl32.dll   5.82.7601.18837    C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7601.18837_none_ec86b8d6858ec0bc
+73b70000 wsock32.dll    6.1.7600.16385     C:\Windows\system32
+748c0000 CRYPTBASE.dll  6.1.7600.16385     C:\Windows\syswow64
+748d0000 SspiCli.dll    6.1.7601.18869     C:\Windows\syswow64
+74930000 KERNELBASE.dll 6.1.7601.18869     C:\Windows\syswow64
+74980000 ADVAPI32.dll   6.1.7601.18869     C:\Windows\syswow64
+74a40000 CLBCatQ.DLL    2001.12.8530.16385 C:\Windows\syswow64
+74ad0000 WLDAP32.dll    6.1.7601.17514     C:\Windows\syswow64
+74d70000 user32.dll     6.1.7601.17514     C:\Windows\syswow64
+74e70000 GDI32.dll      6.1.7601.18778     C:\Windows\syswow64
+74f10000 SETUPAPI.dll   6.1.7601.17514     C:\Windows\syswow64
+75120000 USP10.dll      1.626.7601.18454   C:\Windows\syswow64
+751e0000 SHLWAPI.dll    6.1.7601.17514     C:\Windows\syswow64
+75240000 WS2_32.dll     6.1.7601.17514     C:\Windows\syswow64
+75280000 sechost.dll    6.1.7601.18869     C:\Windows\SysWOW64
+752a0000 DEVOBJ.dll     6.1.7601.17621     C:\Windows\syswow64
+752c0000 kernel32.dll   6.1.7601.18869     C:\Windows\syswow64
+753e0000 MSCTF.dll      6.1.7601.18731     C:\Windows\syswow64
+754b0000 CFGMGR32.dll   6.1.7601.17621     C:\Windows\syswow64
+75510000 LPK.dll        6.1.7601.18768     C:\Windows\syswow64
+758a0000 NSI.dll        6.1.7600.16385     C:\Windows\syswow64
+758b0000 msvcrt.dll     7.0.7601.17744     C:\Windows\syswow64
+75960000 comdlg32.dll   6.1.7601.17514     C:\Windows\syswow64
+759e0000 IMM32.DLL      6.1.7601.17514     C:\Windows\system32
+75a40000 oleaut32.dll   6.1.7601.18679     C:\Windows\syswow64
+75c90000 ole32.dll      6.1.7601.17514     C:\Windows\syswow64
+75e20000 RPCRT4.dll     6.1.7601.18532     C:\Windows\syswow64
+75f10000 shell32.dll    6.1.7601.18762     C:\Windows\syswow64
+76f60000 ntdll.dll      6.1.7601.18869     C:\Windows\SysWOW64
+
+processes:
+000 Idle                   0 0   0
+004 System                 0 0   0
+10c smss.exe               0 0   0
+15c csrss.exe              0 0   0
+180 wininit.exe            0 0   0
+18c csrss.exe              1 0   0
+1b4 winlogon.exe           1 0   0
+1e0 services.exe           0 0   0
+1f0 lsass.exe              0 0   0
+1f8 lsm.exe                0 0   0
+25c svchost.exe            0 0   0
+29c VBoxService.exe        0 0   0
+2d0 svchost.exe            0 0   0
+304 svchost.exe            0 0   0
+378 svchost.exe            0 0   0
+3ac svchost.exe            0 0   0
+3d0 svchost.exe            0 0   0
+158 svchost.exe            0 0   0
+454 svchost.exe            0 0   0
+4b8 spoolsv.exe            0 0   0
+4dc svchost.exe            0 0   0
+548 svchost.exe            0 0   0
+578 svchost.exe            0 0   0
+7b0 taskhost.exe           1 17  16  normal
+7e4 dwm.exe                1 9   2   normal
+7f0 explorer.exe           1 478 333 normal
+72c VBoxTray.exe           1 12  14  normal
+84c jusched.exe            1 12  6   normal C:\Program Files (x86)\Java\jre1.6.0_02\bin
+90c SearchIndexer.exe      0 0   0
+988 wmpnetwk.exe           0 0   0
+a78 svchost.exe            0 0   0
+41c svchost.exe            0 0   0
+24c wuauclt.exe            1 12  7   normal
+870 TrustedInstaller.exe   0 0   0
+610 taskhost.exe           1 0   0
+448 delphi32.exe           1 0   0
+9f4 SearchProtocolHost.exe 0 0   0
+250 SearchFilterHost.exe   0 0   0
+248 Hospitales.exe         1 147 129 normal \\VBOXSVR\Vuze_Downloads\Final\v1
+818 audiodg.exe            0 0   0
+
+hardware:
++ Batteries
+  - Microsoft AC Adapter
+  - Microsoft ACPI-Compliant Control Method Battery
+  - Microsoft Composite Battery
++ Computer
+  - ACPI x64-based PC
++ Disk drives
+  - VBOX HARDDISK ATA Device
++ Display adapters
+  - VirtualBox Graphics Adapter (driver 4.3.10.0)
++ DVD/CD-ROM drives
+  - VBOX CD-ROM ATA Device
++ Human Interface Devices
+  - USB Input Device
++ IDE ATA/ATAPI controllers
+  - ATA Channel 0
+  - ATA Channel 0
+  - ATA Channel 1
+  - Intel(R) 82371AB/EB PCI Bus Master IDE Controller
+  - Standard AHCI 1.0 Serial ATA Controller
++ Keyboards
+  - Standard PS/2 Keyboard
++ Mice and other pointing devices
+  - HID-compliant mouse
+  - Microsoft PS/2 Mouse
++ Monitors
+  - Generic Non-PnP Monitor
++ Network adapters
+  - Intel(R) PRO/1000 MT Desktop Adapter
+  - Microsoft ISATAP Adapter
+  - Microsoft Teredo Tunneling Adapter
+  - WAN Miniport (IKEv2)
+  - WAN Miniport (IP)
+  - WAN Miniport (IPv6)
+  - WAN Miniport (L2TP)
+  - WAN Miniport (Network Monitor)
+  - WAN Miniport (PPPOE)
+  - WAN Miniport (PPTP)
+  - WAN Miniport (SSTP)
++ Ports (COM & LPT)
+  - Printer Port (LPT1)
++ Processors
+  - Intel(R) Core(TM) i7-4578U CPU @ 3.00GHz
++ Sound, video and game controllers
+  - High Definition Audio Device
++ Storage volume shadow copies
+  - Generic volume shadow copy
++ System devices
+  - ACPI Fixed Feature Button
+  - Composite Bus Enumerator
+  - Direct memory access controller
+  - File as Volume Driver
+  - High Definition Audio Controller
+  - Intel 82371SB PCI to ISA bridge
+  - Intel 82441FX Pentium(R) Pro Processor to PCI bridge
+  - Microsoft ACPI-Compliant System
+  - Microsoft System Management BIOS Driver
+  - Microsoft Virtual Drive Enumerator Driver
+  - PCI bus
+  - Plug and Play Software Device Enumerator
+  - Printer Port Logical Interface
+  - Programmable interrupt controller
+  - Remote Desktop Device Redirector Bus
+  - System timer
+  - Terminal Server Keyboard Driver
+  - Terminal Server Mouse Driver
+  - UMBus Enumerator
+  - UMBus Root Bus Enumerator
+  - VirtualBox Device (driver 4.3.10.0)
+  - Volume Manager
++ Universal Serial Bus controllers
+  - Intel(R) 82801FB/FBM USB2 Enhanced Host Controller - 265C
+  - Standard OpenHCD USB Host Controller
+  - USB Root Hub
+  - USB Root Hub
+
+cpu registers:
+eax = 00000000
+ebx = 00000001
+ecx = 00000000
+edx = 00000000
+esi = 0049eedc
+edi = 0018f6fc
+eip = 004ccf20
+esp = 0018f554
+ebp = 0018f570
+
+stack dump:
+0018f554  a4 c3 4f 00 b0 f8 18 00 - b0 40 40 00 70 f5 18 00  ..O......@@.p...
+0018f564  dc ee 49 00 a0 b1 2d 00 - 00 00 00 00 80 f5 18 00  ..I...-.........
+0018f574  19 c4 4f 00 80 f5 18 00 - 98 66 2f 00 c0 f6 18 00  ..O......f/.....
+0018f584  ae 8f 4a 00 a0 b1 2d 00 - fd ee 49 00 fc f6 18 00  ..J...-...I.....
+0018f594  f1 ef 49 00 a0 b1 2d 00 - 13 8e 4a 00 fc f6 18 00  ..I...-...J.....
+0018f5a4  fc f6 18 00 a0 b1 2d 00 - e0 7c 70 00 f3 00 00 00  ......-..|p.....
+0018f5b4  48 f5 18 00 00 00 00 00 - 80 f6 18 00 05 1a fd 76  H..............v
+0018f5c4  3f 19 21 01 fe ff ff ff - cc e3 f8 76 32 e1 f8 76  ?.!........v2..v
+0018f5d4  b4 f6 18 00 bc f6 18 00 - 00 00 00 00 00 00 00 00  ................
+0018f5e4  10 f6 18 00 fa 62 d8 74 - 78 01 13 00 15 02 00 00  .....b.tx.......
+0018f5f4  00 00 00 00 00 00 00 00 - d8 a4 fd 76 cd ab ba dc  ...........v....
+0018f604  00 00 00 00 00 00 00 00 - d8 a4 fd 76 20 f6 18 00  ...........v ...
+0018f614  3c f6 18 00 30 02 df 74 - 22 52 03 89 88 f6 18 00  <...0..t"R......
+0018f624  00 00 00 00 00 00 70 00 - 58 71 13 04 02 00 00 00  ......p.Xq......
+0018f634  20 00 00 00 38 00 3a 00 - b9 00 00 00 00 00 00 00   ...8.:.........
+0018f644  90 f6 18 00 92 e7 f8 76 - c0 6f 13 04 01 00 00 00  .......v.o......
+0018f654  50 71 13 04 70 f6 18 00 - 63 e0 f8 76 bc f6 18 00  Pq..p...c..v....
+0018f664  bc f6 18 00 00 00 00 00 - 50 71 13 04 84 f6 18 00  ........Pq......
+0018f674  e8 e6 f8 76 00 00 70 00 - 00 00 00 00 58 71 13 04  ...v..p.....Xq..
+0018f684  94 f6 18 00 bf e6 f8 76 - 58 71 13 04 fe ff ff ff  .......vXq......
+
+disassembling:
+004ccf20     public SharedClasses.ObraSocial.obtenernroobra:  ; function entry point
+004ccf20 619 > mov     edx, [eax+4]
+004ccf23       test    edx, edx
+004ccf25       jz      loc_4ccf29
+004ccf27 621   mov     ecx, edx
+004ccf29       mov     eax, ecx
+[...]
+
+date/time          : 2015-07-02, 18:46:56, 90ms
+computer name      : KROSTI-PC
+user name          : krosti
+registered owner   : Windows User
+operating system   : Windows 7 x64 Service Pack 1 build 7601
+system language    : English
+system up time     : 4 hours 4 minutes
+program up time    : 12 seconds
+processor          : Intel(R) Core(TM) i7-4578U CPU @ 3.00GHz
+physical memory    : 120/512 MB (free/total)
+free disk space    : (C:) 5.75 GB
+display mode       : 1920x1014, 32 bit
+process id         : $248
+allocated memory   : 32.18 MB
+largest free block : 1.71 GB
+executable         : Hospitales.exe
+exec. date/time    : 2015-07-02 18:39
+compiled with      : Delphi 7
+madExcept version  : 4.0.12
+contact name       : hg
+contact email      : ghgjhjg@hf.dhj
+callstack crc      : $43ffed6d, $c63493a6, $c63493a6
+exception number   : 2
+exception class    : EAccessViolation
+exception message  : Access violation at address 004CCF20 in module 'Hospitales.exe'. Read of address 00000004.
+
+main thread ($900):
+004ccf20 +000 Hospitales.exe SharedClasses   619 +0 ObraSocial.obtenernroobra
+004fc87d +03d Hospitales.exe ViewInternacion 235 +5 TFInternacion.Button8Click
+004a8fa8 +064 Hospitales.exe Controls               TControl.Click
+0049eef8 +01c Hospitales.exe StdCtrls               TButton.Click
+0049efec +00c Hospitales.exe StdCtrls               TButton.CNCommand
+004a8e10 +188 Hospitales.exe Controls               TControl.WndProc
+004abd5b +157 Hospitales.exe Controls               TWinControl.WndProc
+0049edbc +06c Hospitales.exe StdCtrls               TButtonControl.WndProc
+004a8be0 +024 Hospitales.exe Controls               TControl.Perform
+004abe93 +023 Hospitales.exe Controls               DoControlMsg
+004ac4eb +00b Hospitales.exe Controls               TWinControl.WMCommand
+004a8e10 +188 Hospitales.exe Controls               TControl.WndProc
+004abd5b +157 Hospitales.exe Controls               TWinControl.WndProc
+00483504 +014 Hospitales.exe Classes                StdWndProc
+004ab9d8 +02c Hospitales.exe Controls               TWinControl.MainWndProc
+00483504 +014 Hospitales.exe Classes                StdWndProc
+74d896c0 +047 user32.dll                            SendMessageW
+74d97945 +016 user32.dll                            CallWindowProcA
+004abe3f +0d7 Hospitales.exe Controls               TWinControl.DefaultHandler
+004a93b0 +010 Hospitales.exe Controls               TControl.WMLButtonUp
+004a8e10 +188 Hospitales.exe Controls               TControl.WndProc
+004abd5b +157 Hospitales.exe Controls               TWinControl.WndProc
+0049edbc +06c Hospitales.exe StdCtrls               TButtonControl.WndProc
+004ab9d8 +02c Hospitales.exe Controls               TWinControl.MainWndProc
+00483504 +014 Hospitales.exe Classes                StdWndProc
+74d87bc5 +00a user32.dll                            DispatchMessageA
+004c74b7 +083 Hospitales.exe Forms                  TApplication.ProcessMessage
+004c74d6 +00a Hospitales.exe Forms                  TApplication.HandleMessage
+004c76f6 +096 Hospitales.exe Forms                  TApplication.Run
+00500c5d +0a5 Hospitales.exe Hospitales       30 +9 initialization
+752d3378 +010 kernel32.dll                          BaseThreadInitThunk
+
+thread $884:
+76f81f8b +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+752d3378 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $894:
+76f81f8b +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+752d3378 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $8fc:
+76f81f8b +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+752d3378 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $1cc:
+76f801a2 +0e ntdll.dll     NtWaitForMultipleObjects
+752d3378 +10 kernel32.dll  BaseThreadInitThunk
+
+modules:
+00400000 Hospitales.exe                    \\VBOXSVR\Vuze_Downloads\Final\v1
+72030000 FaultRep.dll   6.1.7601.17514     C:\Windows\system32
+72760000 DNSAPI.dll     6.1.7601.17570     C:\Windows\system32
+72c40000 rasadhlp.dll   6.1.7600.16385     C:\Windows\system32
+72c50000 dhcpcsvc.DLL   6.1.7600.16385     C:\Windows\system32
+72ce0000 dhcpcsvc6.DLL  6.1.7601.17970     C:\Windows\system32
+72d20000 uxtheme.dll    6.1.7600.16385     C:\Windows\system32
+72db0000 IpHlpApi.dll   6.1.7601.17514     C:\Windows\system32
+72f10000 propsys.dll    7.0.7601.17514     C:\Windows\system32
+73010000 comctl32.DLL   6.10.7601.18837    C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d
+731b0000 version.dll    6.1.7600.16385     C:\Windows\system32
+731c0000 WINNSI.DLL     6.1.7600.16385     C:\Windows\system32
+731d0000 mswsock.dll    6.1.7601.18254     C:\Windows\system32
+735a0000 ntmarta.dll    6.1.7600.16385     C:\Windows\system32
+73740000 dwmapi.dll     6.1.7600.16385     C:\Windows\system32
+73ae0000 comctl32.dll   5.82.7601.18837    C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7601.18837_none_ec86b8d6858ec0bc
+73b70000 wsock32.dll    6.1.7600.16385     C:\Windows\system32
+748c0000 CRYPTBASE.dll  6.1.7600.16385     C:\Windows\syswow64
+748d0000 SspiCli.dll    6.1.7601.18869     C:\Windows\syswow64
+74930000 KERNELBASE.dll 6.1.7601.18869     C:\Windows\syswow64
+74980000 ADVAPI32.dll   6.1.7601.18869     C:\Windows\syswow64
+74a30000 MSASN1.dll     6.1.7601.17514     C:\Windows\syswow64
+74a40000 CLBCatQ.DLL    2001.12.8530.16385 C:\Windows\syswow64
+74ad0000 WLDAP32.dll    6.1.7601.17514     C:\Windows\syswow64
+74d70000 user32.dll     6.1.7601.17514     C:\Windows\syswow64
+74e70000 GDI32.dll      6.1.7601.18778     C:\Windows\syswow64
+74f10000 SETUPAPI.dll   6.1.7601.17514     C:\Windows\syswow64
+75120000 USP10.dll      1.626.7601.18454   C:\Windows\syswow64
+751e0000 SHLWAPI.dll    6.1.7601.17514     C:\Windows\syswow64
+75240000 WS2_32.dll     6.1.7601.17514     C:\Windows\syswow64
+75280000 sechost.dll    6.1.7601.18869     C:\Windows\SysWOW64
+752a0000 DEVOBJ.dll     6.1.7601.17621     C:\Windows\syswow64
+752c0000 kernel32.dll   6.1.7601.18869     C:\Windows\syswow64
+753d0000 psapi.dll      6.1.7600.16385     C:\Windows\syswow64
+753e0000 MSCTF.dll      6.1.7601.18731     C:\Windows\syswow64
+754b0000 CFGMGR32.dll   6.1.7601.17621     C:\Windows\syswow64
+75510000 LPK.dll        6.1.7601.18768     C:\Windows\syswow64
+758a0000 NSI.dll        6.1.7600.16385     C:\Windows\syswow64
+758b0000 msvcrt.dll     7.0.7601.17744     C:\Windows\syswow64
+75960000 comdlg32.dll   6.1.7601.17514     C:\Windows\syswow64
+759e0000 IMM32.DLL      6.1.7601.17514     C:\Windows\system32
+75a40000 oleaut32.dll   6.1.7601.18679     C:\Windows\syswow64
+75ad0000 CRYPT32.dll    6.1.7601.18741     C:\Windows\syswow64
+75c90000 ole32.dll      6.1.7601.17514     C:\Windows\syswow64
+75df0000 WINTRUST.dll   6.1.7601.18741     C:\Windows\syswow64
+75e20000 RPCRT4.dll     6.1.7601.18532     C:\Windows\syswow64
+75f10000 shell32.dll    6.1.7601.18762     C:\Windows\syswow64
+76f60000 ntdll.dll      6.1.7601.18869     C:\Windows\SysWOW64
+
+processes:
+000 Idle                   0 0   0
+004 System                 0 0   0
+10c smss.exe               0 0   0
+15c csrss.exe              0 0   0
+180 wininit.exe            0 0   0
+18c csrss.exe              1 0   0
+1b4 winlogon.exe           1 0   0
+1e0 services.exe           0 0   0
+1f0 lsass.exe              0 0   0
+1f8 lsm.exe                0 0   0
+25c svchost.exe            0 0   0
+29c VBoxService.exe        0 0   0
+2d0 svchost.exe            0 0   0
+304 svchost.exe            0 0   0
+378 svchost.exe            0 0   0
+3ac svchost.exe            0 0   0
+3d0 svchost.exe            0 0   0
+158 svchost.exe            0 0   0
+454 svchost.exe            0 0   0
+4b8 spoolsv.exe            0 0   0
+4dc svchost.exe            0 0   0
+548 svchost.exe            0 0   0
+578 svchost.exe            0 0   0
+7b0 taskhost.exe           1 17  16  normal
+7e4 dwm.exe                1 9   2   normal
+7f0 explorer.exe           1 475 328 normal
+72c VBoxTray.exe           1 12  14  normal
+84c jusched.exe            1 12  6   normal C:\Program Files (x86)\Java\jre1.6.0_02\bin
+90c SearchIndexer.exe      0 0   0
+988 wmpnetwk.exe           0 0   0
+a78 svchost.exe            0 0   0
+41c svchost.exe            0 0   0
+24c wuauclt.exe            1 12  7   normal
+870 TrustedInstaller.exe   0 0   0
+610 taskhost.exe           1 0   0
+448 delphi32.exe           1 0   0
+9f4 SearchProtocolHost.exe 0 0   0
+250 SearchFilterHost.exe   0 0   0
+248 Hospitales.exe         1 151 129 normal \\VBOXSVR\Vuze_Downloads\Final\v1
+818 audiodg.exe            0 0   0
+
+hardware:
++ Batteries
+  - Microsoft AC Adapter
+  - Microsoft ACPI-Compliant Control Method Battery
+  - Microsoft Composite Battery
++ Computer
+  - ACPI x64-based PC
++ Disk drives
+  - VBOX HARDDISK ATA Device
++ Display adapters
+  - VirtualBox Graphics Adapter (driver 4.3.10.0)
++ DVD/CD-ROM drives
+  - VBOX CD-ROM ATA Device
++ Human Interface Devices
+  - USB Input Device
++ IDE ATA/ATAPI controllers
+  - ATA Channel 0
+  - ATA Channel 0
+  - ATA Channel 1
+  - Intel(R) 82371AB/EB PCI Bus Master IDE Controller
+  - Standard AHCI 1.0 Serial ATA Controller
++ Keyboards
+  - Standard PS/2 Keyboard
++ Mice and other pointing devices
+  - HID-compliant mouse
+  - Microsoft PS/2 Mouse
++ Monitors
+  - Generic Non-PnP Monitor
++ Network adapters
+  - Intel(R) PRO/1000 MT Desktop Adapter
+  - Microsoft ISATAP Adapter
+  - Microsoft Teredo Tunneling Adapter
+  - WAN Miniport (IKEv2)
+  - WAN Miniport (IP)
+  - WAN Miniport (IPv6)
+  - WAN Miniport (L2TP)
+  - WAN Miniport (Network Monitor)
+  - WAN Miniport (PPPOE)
+  - WAN Miniport (PPTP)
+  - WAN Miniport (SSTP)
++ Ports (COM & LPT)
+  - Printer Port (LPT1)
++ Processors
+  - Intel(R) Core(TM) i7-4578U CPU @ 3.00GHz
++ Sound, video and game controllers
+  - High Definition Audio Device
++ Storage volume shadow copies
+  - Generic volume shadow copy
++ System devices
+  - ACPI Fixed Feature Button
+  - Composite Bus Enumerator
+  - Direct memory access controller
+  - File as Volume Driver
+  - High Definition Audio Controller
+  - Intel 82371SB PCI to ISA bridge
+  - Intel 82441FX Pentium(R) Pro Processor to PCI bridge
+  - Microsoft ACPI-Compliant System
+  - Microsoft System Management BIOS Driver
+  - Microsoft Virtual Drive Enumerator Driver
+  - PCI bus
+  - Plug and Play Software Device Enumerator
+  - Printer Port Logical Interface
+  - Programmable interrupt controller
+  - Remote Desktop Device Redirector Bus
+  - System timer
+  - Terminal Server Keyboard Driver
+  - Terminal Server Mouse Driver
+  - UMBus Enumerator
+  - UMBus Root Bus Enumerator
+  - VirtualBox Device (driver 4.3.10.0)
+  - Volume Manager
++ Universal Serial Bus controllers
+  - Intel(R) 82801FB/FBM USB2 Enhanced Host Controller - 265C
+  - Standard OpenHCD USB Host Controller
+  - USB Root Hub
+  - USB Root Hub
+
+cpu registers:
+eax = 00000000
+ebx = 00000001
+ecx = 00000000
+edx = 00000000
+esi = 0049eedc
+edi = 0018f730
+eip = 004ccf20
+esp = 0018f594
+ebp = 0018f5b4
+
+stack dump:
+0018f594  82 c8 4f 00 b0 f8 18 00 - b0 40 40 00 b4 f5 18 00  ..O......@@.....
+0018f5a4  dc ee 49 00 18 bf 2f 00 - 00 00 00 00 98 66 2f 00  ..I.../......f/.
+0018f5b4  f4 f6 18 00 ae 8f 4a 00 - 18 bf 2f 00 fd ee 49 00  ......J.../...I.
+0018f5c4  30 f7 18 00 f1 ef 49 00 - 18 bf 2f 00 13 8e 4a 00  0.....I.../...J.
+0018f5d4  30 f7 18 00 30 f7 18 00 - 18 bf 2f 00 e0 7c 70 00  0...0...../..|p.
+0018f5e4  10 f6 18 00 7c f5 18 00 - 54 01 10 00 b4 f6 18 00  ....|...T.......
+0018f5f4  05 1a fd 76 3f 19 21 01 - fe ff ff ff cc e3 f8 76  ...v?.!........v
+0018f604  32 e1 f8 76 e8 f6 18 00 - f0 f6 18 00 00 00 00 00  2..v............
+0018f614  3c f6 18 00 30 02 df 74 - 22 52 03 89 88 f6 18 00  <...0..t"R......
+0018f624  91 6d d8 74 51 6d d8 74 - aa a4 1b 89 15 02 00 00  .m.tQm.t........
+0018f634  d8 a4 fd 76 98 f8 18 00 - 24 00 00 00 01 00 00 00  ...v....$.......
+0018f644  00 00 00 00 00 00 00 00 - 70 00 00 00 ff ff ff ff  ........p.......
+0018f654  ff ff ff ff 00 00 00 00 - 00 00 70 00 98 74 13 04  ..........p..t..
+0018f664  02 00 00 00 20 00 00 00 - 30 00 5a 00 71 02 00 00  .... ...0.Z.q...
+0018f674  00 00 00 00 c4 f6 18 00 - 92 e7 f8 76 c0 6f 13 04  ...........v.o..
+0018f684  01 00 00 00 90 74 13 04 - a4 f6 18 00 63 e0 f8 76  .....t......c..v
+0018f694  f0 f6 18 00 f0 f6 18 00 - 00 00 00 00 90 74 13 04  .............t..
+0018f6a4  b8 f6 18 00 e8 e6 f8 76 - 00 00 70 00 00 00 00 00  .......v..p.....
+0018f6b4  98 74 13 04 c8 f6 18 00 - bf e6 f8 76 98 74 13 04  .t.........v.t..
+0018f6c4  fe ff ff ff 1c f7 18 00 - aa ed 2e 75 f0 f6 18 00  ...........u....
+
+disassembling:
+004ccf20     public SharedClasses.ObraSocial.obtenernroobra:  ; function entry point
+004ccf20 619 > mov     edx, [eax+4]
+004ccf23       test    edx, edx
+004ccf25       jz      loc_4ccf29
+004ccf27 621   mov     ecx, edx
+004ccf29       mov     eax, ecx
+[...]
+
+date/time          : 2015-07-02, 19:29:10, 586ms
+computer name      : KROSTI-PC
+user name          : krosti
+registered owner   : Windows User
+operating system   : Windows 7 x64 Service Pack 1 build 7601
+system language    : English
+system up time     : 4 hours 47 minutes
+program up time    : 1 second
+processor          : Intel(R) Core(TM) i7-4578U CPU @ 3.00GHz
+physical memory    : 157/512 MB (free/total)
+free disk space    : (C:) 5.74 GB
+display mode       : 1920x1014, 32 bit
+process id         : $86c
+allocated memory   : 28.47 MB
+largest free block : 1.71 GB
+executable         : Hospitales.exe
+exec. date/time    : 2015-07-02 19:28
+compiled with      : Delphi 7
+madExcept version  : 4.0.12
+callstack crc      : $43ffed6d, $f175373e, $f175373e
+exception number   : 1
+exception class    : EAccessViolation
+exception message  : Access violation at address 004CCF20 in module 'Hospitales.exe'. Read of address 00000004.
+
+main thread ($b3c):
+004ccf20 +000 Hospitales.exe SharedClasses   619 +0 ObraSocial.obtenernroobra
+004fc39f +037 Hospitales.exe ViewInternacion 113 +5 ActualizarComboOS
+004fc414 +018 Hospitales.exe ViewInternacion 125 +2 TFInternacion.Button1Click
+004a8fa8 +064 Hospitales.exe Controls               TControl.Click
+0049eef8 +01c Hospitales.exe StdCtrls               TButton.Click
+0049efec +00c Hospitales.exe StdCtrls               TButton.CNCommand
+004a8e10 +188 Hospitales.exe Controls               TControl.WndProc
+004abd5b +157 Hospitales.exe Controls               TWinControl.WndProc
+0049edbc +06c Hospitales.exe StdCtrls               TButtonControl.WndProc
+004a8be0 +024 Hospitales.exe Controls               TControl.Perform
+004abe93 +023 Hospitales.exe Controls               DoControlMsg
+004ac4eb +00b Hospitales.exe Controls               TWinControl.WMCommand
+004c3148 +02c Hospitales.exe Forms                  TCustomForm.WMCommand
+004a8e10 +188 Hospitales.exe Controls               TControl.WndProc
+004abd5b +157 Hospitales.exe Controls               TWinControl.WndProc
+004c11a1 +421 Hospitales.exe Forms                  TCustomForm.WndProc
+00483504 +014 Hospitales.exe Classes                StdWndProc
+004ab9d8 +02c Hospitales.exe Controls               TWinControl.MainWndProc
+00483504 +014 Hospitales.exe Classes                StdWndProc
+74d896c0 +047 user32.dll                            SendMessageW
+74d97945 +016 user32.dll                            CallWindowProcA
+004abe3f +0d7 Hospitales.exe Controls               TWinControl.DefaultHandler
+004a93b0 +010 Hospitales.exe Controls               TControl.WMLButtonUp
+004a8e10 +188 Hospitales.exe Controls               TControl.WndProc
+004abd5b +157 Hospitales.exe Controls               TWinControl.WndProc
+0049edbc +06c Hospitales.exe StdCtrls               TButtonControl.WndProc
+004ab9d8 +02c Hospitales.exe Controls               TWinControl.MainWndProc
+00483504 +014 Hospitales.exe Classes                StdWndProc
+74d87bc5 +00a user32.dll                            DispatchMessageA
+004c74b7 +083 Hospitales.exe Forms                  TApplication.ProcessMessage
+004c74d6 +00a Hospitales.exe Forms                  TApplication.HandleMessage
+004c76f6 +096 Hospitales.exe Forms                  TApplication.Run
+00500c65 +0a5 Hospitales.exe Hospitales       30 +9 initialization
+752d3378 +010 kernel32.dll                          BaseThreadInitThunk
+
+thread $954:
+76f81f8b +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+752d3378 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $bc:
+76f81f8b +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+752d3378 +10 kernel32.dll  BaseThreadInitThunk
+
+modules:
+00400000 Hospitales.exe                    \\VBOXSVR\Vuze_Downloads\Final\v1
+72030000 FaultRep.dll   6.1.7601.17514     C:\Windows\system32
+72d20000 uxtheme.dll    6.1.7600.16385     C:\Windows\system32
+72f10000 propsys.dll    7.0.7601.17514     C:\Windows\system32
+73010000 comctl32.DLL   6.10.7601.18837    C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d
+731b0000 version.dll    6.1.7600.16385     C:\Windows\system32
+735a0000 ntmarta.dll    6.1.7600.16385     C:\Windows\system32
+73740000 dwmapi.dll     6.1.7600.16385     C:\Windows\system32
+73ae0000 comctl32.dll   5.82.7601.18837    C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7601.18837_none_ec86b8d6858ec0bc
+73b70000 wsock32.dll    6.1.7600.16385     C:\Windows\system32
+748c0000 CRYPTBASE.dll  6.1.7600.16385     C:\Windows\syswow64
+748d0000 SspiCli.dll    6.1.7601.18869     C:\Windows\syswow64
+74930000 KERNELBASE.dll 6.1.7601.18869     C:\Windows\syswow64
+74980000 ADVAPI32.dll   6.1.7601.18869     C:\Windows\syswow64
+74a40000 CLBCatQ.DLL    2001.12.8530.16385 C:\Windows\syswow64
+74ad0000 WLDAP32.dll    6.1.7601.17514     C:\Windows\syswow64
+74d70000 user32.dll     6.1.7601.17514     C:\Windows\syswow64
+74e70000 GDI32.dll      6.1.7601.18778     C:\Windows\syswow64
+74f10000 SETUPAPI.dll   6.1.7601.17514     C:\Windows\syswow64
+75120000 USP10.dll      1.626.7601.18454   C:\Windows\syswow64
+751e0000 SHLWAPI.dll    6.1.7601.17514     C:\Windows\syswow64
+75240000 WS2_32.dll     6.1.7601.17514     C:\Windows\syswow64
+75280000 sechost.dll    6.1.7601.18869     C:\Windows\SysWOW64
+752a0000 DEVOBJ.dll     6.1.7601.17621     C:\Windows\syswow64
+752c0000 kernel32.dll   6.1.7601.18869     C:\Windows\syswow64
+753e0000 MSCTF.dll      6.1.7601.18731     C:\Windows\syswow64
+754b0000 CFGMGR32.dll   6.1.7601.17621     C:\Windows\syswow64
+75510000 LPK.dll        6.1.7601.18768     C:\Windows\syswow64
+758a0000 NSI.dll        6.1.7600.16385     C:\Windows\syswow64
+758b0000 msvcrt.dll     7.0.7601.17744     C:\Windows\syswow64
+75960000 comdlg32.dll   6.1.7601.17514     C:\Windows\syswow64
+759e0000 IMM32.DLL      6.1.7601.17514     C:\Windows\system32
+75a40000 oleaut32.dll   6.1.7601.18679     C:\Windows\syswow64
+75c90000 ole32.dll      6.1.7601.17514     C:\Windows\syswow64
+75e20000 RPCRT4.dll     6.1.7601.18532     C:\Windows\syswow64
+75f10000 shell32.dll    6.1.7601.18762     C:\Windows\syswow64
+76f60000 ntdll.dll      6.1.7601.18869     C:\Windows\SysWOW64
+
+processes:
+000 Idle                   0 0   0
+004 System                 0 0   0
+10c smss.exe               0 0   0
+15c csrss.exe              0 0   0
+180 wininit.exe            0 0   0
+18c csrss.exe              1 0   0
+1b4 winlogon.exe           1 0   0
+1e0 services.exe           0 0   0
+1f0 lsass.exe              0 0   0
+1f8 lsm.exe                0 0   0
+25c svchost.exe            0 0   0
+29c VBoxService.exe        0 0   0
+2d0 svchost.exe            0 0   0
+304 svchost.exe            0 0   0
+378 svchost.exe            0 0   0
+3ac svchost.exe            0 0   0
+3d0 svchost.exe            0 0   0
+158 svchost.exe            0 0   0
+454 svchost.exe            0 0   0
+4b8 spoolsv.exe            0 0   0
+4dc svchost.exe            0 0   0
+548 svchost.exe            0 0   0
+578 svchost.exe            0 0   0
+7b0 taskhost.exe           1 17  16  normal
+7e4 dwm.exe                1 9   2   normal
+7f0 explorer.exe           1 479 333 normal
+72c VBoxTray.exe           1 12  14  normal
+84c jusched.exe            1 12  6   normal C:\Program Files (x86)\Java\jre1.6.0_02\bin
+90c SearchIndexer.exe      0 0   0
+988 wmpnetwk.exe           0 0   0
+a78 svchost.exe            0 0   0
+41c svchost.exe            0 0   0
+24c wuauclt.exe            1 12  6   normal
+870 TrustedInstaller.exe   0 0   0
+610 taskhost.exe           1 0   0
+448 delphi32.exe           1 0   0
+a18 Hospitales.exe         1 0   0
+710 SearchProtocolHost.exe 0 0   0
+7dc SearchFilterHost.exe   0 0   0
+86c Hospitales.exe         1 147 129 normal \\VBOXSVR\Vuze_Downloads\Final\v1
+b1c audiodg.exe            0 0   0
+
+hardware:
++ Batteries
+  - Microsoft AC Adapter
+  - Microsoft ACPI-Compliant Control Method Battery
+  - Microsoft Composite Battery
++ Computer
+  - ACPI x64-based PC
++ Disk drives
+  - VBOX HARDDISK ATA Device
++ Display adapters
+  - VirtualBox Graphics Adapter (driver 4.3.10.0)
++ DVD/CD-ROM drives
+  - VBOX CD-ROM ATA Device
++ Human Interface Devices
+  - USB Input Device
++ IDE ATA/ATAPI controllers
+  - ATA Channel 0
+  - ATA Channel 0
+  - ATA Channel 1
+  - Intel(R) 82371AB/EB PCI Bus Master IDE Controller
+  - Standard AHCI 1.0 Serial ATA Controller
++ Keyboards
+  - Standard PS/2 Keyboard
++ Mice and other pointing devices
+  - HID-compliant mouse
+  - Microsoft PS/2 Mouse
++ Monitors
+  - Generic Non-PnP Monitor
++ Network adapters
+  - Intel(R) PRO/1000 MT Desktop Adapter
+  - Microsoft ISATAP Adapter
+  - Microsoft Teredo Tunneling Adapter
+  - WAN Miniport (IKEv2)
+  - WAN Miniport (IP)
+  - WAN Miniport (IPv6)
+  - WAN Miniport (L2TP)
+  - WAN Miniport (Network Monitor)
+  - WAN Miniport (PPPOE)
+  - WAN Miniport (PPTP)
+  - WAN Miniport (SSTP)
++ Ports (COM & LPT)
+  - Printer Port (LPT1)
++ Processors
+  - Intel(R) Core(TM) i7-4578U CPU @ 3.00GHz
++ Sound, video and game controllers
+  - High Definition Audio Device
++ Storage volume shadow copies
+  - Generic volume shadow copy
++ System devices
+  - ACPI Fixed Feature Button
+  - Composite Bus Enumerator
+  - Direct memory access controller
+  - File as Volume Driver
+  - High Definition Audio Controller
+  - Intel 82371SB PCI to ISA bridge
+  - Intel 82441FX Pentium(R) Pro Processor to PCI bridge
+  - Microsoft ACPI-Compliant System
+  - Microsoft System Management BIOS Driver
+  - Microsoft Virtual Drive Enumerator Driver
+  - PCI bus
+  - Plug and Play Software Device Enumerator
+  - Printer Port Logical Interface
+  - Programmable interrupt controller
+  - Remote Desktop Device Redirector Bus
+  - System timer
+  - Terminal Server Keyboard Driver
+  - Terminal Server Mouse Driver
+  - UMBus Enumerator
+  - UMBus Root Bus Enumerator
+  - VirtualBox Device (driver 4.3.10.0)
+  - Volume Manager
++ Universal Serial Bus controllers
+  - Intel(R) 82801FB/FBM USB2 Enhanced Host Controller - 265C
+  - Standard OpenHCD USB Host Controller
+  - USB Root Hub
+  - USB Root Hub
+
+cpu registers:
+eax = 00000000
+ebx = 00000001
+ecx = 00000000
+edx = 00000000
+esi = 0049eedc
+edi = 0018f6fc
+eip = 004ccf20
+esp = 0018f554
+ebp = 0018f570
+
+stack dump:
+0018f554  a4 c3 4f 00 b0 f8 18 00 - b0 40 40 00 70 f5 18 00  ..O......@@.p...
+0018f564  dc ee 49 00 a0 b1 fd 01 - 00 00 00 00 80 f5 18 00  ..I.............
+0018f574  19 c4 4f 00 80 f5 18 00 - 98 66 ff 01 c0 f6 18 00  ..O......f......
+0018f584  ae 8f 4a 00 a0 b1 fd 01 - fd ee 49 00 fc f6 18 00  ..J.......I.....
+0018f594  f1 ef 49 00 a0 b1 fd 01 - 13 8e 4a 00 fc f6 18 00  ..I.......J.....
+0018f5a4  fc f6 18 00 a0 b1 fd 01 - 80 f6 18 00 05 1a fd 76  ...............v
+0018f5b4  50 01 75 00 05 00 00 05 - f3 3c f9 76 47 00 00 47  P.u......<.vG..G
+0018f5c4  18 00 00 00 40 00 00 00 - aa 45 80 03 03 00 00 00  ....@....E......
+0018f5d4  b4 f6 18 00 18 00 00 00 - 47 00 00 00 00 00 00 00  ........G.......
+0018f5e4  02 34 20 16 18 00 00 00 - bc 03 27 00 88 8f 78 00  .4 .......'...x.
+0018f5f4  00 00 00 00 00 00 00 00 - d8 a4 fd 76 7c 01 75 00  ...........v|.u.
+0018f604  00 00 00 00 50 01 75 00 - d8 a4 fd 76 20 f6 18 00  ....P.u....v ...
+0018f614  b0 45 80 03 b0 4d 80 03 - 14 1f 68 4a 18 00 00 00  .E...M....hJ....
+0018f624  00 00 00 00 51 6d 00 01 - 00 00 00 00 c0 00 00 00  ....Qm..........
+0018f634  20 00 01 01 70 f5 18 00 - bc f6 18 00 d8 f6 18 00   ...p...........
+0018f644  05 1a fd 76 39 39 f8 00 - fe ff ff ff ca 38 f9 76  ...v99.......8.v
+0018f654  c2 34 f9 76 00 00 00 00 - b0 45 80 03 bc f6 18 00  .4.v.....E......
+0018f664  bc f6 18 00 00 00 00 00 - a8 45 80 03 84 f6 18 00  .........E......
+0018f674  e8 e6 f8 76 00 00 75 00 - 00 00 00 00 b0 45 80 03  ...v..u......E..
+0018f684  94 f6 18 00 bf e6 f8 76 - b0 45 80 03 fe ff ff ff  .......v.E......
+
+disassembling:
+004ccf20     public SharedClasses.ObraSocial.obtenernroobra:  ; function entry point
+004ccf20 619 > mov     edx, [eax+4]
+004ccf23       test    edx, edx
+004ccf25       jz      loc_4ccf29
+004ccf27 621   mov     ecx, edx
+004ccf29       mov     eax, ecx
+[...]
+
