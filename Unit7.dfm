@@ -1,6 +1,6 @@
 object FDatos: TFDatos
-  Left = 283
-  Top = 271
+  Left = 300
+  Top = 189
   Width = 1150
   Height = 551
   Caption = 'Cargar datos iniciales'
@@ -104,16 +104,16 @@ object FDatos: TFDatos
     object Label3: TLabel
       Left = 8
       Top = 56
-      Width = 54
+      Width = 63
       Height = 13
-      Caption = 'Enfermera:'
+      Caption = 'Enfermera n:'
     end
     object Label4: TLabel
       Left = 8
       Top = 80
-      Width = 39
+      Width = 48
       Height = 13
-      Caption = 'Auxiliar:'
+      Caption = 'Auxiliar n:'
     end
     object Edit1: TEdit
       Left = 80
@@ -123,18 +123,20 @@ object FDatos: TFDatos
       TabOrder = 0
     end
     object Edit2: TEdit
-      Left = 80
+      Left = 96
       Top = 56
       Width = 81
       Height = 19
-      TabOrder = 1
+      TabOrder = 2
+      Visible = False
     end
     object Edit3: TEdit
-      Left = 80
+      Left = 96
       Top = 80
       Width = 81
       Height = 19
-      TabOrder = 2
+      TabOrder = 4
+      Visible = False
     end
     object Button1: TButton
       Left = 96
@@ -142,8 +144,24 @@ object FDatos: TFDatos
       Width = 65
       Height = 25
       Caption = 'Guardar'
-      TabOrder = 3
+      TabOrder = 5
       OnClick = Button1Click
+    end
+    object listaEnfermeras3: TComboBox
+      Left = 80
+      Top = 56
+      Width = 81
+      Height = 21
+      ItemHeight = 13
+      TabOrder = 1
+    end
+    object listaAuxiliares1: TComboBox
+      Left = 80
+      Top = 80
+      Width = 81
+      Height = 21
+      ItemHeight = 13
+      TabOrder = 3
     end
   end
   object GroupBox2: TGroupBox
@@ -207,18 +225,20 @@ object FDatos: TFDatos
       TabOrder = 0
     end
     object Edit5: TEdit
-      Left = 80
+      Left = 96
       Top = 56
       Width = 81
       Height = 19
-      TabOrder = 2
+      TabOrder = 4
+      Visible = False
     end
     object Edit6: TEdit
-      Left = 256
+      Left = 280
       Top = 32
       Width = 81
       Height = 19
-      TabOrder = 1
+      TabOrder = 2
+      Visible = False
     end
     object Button2: TButton
       Left = 272
@@ -226,34 +246,59 @@ object FDatos: TFDatos
       Width = 65
       Height = 25
       Caption = 'Guardar'
-      TabOrder = 6
+      TabOrder = 9
       OnClick = Button2Click
     end
     object Edit7: TEdit
-      Left = 80
+      Left = 96
       Top = 80
       Width = 81
       Height = 19
-      TabOrder = 4
+      TabOrder = 7
+      Visible = False
     end
     object Edit19: TEdit
       Left = 256
       Top = 56
       Width = 81
       Height = 19
-      TabOrder = 3
+      TabOrder = 5
     end
     object ComboBox1: TComboBox
       Left = 80
       Top = 120
-      Width = 121
+      Width = 169
       Height = 21
       ItemHeight = 13
-      TabOrder = 5
+      TabOrder = 8
       Items.Strings = (
         'Internacion Comun'
         'Terapia Intermedia'
         'Terapia Intensiva')
+    end
+    object listaEnfermeras1: TComboBox
+      Left = 80
+      Top = 56
+      Width = 81
+      Height = 21
+      ItemHeight = 13
+      TabOrder = 3
+    end
+    object listaEnfermeras2: TComboBox
+      Left = 80
+      Top = 80
+      Width = 81
+      Height = 21
+      ItemHeight = 13
+      TabOrder = 6
+    end
+    object listaAuxiliares2: TComboBox
+      Left = 256
+      Top = 32
+      Width = 81
+      Height = 21
+      ItemHeight = 13
+      TabOrder = 1
     end
   end
   object GroupBox5: TGroupBox
@@ -890,18 +935,19 @@ object FDatos: TFDatos
       TabOrder = 1
     end
     object Edit48: TEdit
-      Left = 88
+      Left = 104
       Top = 76
       Width = 80
       Height = 19
-      TabOrder = 2
+      TabOrder = 3
+      Visible = False
     end
     object Edit49: TEdit
       Left = 88
       Top = 100
       Width = 80
       Height = 19
-      TabOrder = 3
+      TabOrder = 4
     end
     object Button10: TButton
       Left = 96
@@ -909,8 +955,17 @@ object FDatos: TFDatos
       Width = 73
       Height = 25
       Caption = 'Guardar'
-      TabOrder = 4
+      TabOrder = 5
       OnClick = Button10Click
+    end
+    object listaMedicos1: TComboBox
+      Left = 88
+      Top = 75
+      Width = 81
+      Height = 21
+      BevelEdges = [beLeft, beTop]
+      ItemHeight = 13
+      TabOrder = 2
     end
   end
   object GroupBox12: TGroupBox
@@ -1052,8 +1107,8 @@ object FDatos: TFDatos
       TabOrder = 1
     end
     object Button4: TButton
-      Left = 96
-      Top = 128
+      Left = 112
+      Top = 120
       Width = 65
       Height = 25
       Caption = 'Guardar'

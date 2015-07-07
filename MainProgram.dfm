@@ -1,6 +1,6 @@
 object Inicial: TInicial
-  Left = 299
-  Top = 221
+  Left = 458
+  Top = 282
   Width = 693
   Height = 414
   Caption = 'Administracion de Hospitales - v1'
@@ -33613,7 +33613,7 @@ object Inicial: TInicial
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 0
+      TabOrder = 4
       OnClick = InternacionesBTNClick
     end
     object ConsultaIntrBTN: TButton
@@ -33622,7 +33622,7 @@ object Inicial: TInicial
       Width = 153
       Height = 33
       Caption = 'Consultar Internaci'#243'n'
-      TabOrder = 4
+      TabOrder = 2
       OnClick = ConsultaIntrBTNClick
     end
     object ConsultoriosBTN: TButton
@@ -33631,7 +33631,7 @@ object Inicial: TInicial
       Width = 153
       Height = 33
       Caption = 'Reservar Consultorio'
-      TabOrder = 3
+      TabOrder = 5
       OnClick = ConsultoriosBTNClick
     end
     object ConsultasPacientesBTN: TButton
@@ -33649,7 +33649,7 @@ object Inicial: TInicial
       Width = 153
       Height = 33
       Caption = 'Asignar Urgencias'
-      TabOrder = 5
+      TabOrder = 6
       OnClick = UrgenciasBTNClick
     end
     object CargaDatosBTN: TButton
@@ -33664,7 +33664,7 @@ object Inicial: TInicial
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 0
       OnClick = CargaDatosBTNClick
     end
     object VerPacientesBTN: TButton
@@ -33673,7 +33673,8 @@ object Inicial: TInicial
       Width = 153
       Height = 33
       Caption = 'Ver Pacientes'
-      TabOrder = 6
+      TabOrder = 3
+      OnClick = VerPacientesBTNClick
     end
   end
 end

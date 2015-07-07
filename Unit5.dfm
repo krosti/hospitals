@@ -1,8 +1,8 @@
 object FPaciente: TFPaciente
-  Left = 203
-  Top = 164
-  Width = 693
-  Height = 480
+  Left = 278
+  Top = 231
+  Width = 685
+  Height = 439
   Caption = 'Consultar Paciente'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -58,11 +58,11 @@ object FPaciente: TFPaciente
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 584
-    Top = 400
+    Left = 576
+    Top = 360
     Width = 89
     Height = 33
-    Caption = 'Salir'
+    Caption = 'Volver'
     TabOrder = 5
     OnClick = Button2Click
   end

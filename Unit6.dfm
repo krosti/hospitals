@@ -1,6 +1,6 @@
 object FConInter: TFConInter
-  Left = 179
-  Top = 165
+  Left = 501
+  Top = 211
   Width = 611
   Height = 456
   Caption = 'Consultar Internaci'#243'n'
@@ -31,7 +31,7 @@ object FConInter: TFConInter
     Top = 8
     Width = 73
     Height = 33
-    Caption = 'Salir'
+    Caption = 'Volver'
     TabOrder = 0
     OnClick = Button1Click
   end

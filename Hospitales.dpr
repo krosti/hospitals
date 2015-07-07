@@ -21,7 +21,7 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TMain, Main);
+  Application.CreateForm(TInicial, Main);
   Application.CreateForm(TFConsultorios, FConsultorios);
   Application.CreateForm(TFPaciente, FPaciente);
   Application.CreateForm(TFConInter, FConInter);

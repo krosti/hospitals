@@ -188,6 +188,7 @@ Pacientes = class(personas)
     function obtenernropac ():integer;
     function obtenerobrapac():integer;
     function obtenercatopac():integer;
+    function obtenerdnipac():LongInt;
 end;
 
 ObraSocial = class
@@ -306,8 +307,6 @@ end;
 
 function digitos(cad:string):boolean;
 function fecha(fa,ff:string):boolean;
-
-var IPac: integer;
 
 implementation
 
@@ -589,6 +588,7 @@ begin
   nro:=n2;
   Obra:=o;
   Cat:=c;
+  DNI:=d;
 end;
 
 function Pacientes.obtenernropac ():integer;
@@ -604,6 +604,10 @@ end;
 function Pacientes.obtenercatopac():integer;
 begin
   obtenercatopac:=cat;
+end;
+function Pacientes.obtenerdnipac():LongInt;
+begin
+  obtenerdnipac:=DNI;
 end;
 //FIN PACIENTES-----------------------------------------------------
 

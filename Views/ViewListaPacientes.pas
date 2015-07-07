@@ -4,14 +4,16 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, ValEdit, SharedClasses, StdCtrls, Buttons;
+  Dialogs, Grids, ValEdit, SharedClasses, Unit7, StdCtrls, Buttons;
 
 type
   TFormListaPacientes1 = class(TForm)
     listaPacientes1: TValueListEditor;
     Volver: TBitBtn;
-    procedure FormCreate(Sender: TObject);
+    btn1: TButton;
     procedure VolverClick(Sender: TObject);
+    procedure btn1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -27,33 +29,64 @@ uses MainProgram;
 
 {$R *.dfm}
 
-procedure TFormListaPacientes1.FormCreate(Sender: TObject);
-  var
-    ap,no:string;
-    i,nu,totalPacientes:integer;
-    pac:Pacientes;
-begin
-  i:=1;
-  totalPacientes := IPac;
-  While (totalPacientes > 0) and(i <= totalPacientes) do
-   begin
-    pac:=VPacientes[i];
-    ap:=pac.obtenerapellido;
-    If ap=edit2.text then
-      begin
-        nu:=pac.obtenernropac;
-        no:=pac.obtenernombre;
-        //Combobox5.Items.Add(inttostr(nu)+'- '+no+' - '+ap);
-        listaPacientes1.InsertRow(nu, no+' - '+ap, True);
-      end;
-    i:=i+1;
-   end;
-end;
-
 procedure TFormListaPacientes1.VolverClick(Sender: TObject);
 begin
   FormListaPacientes1.Hide;
   Main.Show;
+end;
+
+procedure TFormListaPacientes1.btn1Click(Sender: TObject);
+var
+    ap,no:string;
+    i,nu:integer;
+    pac:Pacientes;
+    dni:LongInt;
+
+begin
+  i := 1;
+
+  listaPacientes1.Strings.Clear;
+
+  While (IPac>0)and(i<=IPac) do
+   begin
+    pac:=VPacientes[i];
+    ap:=pac.obtenerapellido;
+    nu:=pac.obtenernropac;
+    no:=pac.obtenernombre;
+    dni:=pac.obtenerdnipac;
+
+    listaPacientes1.InsertRow(IntToStr(nu), IntToStr(dni)+' | '+no+' - '+ap, True);
+
+    i:=i+1;
+    end;
+end;
+
+
+procedure TFormListaPacientes1.FormShow(Sender: TObject);
+var
+    ap,no:string;
+    i,nu:integer;
+    pac:Pacientes;
+    dni:LongInt;
+
+begin
+  i := 1;
+
+  listaPacientes1.Strings.Clear;
+
+  While (IPac>0)and(i<=IPac) do
+   begin
+    pac:=VPacientes[i];
+    ap:=pac.obtenerapellido;
+    nu:=pac.obtenernropac;
+    no:=pac.obtenernombre;
+    dni:=pac.obtenerdnipac;
+
+    listaPacientes1.InsertRow(IntToStr(nu), IntToStr(dni)+' | '+no+' - '+ap, True);
+
+    i:=i+1;
+    end;
+
 end;
 
 end.

@@ -138,6 +138,12 @@ type
     CargaDummyData: TButton;
     helpbtn1: TSpeedButton;
     mdxcptnhndlr1: TMadExceptionHandler;
+    listaEnfermeras1: TComboBox;
+    listaEnfermeras2: TComboBox;
+    listaEnfermeras3: TComboBox;
+    listaAuxiliares1: TComboBox;
+    listaAuxiliares2: TComboBox;
+    listaMedicos1: TComboBox;
     procedure Button13Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
@@ -256,6 +262,21 @@ var
   d:longint;
   med:Medicos;
   ok:boolean;
+
+   procedure ActualizarComboMedicos;
+    var
+      md:Medicos;
+      i,nu:integer;
+    begin
+      i:=1;
+      listaMedicos1.Clear;
+      Repeat
+        md:=VMedicos[i];
+        nu:=md.obtenermatricula;
+        listaMedicos1.Items.Add(inttostr(nu));
+        i:=i+1;
+      until i>IMed;
+    end;
 begin
   // Tomo los valores de los edit
   ok:=true;
@@ -285,6 +306,7 @@ begin
       Med:=Medicos.crearmedico(d,a,n,f,l,m);
       // Almaceno en el vector el objeto creado
       VMedicos[IMed]:=Med;
+      ActualizarComboMedicos;
       showmessage('Carga correcta');
     end
   else
@@ -316,8 +338,8 @@ begin
 
   e:=edit47.text;
 
-  if digitos(edit48.text) then
-    m:=strtoint(edit48.text)
+  if listaMedicos1.ItemIndex <> -1 then
+    m:=strtoint(listaMedicos1.text)
   else
       ok:=false;
 
@@ -498,13 +520,15 @@ begin
   else
     ok:=false;
 
-  if digitos(edit2.text) then
-    e:=strtoint(edit2.text)
+  // enfermera nro
+  if listaEnfermeras3.ItemIndex <> -1 then
+    e:=strtoint(listaEnfermeras3.text)
   else
     ok:=false;
 
-  if digitos(edit3.text) then
-    a:=strtoint(edit3.text)
+  // aux nro
+  if listaAuxiliares1.ItemIndex <> -1 then
+    a:=strtoint(listaAuxiliares1.text)
   else
     ok:=false;
 
@@ -518,7 +542,7 @@ begin
       showmessage ('Sala cargada')
     end
     else
-      showmessage('Hay datos inv�lidos');
+      showmessage('Hay datos invalidos');
 
   Edit1.Text:='';
   Edit2.Text:='';
@@ -534,6 +558,26 @@ var
   d:longint;
   enf:Enfermeras;
   ok:boolean;
+
+  procedure ActualizarEnfermeras;
+    var
+      en:Enfermeras;
+      i,nu:integer;
+    begin
+      i:=1;
+      listaEnfermeras3.Clear;
+      listaEnfermeras2.Clear;
+      listaEnfermeras1.Clear;
+      Repeat
+        en:=VEnfermeras[i];
+        nu:=en.obtenernroenf;
+        listaEnfermeras3.Items.Add(inttostr(nu));
+        listaEnfermeras2.Items.Add(inttostr(nu));
+        listaEnfermeras1.Items.Add(inttostr(nu));
+        i:=i+1;
+      until i>IEnf;
+    end;
+
 begin
   // Tomo los valores de los edit
   ok:=true;
@@ -565,6 +609,7 @@ begin
       Enf:=Enfermeras.crearenfermera(d,a,n,f,l,nro);
       // Almaceno en el vector el objeto creado
       VEnfermeras[IEnf]:=Enf;
+      ActualizarEnfermeras;
       showmessage('Carga correcta');
     end
     else
@@ -588,6 +633,24 @@ var
   d:longint;
   aux:Auxiliares;
   ok:boolean;
+
+  procedure ActualizarComboAuxiliares;
+    var
+      au:Auxiliares;
+      i,nu:integer;
+    begin
+      i:=1;
+      listaAuxiliares1.Clear;
+      listaAuxiliares2.Clear;
+      Repeat
+        au:=VAuxiliares[i];
+        nu:=au.obtenernroaux;
+        listaAuxiliares1.Items.Add(inttostr(nu));
+        listaAuxiliares2.Items.Add(inttostr(nu));
+        i:=i+1;
+      until i>IAux;
+    end;
+
 begin
   // Tomo los valores de los edit
   ok:=true;
@@ -619,13 +682,14 @@ begin
       Aux:=Auxiliares.crearauxiliar(d,a,n,f,l,nro);
       // Almaceno en el vector el objeto creado
       VAuxiliares[IAux]:=Aux;
+      ActualizarComboAuxiliares;
       showmessage('Carga correcta');
     end
     else
       showmessage('Hay datos incorrectos');
 
   Edit28.Text:='';
-  Edit28.Text:='';
+  Edit29.Text:='';
   Edit31.Text:='';
   Edit32.Text:='';
   Edit33.Text:='';
@@ -701,18 +765,18 @@ begin
   else
     ok:=false;
 
-  if digitos(edit5.text) then
-    e1:=strtoint(edit5.text)
+  if listaEnfermeras1.ItemIndex <> -1 then
+    e1:=strtoint(listaEnfermeras1.text)
   else
     ok:=false;
 
-  if digitos(edit7.text) then
-    e2:=strtoint(edit7.text)
+  if listaEnfermeras2.ItemIndex <> -1 then
+    e2:=strtoint(listaEnfermeras2.text)
   else
     ok:=false;
 
-  if digitos(edit6.text) then
-    aux:=strtoint(edit6.text)
+  if listaAuxiliares2.ItemIndex <> -1 then
+    aux:=strtoint(listaAuxiliares2.text)
   else
     ok:=false;
 
@@ -792,14 +856,16 @@ procedure TFDatos.CargaDummyDataClick(Sender: TObject);
 var randomString: Integer;
 
 begin
-  // Medicos
+
   randomString:= Random(1000);
+
+  // Medicos
   Edit16.Text := 'Nombre0' + IntToStr(randomString);
   Edit17.Text := 'Apellido0' + IntToStr(randomString);
   Edit18.Text := '12322' + IntToStr(randomString);
   MaskEdit1.Text := '10/10/1958';
   Edit20.Text := '00' + IntToStr(randomString);
-  Edit21.Text := 'AA00' + IntToStr(randomString);
+  Edit21.Text := '00' + IntToStr(randomString);
 
   // Enfermeras
   Edit22.Text := 'Enf0' + IntToStr(randomString);
@@ -807,7 +873,40 @@ begin
   Edit25.Text := '12322' + IntToStr(randomString);
   MaskEdit2.Text := '10/10/1958';
   Edit26.Text := '00' + IntToStr(randomString);
-  Edit27.Text := 'AA00' + IntToStr(randomString);
+  Edit27.Text := '00' + IntToStr(randomString);
+
+  // Auxiliares
+  Edit33.Text := 'Enf0' + IntToStr(randomString);
+  Edit32.Text := 'EnfApellido0' + IntToStr(randomString);
+  Edit31.Text := '12322' + IntToStr(randomString);
+  MaskEdit3.Text := '10/10/1958';
+  Edit29.Text := '00' + IntToStr(randomString);
+  Edit28.Text := '00' + IntToStr(randomString);
+
+  // Secretarias
+  Edit39.Text := 'Enf0' + IntToStr(randomString);
+  Edit38.Text := 'EnfApellido0' + IntToStr(randomString);
+  Edit37.Text := '12322' + IntToStr(randomString);
+  MaskEdit4.Text := '10/10/1958';
+  Edit35.Text := '00' + IntToStr(randomString);
+  Edit34.Text := '00' + IntToStr(randomString);
+
+  // Obras Sociales
+  Edit40.Text := '001' + IntToStr(randomString);
+  Edit41.Text := 'obra social ' + IntToStr(randomString);
+  // Categorias Obras Sociales
+  Edit42.Text := '001' + IntToStr(randomString);
+  Edit43.Text := 'plan 1' + IntToStr(randomString);
+  Edit45.Text := '10';
+
+  // Salas Comunes
+  Edit1.Text := '001' + IntToStr(randomString);
+  Edit2.Text := '00' + IntToStr(randomString);
+  Edit3.Text := '00' + IntToStr(randomString);
+
+  // Salas Internacion
+  Edit4.Text := '001' + IntToStr(randomString);
+  
 end;
 
 procedure TFDatos.mdxcptnhndlr1Exception(const exceptIntf: IMEException;

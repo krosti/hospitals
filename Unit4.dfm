@@ -1,6 +1,6 @@
 object FConsultorios: TFConsultorios
-  Left = 203
-  Top = 165
+  Left = 495
+  Top = 249
   Width = 690
   Height = 480
   Caption = 'Reservar Consultorio'
@@ -79,7 +79,7 @@ object FConsultorios: TFConsultorios
     Width = 97
     Height = 25
     Caption = 'Reservar'
-    TabOrder = 0
+    TabOrder = 8
     OnClick = Button1Click
   end
   object ListBox1: TListBox
@@ -88,7 +88,7 @@ object FConsultorios: TFConsultorios
     Width = 121
     Height = 201
     ItemHeight = 13
-    TabOrder = 1
+    TabOrder = 3
   end
   object ComboBox1: TComboBox
     Left = 120
@@ -96,7 +96,7 @@ object FConsultorios: TFConsultorios
     Width = 89
     Height = 21
     ItemHeight = 13
-    TabOrder = 2
+    TabOrder = 1
     Text = '----------------'
   end
   object ComboBox2: TComboBox
@@ -105,16 +105,16 @@ object FConsultorios: TFConsultorios
     Width = 89
     Height = 21
     ItemHeight = 13
-    TabOrder = 3
+    TabOrder = 6
     Text = '----------------'
   end
   object Button2: TButton
-    Left = 592
+    Left = 584
     Top = 400
     Width = 81
     Height = 33
-    Caption = 'Salir'
-    TabOrder = 4
+    Caption = 'Volver'
+    TabOrder = 10
     OnClick = Button2Click
   end
   object ListBox2: TListBox
@@ -126,14 +126,14 @@ object FConsultorios: TFConsultorios
     Items.Strings = (
       '1. 8:00 a 8:30'
       '2. 8:30 a 9:00')
-    TabOrder = 5
+    TabOrder = 2
   end
   object Edit1: TEdit
     Left = 120
     Top = 208
     Width = 89
     Height = 21
-    TabOrder = 6
+    TabOrder = 7
   end
   object Button3: TButton
     Left = 536
@@ -141,7 +141,7 @@ object FConsultorios: TFConsultorios
     Width = 97
     Height = 33
     Caption = 'Cargar Datos '
-    TabOrder = 7
+    TabOrder = 0
     OnClick = Button3Click
   end
   object Button4: TButton
@@ -150,7 +150,7 @@ object FConsultorios: TFConsultorios
     Width = 73
     Height = 25
     Caption = 'Horarios'
-    TabOrder = 8
+    TabOrder = 5
     OnClick = Button4Click
   end
   object MaskEdit1: TMaskEdit
@@ -160,7 +160,7 @@ object FConsultorios: TFConsultorios
     Height = 21
     EditMask = '!99/99/0000;1;_'
     MaxLength = 10
-    TabOrder = 9
+    TabOrder = 4
     Text = '  /  /    '
   end
   object GroupBox1: TGroupBox
@@ -169,14 +169,14 @@ object FConsultorios: TFConsultorios
     Width = 441
     Height = 105
     Caption = 'Turnos Reservados'
-    TabOrder = 10
+    TabOrder = 9
     object ComboBox3: TComboBox
       Left = 16
       Top = 28
       Width = 89
       Height = 21
       ItemHeight = 13
-      TabOrder = 0
+      TabOrder = 1
       Text = '----------------'
     end
     object ListBox3: TListBox
@@ -185,7 +185,7 @@ object FConsultorios: TFConsultorios
       Width = 273
       Height = 65
       ItemHeight = 13
-      TabOrder = 1
+      TabOrder = 0
     end
     object Button5: TButton
       Left = 16

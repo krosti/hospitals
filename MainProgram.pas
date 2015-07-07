@@ -4,7 +4,7 @@ interface
 
 uses                           
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, SharedClasses, Unit7, ExtCtrls;
+  Dialogs, StdCtrls, Buttons, SharedClasses, Unit7, ExtCtrls, ViewListaPacientes;
 
 type
   TInicial = class(TForm)
@@ -37,6 +37,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure UrgenciasBTNClick(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
+    procedure VerPacientesBTNClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -220,6 +221,12 @@ end;
 procedure TInicial.BitBtn1Click(Sender: TObject);
 begin
   Main.Close;
+end;
+
+procedure TInicial.VerPacientesBTNClick(Sender: TObject);
+begin
+  FormListaPacientes1.Show;
+  Main.Hide;
 end;
 
 end.

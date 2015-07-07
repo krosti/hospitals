@@ -158,6 +158,7 @@ end;
 procedure TFInternacion.Button3Click(Sender: TObject);
 begin
 FInternacion.hide;
+GroupBox2.visible:=false;
 Main.show;
 end;
 
@@ -185,12 +186,23 @@ var
   d:longint;
   o,c,n2:integer;
   ok:boolean;
+
+  procedure limpiarCampos();
+  begin
+    Edit10.Clear;
+    Edit11.Clear;
+    Edit12.Clear;
+    MaskEdit3.Clear;
+    ComboBox2.ItemIndex := -1;
+    ComboBox3.ItemIndex := -1;
+    Label18.Caption := '';
+  end;
 begin
   //10/13
   //Tomo los datos
   ok:=true;
-  n:=edit10.Text;
-  a:=edit11.Text;
+  n:=Edit10.Text;
+  a:=Edit11.Text;
   f:=maskedit3.Text;
   If digitos (edit12.Text) then
     d := strtoint(edit12.text)
@@ -214,13 +226,14 @@ begin
             //Guardo
             VPacientes[IPac]:=paciente;
             showmessage('Paciente registrado');
+            limpiarCampos();
           end
-          else
-            showmessage('Debe generar el Nro. de paciente')
+        else
+          showmessage('Debe generar el Nro. de paciente')
       end;
     end
     else
-      showmessage('DNI inv�lido');
+      showmessage('DNI invalido');
 end;
 
 procedure TFInternacion.Button8Click(Sender: TObject);
@@ -648,6 +661,8 @@ begin
         //Verifica que ese paciente no est� internado
         If ok then
         begin
+
+          {validar aca si las fechas no vienen vacias}
           If not internado(np) then
             begin
               e:=false;

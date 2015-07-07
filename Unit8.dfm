@@ -1,6 +1,6 @@
 object AsigUrgencias: TAsigUrgencias
-  Left = 204
-  Top = 170
+  Left = 490
+  Top = 223
   Width = 693
   Height = 403
   Caption = 'AsigUrgencias'
@@ -105,7 +105,7 @@ object AsigUrgencias: TAsigUrgencias
     Top = 320
     Width = 113
     Height = 33
-    Caption = 'Salir'
+    Caption = 'Volver'
     TabOrder = 2
     OnClick = Button2Click
   end
