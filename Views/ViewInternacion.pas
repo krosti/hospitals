@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, SharedClasses, Unit7, Mask, WebAdapt, WebComp,
-  madExceptVcl;
+  madExceptVcl, jpeg, ExtCtrls;
 
 type
   TFInternacion = class(TForm)
@@ -55,7 +55,6 @@ type
     ComboBox3: TComboBox;
     MaskEdit3: TMaskEdit;
     CheckBox2: TCheckBox;
-    Button10: TButton;
     ComboBox4: TComboBox;
     GroupBox7: TGroupBox;
     Edit2: TEdit;
@@ -70,6 +69,8 @@ type
     CheckBox3: TCheckBox;
     lgnfrmdptr1: TLoginFormAdapter;
     mdxcptnhndlr1: TMadExceptionHandler;
+    catLabel: TLabel;
+    img1: TImage;
     procedure Button1Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
     procedure CheckBox1Click(Sender: TObject);
@@ -84,6 +85,7 @@ type
     procedure Button11Click(Sender: TObject);
     procedure CheckBox3Click(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -772,6 +774,33 @@ procedure TFInternacion.ComboBox2Change(Sender: TObject);
 
 begin
   ActualizazComboOSCat;
+end;
+
+procedure TFInternacion.FormShow(Sender: TObject);
+
+     procedure actualizarListaMedicos;
+      var
+        med:Medicos;
+        i,m:integer;
+      begin
+        i:=1;
+        ComboBox4.Clear;
+        While (IMed>=1) and (i<=IMed) do
+          begin
+            med:=VMedicos[i];
+            m:=med.obtenermatricula;
+            ComboBox4.Items.Add(inttostr(m));
+            i:=i+1;
+          end;
+      end;
+
+begin
+  //fecha inicio de internacion
+  MaskEdit1.Text:= DateToStr(Date);
+  //fecha finalizacion internacion
+  //MaskEdit2.Text:= DateToStr(Date);
+
+  actualizarListaMedicos;
 end;
 
 end.

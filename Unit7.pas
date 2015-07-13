@@ -144,6 +144,7 @@ type
     listaAuxiliares1: TComboBox;
     listaAuxiliares2: TComboBox;
     listaMedicos1: TComboBox;
+    listaSecreatias1: TComboBox;
     procedure Button13Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
@@ -343,8 +344,8 @@ begin
   else
       ok:=false;
 
-  if digitos(edit49.text) then
-    s:=strtoint(edit49.text)
+  if listaSecreatias1.ItemIndex <> -1 then
+    s:=strtoint(listaMedicos1.Text)
   else
     ok:=false;
 
@@ -427,9 +428,11 @@ var
     end;
 
 begin
+  ok:=true;
+  
   //Almacena los datos
-  if digitos (edit40.Text)then
-    nu:=strtoint(Edit40.text)
+  if digitos(Edit40.Text)then
+    nu:=strtoint(Edit40.Text)
   else
     ok:=false;
 
@@ -705,6 +708,22 @@ var
   d:longint;
   sec:Secretarias;
   ok:boolean;
+
+  procedure ActualizarComboSecretarias;
+    var
+      sec:Secretarias;
+      i,nu:integer;
+    begin
+      i:=1;
+      listaSecreatias1.Clear;
+
+      Repeat
+        sec:=VSecretarias[i];
+        nu:=sec.obtenernrosec;
+        listaSecreatias1.Items.Add(inttostr(nu));
+        i:=i+1;
+      until i>ISec;
+    end;
 begin
   // Tomo los valores de los edit
   ok:=true;
@@ -736,6 +755,7 @@ begin
       Sec:=Secretarias.crearsecretaria(d,a,n,f,l,nro);
       // Almaceno en el vector el objeto creado
       Vsecretarias[ISec]:=Sec;
+      ActualizarComboSecretarias;
       showmessage('Carga correcta');
     end
     else
@@ -794,7 +814,8 @@ begin
         tipo:=2;
 
   if ok then
-    if (edit5.text)<>(edit7.Text) then
+    // miro que no sean las mismas enfermeras
+    if (listaEnfermeras1.text)<>(listaEnfermeras2.Text) then
       begin
         //Creo el objeto
         Sint:=SInternaciones.crearsinter(nro,e1,e2,aux,camas,tipo);
@@ -828,10 +849,16 @@ begin
   begin
     PSC:=strtofloat(edit8.text);
     PSI:=strtofloat(edit9.text);
+
+    Edit8.Enabled := false;
+    Edit8.Color := clHighlight;
+    Edit9.Enabled := false;
+    Edit9.Color := clHighlight;
+
     showmessage('Precios establecidos');
   end
   else
-    showmessage ('Datos inv�lidos');
+    showmessage ('Datos invalidos');
 end;
 
 procedure TFDatos.MaskEdit5Change(Sender: TObject);

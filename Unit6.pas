@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, SharedClasses,Unit7, Mask;
+  Dialogs, StdCtrls, SharedClasses,Unit7, Mask, jpeg, ExtCtrls;
 
 type
   TFConInter = class(TForm)
@@ -39,6 +39,7 @@ type
     Label16: TLabel;
     Label18: TLabel;
     Label19: TLabel;
+    img1: TImage;
     procedure Button1Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);

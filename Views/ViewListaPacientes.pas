@@ -4,13 +4,16 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, ValEdit, SharedClasses, Unit7, StdCtrls, Buttons;
+  Dialogs, Grids, ValEdit, SharedClasses, Unit7, StdCtrls, Buttons, jpeg,
+  ExtCtrls;
 
 type
   TFormListaPacientes1 = class(TForm)
     listaPacientes1: TValueListEditor;
     Volver: TBitBtn;
     btn1: TButton;
+    img1: TImage;
+    lbl1: TLabel;
     procedure VolverClick(Sender: TObject);
     procedure btn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);

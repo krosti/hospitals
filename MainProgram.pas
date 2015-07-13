@@ -4,7 +4,8 @@ interface
 
 uses                           
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, SharedClasses, Unit7, ExtCtrls, ViewListaPacientes;
+  Dialogs, StdCtrls, Buttons, SharedClasses, Unit7, ExtCtrls, ViewListaPacientes,
+  jpeg;
 
 type
   TInicial = class(TForm)
@@ -29,6 +30,9 @@ type
     Label2: TLabel;
     Label3: TLabel;
     VerPacientesBTN: TButton;
+    img1: TImage;
+    consultas: TLabel;
+    lbl1: TLabel;
     procedure InternacionesBTNClick(Sender: TObject);
     procedure ConsultoriosBTNClick(Sender: TObject);
     procedure ConsultasPacientesBTNClick(Sender: TObject);

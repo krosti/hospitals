@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, SharedClasses, Unit7, Mask;
+  Dialogs, StdCtrls, SharedClasses, Unit7, Mask, jpeg, ExtCtrls;
 
 type
   TFConsultorios = class(TForm)
@@ -28,11 +28,14 @@ type
     ComboBox3: TComboBox;
     ListBox3: TListBox;
     Button5: TButton;
+    img1: TImage;
+    lbl1: TLabel;
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -141,24 +144,37 @@ var
   f:string[25];
 begin
   If (not digitos(Edit1.Text)) then
-  showmessage('DNI Inválido')
+    showmessage('DNI Inválido')
   else
-  If (Combobox1.ItemIndex<>-1) and (Combobox2.ItemIndex<>-1) then
-  begin
-    //Recupera la información
-    s:=strtoint(Edit1.text);
-    t:=strtoint(Combobox2.Text);
-    c:=strtoint(Combobox1.Text);
-    f:=MaskEdit1.Text;
-    //Incrementa el índice
-    IPed:=IPed+1;
-    //Almacena en el objeto
-    ped:=Pedidos.crearpedido(t,c,s,f);
-    //Almacena en el vector
-    VPedidos[IPed]:=ped;
-  end
-  else
-    showmessage('Seleccione consultorio y horario');
+    begin
+      If (Combobox1.ItemIndex<>-1) and (Combobox2.ItemIndex<>-1) then
+      begin
+        //Recupera la información
+        s:=strtoint(Edit1.text);
+        t:=strtoint(Combobox2.Text);
+        c:=strtoint(Combobox1.Text);
+        f:=MaskEdit1.Text;
+        //Incrementa el índice
+        IPed:=IPed+1;
+        //Almacena en el objeto
+        ped:=Pedidos.crearpedido(t,c,s,f);
+        //Almacena en el vector
+        VPedidos[IPed]:=ped;
+        showmessage('Consultorio Reservado!' + #13#10 +'Consultorio:'+ IntToStr(c));
+
+        // trigger Consultar los turnos con este valor
+        ComboBox3.ItemIndex := ComboBox1.ItemIndex;
+        Button5.Click;
+
+        // clean
+        ComboBox1.ItemIndex := -1;
+        MaskEdit1.Text := '';
+        ComboBox2.ItemIndex := -1;
+        Edit1.Text := '';
+      end
+      else
+        showmessage('Seleccione consultorio y horario');
+    end;
 end;
 
 procedure TFConsultorios.Button5Click(Sender: TObject);
@@ -189,6 +205,32 @@ begin
   i:=i+1;
   end;
   end;
+end;
+
+procedure TFConsultorios.FormShow(Sender: TObject);
+var
+  i,n:integer;
+  e:string[20];
+  cons:Consultorios;
+begin
+  ListBox1.Clear;
+  ComboBox1.Clear;
+  Combobox2.Clear;
+  Combobox3.Clear;
+
+// Recorre el vector de consultorios para mostrarlos
+  i:=1;
+  While (ICns>0)and(i<=ICns) do
+    begin
+      cons:=VConsultorios[i];
+      n:=cons.obtenernrocons;
+      e:=cons.obtenerespecialidad;
+      // Recupera los datos y luego los imprime
+      Listbox1.Items.Add(inttostr(n)+': '+e);
+      Combobox1.Items.Add(inttostr(n));
+      Combobox3.Items.Add(inttostr(n));
+      i:=i+1;
+    end;
 end;
 
 end.

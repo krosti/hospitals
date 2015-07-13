@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, SharedClasses,Unit7;
+  Dialogs, StdCtrls, SharedClasses,Unit7, jpeg, ExtCtrls;
 
 type
   TFPaciente = class(TForm)
@@ -42,6 +42,7 @@ type
     Label25: TLabel;
     Label26: TLabel;
     Label27: TLabel;
+    img1: TImage;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Edit1KeyPress(Sender: TObject; var Key: Char);

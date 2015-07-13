@@ -1,6 +1,6 @@
 object FDatos: TFDatos
-  Left = 300
-  Top = 189
+  Left = 258
+  Top = 185
   Width = 1150
   Height = 551
   Caption = 'Cargar datos iniciales'
@@ -888,7 +888,7 @@ object FDatos: TFDatos
     Top = 248
     Width = 177
     Height = 161
-    Caption = 'Consultorios'
+    Caption = 'Consultorios Externos'
     Ctl3D = False
     ParentCtl3D = False
     TabOrder = 8
@@ -943,11 +943,12 @@ object FDatos: TFDatos
       Visible = False
     end
     object Edit49: TEdit
-      Left = 88
+      Left = 112
       Top = 100
       Width = 80
       Height = 19
-      TabOrder = 4
+      TabOrder = 5
+      Visible = False
     end
     object Button10: TButton
       Left = 96
@@ -955,7 +956,7 @@ object FDatos: TFDatos
       Width = 73
       Height = 25
       Caption = 'Guardar'
-      TabOrder = 5
+      TabOrder = 6
       OnClick = Button10Click
     end
     object listaMedicos1: TComboBox
@@ -966,6 +967,15 @@ object FDatos: TFDatos
       BevelEdges = [beLeft, beTop]
       ItemHeight = 13
       TabOrder = 2
+    end
+    object listaSecreatias1: TComboBox
+      Left = 88
+      Top = 99
+      Width = 81
+      Height = 21
+      BevelEdges = [beLeft, beTop]
+      ItemHeight = 13
+      TabOrder = 4
     end
   end
   object GroupBox12: TGroupBox
@@ -1097,6 +1107,7 @@ object FDatos: TFDatos
       Top = 40
       Width = 80
       Height = 19
+      Color = clInactiveBorder
       TabOrder = 0
     end
     object Edit9: TEdit
