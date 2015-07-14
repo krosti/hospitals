@@ -142,35 +142,53 @@ var
   i,t,c,n,c2:integer;
   s:longint;
   f:string[25];
+
+  function IsValidDateCheck(const AValue: String): Boolean;
+  var
+    dtTemp: TDateTime;
+  begin
+    Result := False;
+
+    if Length(AValue) = 10 then
+      if (AValue[3] = '/') and (AValue[6] = '/') then
+        Result := TryStrToDate(AValue, dtTemp);
+  end;
+
 begin
-  If (not digitos(Edit1.Text)) then
+
+  if (not digitos(Edit1.Text)) then
     showmessage('DNI Inválido')
   else
     begin
       If (Combobox1.ItemIndex<>-1) and (Combobox2.ItemIndex<>-1) then
       begin
         //Recupera la información
-        s:=strtoint(Edit1.text);
-        t:=strtoint(Combobox2.Text);
-        c:=strtoint(Combobox1.Text);
-        f:=MaskEdit1.Text;
-        //Incrementa el índice
-        IPed:=IPed+1;
-        //Almacena en el objeto
-        ped:=Pedidos.crearpedido(t,c,s,f);
-        //Almacena en el vector
-        VPedidos[IPed]:=ped;
-        showmessage('Consultorio Reservado!' + #13#10 +'Consultorio:'+ IntToStr(c));
+        s := strtoint(Edit1.text);
+        t := strtoint(Combobox2.Text);
+        c := strtoint(Combobox1.Text);
+        f := MaskEdit1.Text;
 
-        // trigger Consultar los turnos con este valor
-        ComboBox3.ItemIndex := ComboBox1.ItemIndex;
-        Button5.Click;
+        if (not IsValidDateCheck(MaskEdit1.Text))
+          then ShowMessage('Fecha invalida!')
+          else begin
+            //Incrementa el índice
+            IPed := IPed+1;
+            //Almacena en el objeto
+            ped := Pedidos.crearpedido(t,c,s,f);
+            //Almacena en el vector
+            VPedidos[IPed] := ped;
+            showmessage('Consultorio Reservado!' + #13#10 +'Consultorio:'+ IntToStr(c));
 
-        // clean
-        ComboBox1.ItemIndex := -1;
-        MaskEdit1.Text := '';
-        ComboBox2.ItemIndex := -1;
-        Edit1.Text := '';
+            // trigger Consultar los turnos con este valor
+            ComboBox3.ItemIndex := ComboBox1.ItemIndex;
+            Button5.Click;
+
+            // clean
+            ComboBox1.ItemIndex := -1;
+            MaskEdit1.Text := '';
+            ComboBox2.ItemIndex := -1;
+            Edit1.Text := '';
+          end;
       end
       else
         showmessage('Seleccione consultorio y horario');

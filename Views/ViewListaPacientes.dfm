@@ -1,6 +1,6 @@
 object FormListaPacientes1: TFormListaPacientes1
-  Left = 349
-  Top = 254
+  Left = 299
+  Top = 247
   Width = 906
   Height = 439
   Caption = 'FormListaPacientes'

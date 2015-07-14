@@ -1,6 +1,6 @@
 object AsigUrgencias: TAsigUrgencias
-  Left = 491
-  Top = 224
+  Left = 420
+  Top = 218
   Width = 689
   Height = 403
   Caption = 'AsigUrgencias'
@@ -8213,7 +8213,10 @@ object AsigUrgencias: TAsigUrgencias
       Top = 24
       Width = 297
       Height = 209
+      Ctl3D = False
+      Enabled = False
       ItemHeight = 13
+      ParentCtl3D = False
       TabOrder = 0
     end
   end
@@ -8266,7 +8269,7 @@ object AsigUrgencias: TAsigUrgencias
       Text = '------------------------'
     end
     object Button3: TButton
-      Left = 176
+      Left = 184
       Top = 16
       Width = 105
       Height = 25

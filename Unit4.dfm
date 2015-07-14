@@ -1,6 +1,6 @@
 object FConsultorios: TFConsultorios
-  Left = 475
-  Top = 264
+  Left = 406
+  Top = 257
   Width = 690
   Height = 480
   Caption = 'Reservar Consultorio'
@@ -8264,7 +8264,7 @@ object FConsultorios: TFConsultorios
     Font.Name = 'Tahoma'
     Font.Style = [fsBold, fsUnderline]
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 9
     OnClick = Button1Click
   end
   object ListBox1: TListBox
@@ -8276,7 +8276,7 @@ object FConsultorios: TFConsultorios
     Enabled = False
     ItemHeight = 13
     ParentCtl3D = False
-    TabOrder = 3
+    TabOrder = 4
   end
   object ComboBox1: TComboBox
     Left = 72
@@ -8284,7 +8284,7 @@ object FConsultorios: TFConsultorios
     Width = 137
     Height = 21
     ItemHeight = 13
-    TabOrder = 1
+    TabOrder = 2
     Text = '----------------'
   end
   object ComboBox2: TComboBox
@@ -8293,16 +8293,16 @@ object FConsultorios: TFConsultorios
     Width = 89
     Height = 21
     ItemHeight = 13
-    TabOrder = 6
+    TabOrder = 7
     Text = '----------------'
   end
   object Button2: TButton
-    Left = 584
-    Top = 400
+    Left = 576
+    Top = 16
     Width = 81
     Height = 33
     Caption = 'Volver'
-    TabOrder = 10
+    TabOrder = 1
     OnClick = Button2Click
   end
   object ListBox2: TListBox
@@ -8310,21 +8310,24 @@ object FConsultorios: TFConsultorios
     Top = 96
     Width = 161
     Height = 201
+    Ctl3D = False
+    Enabled = False
     ItemHeight = 13
     Items.Strings = (
       '1. 8:00 a 8:30'
       '2. 8:30 a 9:00')
-    TabOrder = 2
+    ParentCtl3D = False
+    TabOrder = 3
   end
   object Edit1: TEdit
     Left = 72
     Top = 216
     Width = 137
     Height = 21
-    TabOrder = 7
+    TabOrder = 8
   end
   object Button3: TButton
-    Left = 560
+    Left = 464
     Top = 16
     Width = 97
     Height = 33
@@ -8345,7 +8348,7 @@ object FConsultorios: TFConsultorios
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 6
     OnClick = Button4Click
   end
   object MaskEdit1: TMaskEdit
@@ -8355,7 +8358,7 @@ object FConsultorios: TFConsultorios
     Height = 21
     EditMask = '!99/99/0000;1;_'
     MaxLength = 10
-    TabOrder = 4
+    TabOrder = 5
     Text = '  /  /    '
   end
   object GroupBox1: TGroupBox
@@ -8372,7 +8375,7 @@ object FConsultorios: TFConsultorios
     Font.Style = []
     ParentColor = False
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 10
     object lbl1: TLabel
       Left = 16
       Top = 24

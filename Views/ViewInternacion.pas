@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, SharedClasses, Unit7, Mask, WebAdapt, WebComp,
-  madExceptVcl, jpeg, ExtCtrls;
+  madExceptVcl, jpeg, ExtCtrls, DateUtils;
 
 type
   TFInternacion = class(TForm)
@@ -71,6 +71,7 @@ type
     mdxcptnhndlr1: TMadExceptionHandler;
     catLabel: TLabel;
     img1: TImage;
+    lbl1: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
     procedure CheckBox1Click(Sender: TObject);
@@ -796,9 +797,9 @@ procedure TFInternacion.FormShow(Sender: TObject);
 
 begin
   //fecha inicio de internacion
-  MaskEdit1.Text:= DateToStr(Date);
+  MaskEdit1.Text:= FormatDateTime('dd/mm/yyyy', Date);
   //fecha finalizacion internacion
-  //MaskEdit2.Text:= DateToStr(Date);
+  MaskEdit2.Text := FormatDateTime('dd/mm/yyyy', IncDay(Date , 1) );
 
   actualizarListaMedicos;
 end;

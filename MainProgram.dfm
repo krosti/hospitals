@@ -1,6 +1,6 @@
 object Inicial: TInicial
-  Left = 442
-  Top = 283
+  Left = 378
+  Top = 276
   Width = 702
   Height = 451
   HorzScrollBar.Position = 11

@@ -41,42 +41,59 @@ uses MainProgram;
 
 procedure TAsigUrgencias.Button1Click(Sender: TObject);
 var
-  med:integer;
+  med,i,nro,nro2:integer;
   urg:Urgencias;
 
-function nromedico(cad:string):integer;
-var
-  i,nro:integer;
-  car:char;
-begin
-  i:=1;nro:=0;car:='a';
-  While (car<>'-') do
-    begin
-      car:=cad[i];
-      If car<>'-' then
-        nro:=(nro*10)+(strtoint(car));
-      i:=i+1;
-    end;
-  nromedico:=nro;
-end;
+  function nromedico(cad:string):integer;
+  var
+    i,nro:integer;
+    car:char;
+  begin
+    i:=1;nro:=0;car:='a';
+    While (car<>'-') do
+      begin
+        car:=cad[i];
+        If car<>'-' then
+          nro:=(nro*10)+(strtoint(car));
+        i:=i+1;
+      end;
+    nromedico:=nro;
+  end;
 
 
 begin
-If Combobox1.ItemIndex=-1 then
-  showmessage('Eliga Médico')
+  If Combobox1.ItemIndex=-1 then
+    showmessage('Eliga Médico')
   else
+  begin
     If Combobox2.ItemIndex=-1 then
       showmessage('Eliga sala')
-      else
-        begin
-          IUrg:=IUrg+1;
-          med:=nromedico(Combobox1.Text);
-          urg:=Urgencias.crearurgencia(strtoint(Combobox2.Text),med);
-          VUrgencias[IUrg]:=urg;
-          Combobox1.Text:='';
-          Combobox2.Text:='';
-        end;
+    else
+      begin
+        IUrg:=IUrg+1;
+        med:=nromedico(Combobox1.Text);
+        urg:=Urgencias.crearurgencia(strtoint(Combobox2.Text),med);
+        VUrgencias[IUrg]:=urg;
+        Combobox1.Text:='';
+        Combobox2.Text:='';
+      end
+  end;
 
+  ListBox1.Clear;
+
+  If IUrg>0 then
+    begin
+      ListBox1.Items.Add('Nro. Sala    -     #Matricula Médico / Nombre');
+      i:=1;
+      While (i<=IUrg)do
+        begin
+          urg:=VUrgencias[i];
+          nro:=urg.obtenersurgencia;
+          nro2:=urg.obtenermurgencia;
+          ListBox1.Items.Add(inttostr(nro)+'        -       #'+inttostr(nro2)+'  |');
+          i:=i+1;
+        end;
+    end;
 end;
 
 procedure TAsigUrgencias.Button3Click(Sender: TObject);
@@ -177,9 +194,11 @@ begin
         end;
       i:=i+1;
     end;
+
   ListBox1.Clear;
+
   If IUrg>0 then
-    begin
+      begin
       ListBox1.Items.Add('Nro. Sala - Matricula Médico');
       i:=1;
       While (i<=IUrg)do

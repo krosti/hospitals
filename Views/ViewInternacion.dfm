@@ -1,6 +1,6 @@
 object FInternacion: TFInternacion
-  Left = 402
-  Top = 201
+  Left = 344
+  Top = 196
   Width = 740
   Height = 564
   Caption = 'Registrar Internacion'
@@ -8214,6 +8214,19 @@ object FInternacion: TFInternacion
     Width = 103
     Height = 13
     Caption = 'Fecha Finalizaci'#243'n (*)'
+  end
+  object lbl1: TLabel
+    Left = 248
+    Top = 104
+    Width = 115
+    Height = 13
+    Caption = 'Formato: (dd/mm/yyyy)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clSilver
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Button1: TButton
     Left = 552

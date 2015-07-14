@@ -1,6 +1,6 @@
 object FDatos: TFDatos
-  Left = 258
-  Top = 185
+  Left = 221
+  Top = 181
   Width = 1150
   Height = 551
   Caption = 'Cargar datos iniciales'
@@ -82,6 +82,7 @@ object FDatos: TFDatos
       EEEEEEEEEEEEE7DBCFDABD9FDDAE8AD9A078D59869DBA782D4BBA1E6DED5EEEE
       EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
       EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE}
+    Visible = False
   end
   object GroupBox1: TGroupBox
     Left = 8
@@ -989,14 +990,14 @@ object FDatos: TFDatos
     TabOrder = 9
     object Label52: TLabel
       Left = 16
-      Top = 40
-      Width = 21
+      Top = 72
+      Width = 47
       Height = 13
-      Caption = 'Nro:'
+      Caption = 'Cantidad:'
     end
     object Label53: TLabel
       Left = 24
-      Top = 64
+      Top = 96
       Width = 137
       Height = 13
       Caption = '(Horario fijos de media hora)'
@@ -1011,10 +1012,10 @@ object FDatos: TFDatos
     end
     object Label54: TLabel
       Left = 16
-      Top = 96
-      Width = 58
+      Top = 32
+      Width = 72
       Height = 13
-      Caption = 'Consultorio:'
+      Caption = 'Consultorio ID:'
     end
     object Button12: TButton
       Left = 104
@@ -1027,17 +1028,17 @@ object FDatos: TFDatos
     end
     object Edit50: TEdit
       Left = 88
-      Top = 40
-      Width = 80
-      Height = 19
-      TabOrder = 0
-    end
-    object Edit51: TEdit
-      Left = 88
-      Top = 96
+      Top = 72
       Width = 80
       Height = 19
       TabOrder = 1
+    end
+    object Edit51: TEdit
+      Left = 88
+      Top = 32
+      Width = 80
+      Height = 19
+      TabOrder = 0
     end
   end
   object Button13: TButton

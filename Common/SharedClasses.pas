@@ -495,8 +495,9 @@ end;
 
 function Urgencias.obtenermurgencia ():integer;
 begin
-  obtenermurgencia:=medico;
+  obtenermurgencia:=Medico;
 end;
+
 //FIN URGENCIAS--------------------------------------------------
 
 //CONSULTORIOS------------------------------------------------------

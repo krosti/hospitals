@@ -1,6 +1,6 @@
 object FPaciente: TFPaciente
-  Left = 326
-  Top = 238
+  Left = 279
+  Top = 232
   Width = 681
   Height = 394
   Caption = 'Consultar Paciente'
